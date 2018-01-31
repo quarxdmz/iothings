@@ -1,3 +1,7 @@
 {
   "name": "myApp"
+   "frameworks": {
+    "netcoreapp1.0": {},
+    "net451": {}
+  }
 }
