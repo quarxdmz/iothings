@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="009873ac48b7466696b1094564b12802" Name="Diagram1">
+        <EntityTypeShape EntityType="Models.ADDRESS" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="Models.CAMPAIGN" Width="1.5" PointX="5.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Models.con_LIST_SOUL" Width="1.5" PointX="13.5" PointY="19.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Models.con_ORDERPROC_DOCTOR" Width="1.5" PointX="13.5" PointY="8.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Models.con_SOUL_ref_upsell" Width="1.5" PointX="16.5" PointY="19.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Models.Conditions_Profile" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Models.Doc_Insurance_Affiliation" Width="1.5" PointX="13.5" PointY="2.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Models.Doc_Specialties_Profile" Width="1.5" PointX="0.75" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Models.DOCTOR" Width="1.5" PointX="11.25" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Models.INS_info_2" Width="1.5" PointX="2.75" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Models.Insurance_Profile" Width="1.5" PointX="11.25" PointY="24.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Models.ITEM" Width="1.5" PointX="4.75" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Models.LIST" Width="1.5" PointX="11.25" PointY="27.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Models.log_EXTERNAL" Width="1.5" PointX="12.75" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Models.log_ORPROC" Width="1.5" PointX="6.75" PointY="13.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Models.log_ORPROC_ALL" Width="1.5" PointX="14.75" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Models.LOG_Q1" Width="1.5" PointX="15.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Models.log_USER" Width="1.5" PointX="5.25" PointY="8.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Models.Med_Specialties" Width="1.5" PointX="13.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Models.NOTE" Width="1.5" PointX="15.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Models.ORDER_info_2" Width="1.5" PointX="10.5" PointY="7.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Models.ORDER_shipping" Width="1.5" PointX="10.5" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Models.ORDERPROC" Width="1.5" PointX="8.25" PointY="7.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Models.ref_orproc_state" Width="1.5" PointX="6" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Models.ref_orproc_state_group" Width="1.5" PointX="15.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Models.ref_TAG" Width="1.5" PointX="16.75" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Models.ref_trans_type" Width="1.5" PointX="16.75" PointY="13.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Models.ref_upsell" Width="1.5" PointX="14.25" PointY="17.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Models.ref_user_type" Width="1.5" PointX="0.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Models.ref_zip" Width="1.5" PointX="0.75" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Models.SETTING" Width="1.5" PointX="16.75" PointY="16.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Models.SOUL" Width="1.5" PointX="11.25" PointY="18.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Models.SOUL_info_2" Width="1.5" PointX="0.75" PointY="17.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Models.SOUL_info_3" Width="1.5" PointX="17.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Models.TAG" Width="1.5" PointX="10.5" PointY="13.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Models.USER" Width="1.5" PointX="3" PointY="7.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Models.Table_1" Width="1.5" PointX="2.75" PointY="17.75" IsExpanded="true" />
+        <AssociationConnector Association="Models.FK_ADDRESS_ref_zip" ManuallyRouted="false" />
+        <AssociationConnector Association="Models.FK_con_LIST_SOUL_LIST" ManuallyRouted="false" />
+        <AssociationConnector Association="Models.FK_con_LIST_SOUL_SOUL" ManuallyRouted="false" />
+        <AssociationConnector Association="Models.FK_con_ORDERPROC_DOCTOR_DOCTOR" ManuallyRouted="false" />
+        <AssociationConnector Association="Models.FK_con_ORDERPROC_DOCTOR_ORDERPROC" ManuallyRouted="false" />
+        <AssociationConnector Association="Models.FK_con_ORDERPROC_DOCTOR_SOUL" ManuallyRouted="false" />
+        <AssociationConnector Association="Models.FK_con_SOUL_ref_upsell_ref_upsell" ManuallyRouted="false" />
+        <AssociationConnector Association="Models.FK_con_SOUL_ref_upsell_SOUL" ManuallyRouted="false" />
+        <AssociationConnector Association="Models.FK_Table_DOCTOR" ManuallyRouted="false" />
+        <AssociationConnector Association="Models.FK_Table_Insurance" ManuallyRouted="false" />
+        <AssociationConnector Association="Models.FK_log_USER_USER" ManuallyRouted="false" />
+        <AssociationConnector Association="Models.FK_ORDER_info_2_ORDERPROC" ManuallyRouted="false" />
+        <AssociationConnector Association="Models.FK_ORDER_shipping_ORDERPROC" ManuallyRouted="false" />
+        <AssociationConnector Association="Models.FK_ORDERPROC_ref_orproc_state" ManuallyRouted="false" />
+        <AssociationConnector Association="Models.FK_ORDERPROC_USER" ManuallyRouted="false" />
+        <AssociationConnector Association="Models.FK_tags_ORDERPROC" ManuallyRouted="false" />
+        <AssociationConnector Association="Models.FK_USER_ref_user_type" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
