@@ -7,10 +7,10 @@
 using System;
 using System.Reflection;
 
-[assembly: System.Reflection.AssemblyCompanyAttribute("myApp")]
+[assembly: System.Reflection.AssemblyCompanyAttribute("iothings")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
 [assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
-[assembly: System.Reflection.AssemblyProductAttribute("myApp")]
-[assembly: System.Reflection.AssemblyTitleAttribute("myApp")]
+[assembly: System.Reflection.AssemblyProductAttribute("iothings")]
+[assembly: System.Reflection.AssemblyTitleAttribute("iothings")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
