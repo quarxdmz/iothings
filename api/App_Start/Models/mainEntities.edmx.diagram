@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="00ed0364d37340498a147eb1024ede01" Name="Diagram1" ZoomLevel="100">
+        <EntityTypeShape EntityType="Models.ADDRESS" Width="1.5" PointX="11" PointY="6" />
+        <EntityTypeShape EntityType="Models.appointment" Width="1.5" PointX="6" PointY="7.375" />
+        <EntityTypeShape EntityType="Models.con_Fave_doctor" Width="1.5" PointX="2.75" PointY="0.75" />
+        <EntityTypeShape EntityType="Models.con_LIST_SOUL" Width="1.5" PointX="8" PointY="2.375" />
+        <EntityTypeShape EntityType="Models.con_SOUL_exam" Width="1.5" PointX="10.75" PointY="0.75" />
+        <EntityTypeShape EntityType="Models.con_SOUL_hist" Width="1.5" PointX="8.75" PointY="10.75" />
+        <EntityTypeShape EntityType="Models.Conditions_Profile" Width="1.5" PointX="10.75" PointY="10.75" />
+        <EntityTypeShape EntityType="Models.Doc_Education" Width="1.5" PointX="3" PointY="18.875" />
+        <EntityTypeShape EntityType="Models.Doc_Insurance" Width="1.5" PointX="3" PointY="16.125" />
+        <EntityTypeShape EntityType="Models.Doc_Insurance_Affiliation" Width="1.5" PointX="3" PointY="4.875" />
+        <EntityTypeShape EntityType="Models.Doc_Specialties_Profile" Width="1.5" PointX="3" PointY="7.875" />
+        <EntityTypeShape EntityType="Models.DOCTOR" Width="1.5" PointX="0.75" PointY="5" />
+        <EntityTypeShape EntityType="Models.ITEM" Width="1.5" PointX="5.75" PointY="11.75" />
+        <EntityTypeShape EntityType="Models.LOG_CALL" Width="1.5" PointX="12.75" PointY="0.75" />
+        <EntityTypeShape EntityType="Models.ref_appointment_type" Width="1.5" PointX="3.75" PointY="11.125" />
+        <EntityTypeShape EntityType="Models.ref_insurancecompanies" Width="1.5" PointX="0.75" PointY="1.875" />
+        <EntityTypeShape EntityType="Models.ref_specialties" Width="1.5" PointX="0.75" PointY="13.75" />
+        <EntityTypeShape EntityType="Models.ref_zip" Width="1.5" PointX="8.75" PointY="6.375" />
+        <EntityTypeShape EntityType="Models.review" Width="1.5" PointX="12.75" PointY="10.75" />
+        <EntityTypeShape EntityType="Models.SOUL" Width="1.5" PointX="5.75" PointY="1.125" />
+        <EntityTypeShape EntityType="Models.SOUL_info_2" Width="1.5" PointX="14.75" PointY="0.75" />
+        <EntityTypeShape EntityType="Models.SOUL_info_3" Width="1.5" PointX="5.75" PointY="14.75" />
+        <EntityTypeShape EntityType="Models.sysdiagram" Width="1.5" PointX="10.75" PointY="14.75" />
+        <EntityTypeShape EntityType="Models.USER" Width="1.5" PointX="14.75" PointY="11.75" />
+        <EntityTypeShape EntityType="Models.wellness_exam" Width="1.5" PointX="2.75" PointY="13.75" />
+        <AssociationConnector Association="Models.FK_ADDRESS_ref_zip" />
+        <AssociationConnector Association="Models.FK_appointment_DOCTOR" />
+        <AssociationConnector Association="Models.FK_appointment_ref_appointment_type" />
+        <AssociationConnector Association="Models.FK_con_LIST_SOUL_SOUL" />
+        <AssociationConnector Association="Models.FK_Doc_Education_ToTable" />
+        <AssociationConnector Association="Models.FK_DOCTOR" />
+        <AssociationConnector Association="Models.FK_Doc_Insurance_Affiliation_ToTable" />
+        <AssociationConnector Association="Models.FK_Table_DOCTOR" />
+        <AssociationConnector Association="Models.FK_Doc_Specialties_Profile_ToTable" />
+        <AssociationConnector Association="Models.FK_Doc_Specialties_Profile_ToTable_1" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

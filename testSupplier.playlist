@@ -1,0 +1,1 @@
+<Playlist Version="1.0"><Add Test="api.NunitTest.UserSupplierTest.testpostSupplier" /><Add Test="api.NunitTest.UserSupplierTest.testpostSupplier_email" /><Add Test="api.NunitTest.UserSupplierTest.testpostSupplier_isrequired" /></Playlist>

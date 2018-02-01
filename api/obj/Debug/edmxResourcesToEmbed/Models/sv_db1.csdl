@@ -1,0 +1,2749 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="SV_db1Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="SV_db1Entities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="con_APPOINTMENT_NOTE" EntityType="SV_db1Model.con_APPOINTMENT_NOTE" />
+    <EntitySet Name="con_DOCTOR_ref_insurance" EntityType="SV_db1Model.con_DOCTOR_ref_insurance" />
+    <EntitySet Name="con_USER_favorite_DOCTOR" EntityType="SV_db1Model.con_USER_favorite_DOCTOR" />
+    <EntitySet Name="DOCTOR_ext" EntityType="SV_db1Model.DOCTOR_ext" />
+    <EntitySet Name="DOCTOR_ext_NPI" EntityType="SV_db1Model.DOCTOR_ext_NPI" />
+    <EntitySet Name="ref_specialty_category" EntityType="SV_db1Model.ref_specialty_category" />
+    <EntitySet Name="sysdiagrams" EntityType="SV_db1Model.sysdiagram" />
+    <EntitySet Name="app_authentication" EntityType="SV_db1Model.app_authentication" />
+    <EntitySet Name="APPOINTMENTs" EntityType="SV_db1Model.APPOINTMENT" />
+    <EntitySet Name="APPOINTMENT_ext" EntityType="SV_db1Model.APPOINTMENT_ext" />
+    <EntitySet Name="con_DOCTOR_Hospital" EntityType="SV_db1Model.con_DOCTOR_Hospital" />
+    <EntitySet Name="con_DOCTOR_NOTE" EntityType="SV_db1Model.con_DOCTOR_NOTE" />
+    <EntitySet Name="con_DOCTOR_ref_condition" EntityType="SV_db1Model.con_DOCTOR_ref_condition" />
+    <EntitySet Name="con_DOCTOR_ref_Hospital" EntityType="SV_db1Model.con_DOCTOR_ref_Hospital" />
+    <EntitySet Name="con_DOCTOR_ref_language" EntityType="SV_db1Model.con_DOCTOR_ref_language" />
+    <EntitySet Name="con_DOCTOR_ref_specialty" EntityType="SV_db1Model.con_DOCTOR_ref_specialty" />
+    <EntitySet Name="con_DOCTOR_timeslot" EntityType="SV_db1Model.con_DOCTOR_timeslot" />
+    <EntitySet Name="con_DOCTOR1_ref_insurance" EntityType="SV_db1Model.con_DOCTOR1_ref_insurance" />
+    <EntitySet Name="con_DOCTOR1_ref_language" EntityType="SV_db1Model.con_DOCTOR1_ref_language" />
+    <EntitySet Name="con_DOCTOR1_ref_specialty" EntityType="SV_db1Model.con_DOCTOR1_ref_specialty" />
+    <EntitySet Name="con_ORDER_NOTE" EntityType="SV_db1Model.con_ORDER_NOTE" />
+    <EntitySet Name="con_ORDER_PRODUCT" EntityType="SV_db1Model.con_ORDER_PRODUCT" />
+    <EntitySet Name="con_ref_specialty_ref_condition" EntityType="SV_db1Model.con_ref_specialty_ref_condition" />
+    <EntitySet Name="con_SOUL_LIST" EntityType="SV_db1Model.con_SOUL_LIST" />
+    <EntitySet Name="con_SOUL_mailing_list" EntityType="SV_db1Model.con_SOUL_mailing_list" />
+    <EntitySet Name="con_SOUL_ref_insurance" EntityType="SV_db1Model.con_SOUL_ref_insurance" />
+    <EntitySet Name="con_TRANSACTION_NOTE" EntityType="SV_db1Model.con_TRANSACTION_NOTE" />
+    <EntitySet Name="DOCTORs" EntityType="SV_db1Model.DOCTOR" />
+    <EntitySet Name="DOCTOR_ext1" EntityType="SV_db1Model.DOCTOR_ext1" />
+    <EntitySet Name="DOCTOR_NPI" EntityType="SV_db1Model.DOCTOR_NPI" />
+    <EntitySet Name="DOCTOR1" EntityType="SV_db1Model.DOCTOR1" />
+    <EntitySet Name="hs_DOCTOR" EntityType="SV_db1Model.hs_DOCTOR" />
+    <EntitySet Name="hs_DOCTOR_ext" EntityType="SV_db1Model.hs_DOCTOR_ext" />
+    <EntitySet Name="hs_Hospital" EntityType="SV_db1Model.hs_Hospital" />
+    <EntitySet Name="hs_HOSPITAL_ext" EntityType="SV_db1Model.hs_HOSPITAL_ext" />
+    <EntitySet Name="hs_ORGANIZATION" EntityType="SV_db1Model.hs_ORGANIZATION" />
+    <EntitySet Name="LISTs" EntityType="SV_db1Model.LIST" />
+    <EntitySet Name="LIST_ext" EntityType="SV_db1Model.LIST_ext" />
+    <EntitySet Name="log_CALL" EntityType="SV_db1Model.log_CALL" />
+    <EntitySet Name="log_payment" EntityType="SV_db1Model.log_payment" />
+    <EntitySet Name="log_token" EntityType="SV_db1Model.log_token" />
+    <EntitySet Name="MARKETERs" EntityType="SV_db1Model.MARKETER" />
+    <EntitySet Name="MARKETER_ext" EntityType="SV_db1Model.MARKETER_ext" />
+    <EntitySet Name="NOTEs" EntityType="SV_db1Model.NOTE" />
+    <EntitySet Name="notifications" EntityType="SV_db1Model.notification" />
+    <EntitySet Name="ORDERs" EntityType="SV_db1Model.ORDER" />
+    <EntitySet Name="ORDER_ext" EntityType="SV_db1Model.ORDER_ext" />
+    <EntitySet Name="PHARMACies" EntityType="SV_db1Model.PHARMACY" />
+    <EntitySet Name="PHARMACY_ext" EntityType="SV_db1Model.PHARMACY_ext" />
+    <EntitySet Name="PHYSICIANs" EntityType="SV_db1Model.PHYSICIAN" />
+    <EntitySet Name="PHYSICIAN_ext" EntityType="SV_db1Model.PHYSICIAN_ext" />
+    <EntitySet Name="PRODUCTs" EntityType="SV_db1Model.PRODUCT" />
+    <EntitySet Name="PRODUCT_ext" EntityType="SV_db1Model.PRODUCT_ext" />
+    <EntitySet Name="ref_APPOINTMENT_status" EntityType="SV_db1Model.ref_APPOINTMENT_status" />
+    <EntitySet Name="ref_APPOINTMENT_type" EntityType="SV_db1Model.ref_APPOINTMENT_type" />
+    <EntitySet Name="ref_CALL_type" EntityType="SV_db1Model.ref_CALL_type" />
+    <EntitySet Name="ref_condition" EntityType="SV_db1Model.ref_condition" />
+    <EntitySet Name="ref_data_type" EntityType="SV_db1Model.ref_data_type" />
+    <EntitySet Name="ref_insurance_provider" EntityType="SV_db1Model.ref_insurance_provider" />
+    <EntitySet Name="ref_languages" EntityType="SV_db1Model.ref_languages" />
+    <EntitySet Name="ref_NOTE_type" EntityType="SV_db1Model.ref_NOTE_type" />
+    <EntitySet Name="ref_specialty" EntityType="SV_db1Model.ref_specialty" />
+    <EntitySet Name="ref_specialty_provider" EntityType="SV_db1Model.ref_specialty_provider" />
+    <EntitySet Name="ref_specialty1" EntityType="SV_db1Model.ref_specialty1" />
+    <EntitySet Name="ref_status" EntityType="SV_db1Model.ref_status" />
+    <EntitySet Name="ref_status_type" EntityType="SV_db1Model.ref_status_type" />
+    <EntitySet Name="ref_TRANSACTION_type" EntityType="SV_db1Model.ref_TRANSACTION_type" />
+    <EntitySet Name="ref_USER_type" EntityType="SV_db1Model.ref_USER_type" />
+    <EntitySet Name="ref_wellness_exam" EntityType="SV_db1Model.ref_wellness_exam" />
+    <EntitySet Name="ref_zip" EntityType="SV_db1Model.ref_zip" />
+    <EntitySet Name="SOULs" EntityType="SV_db1Model.SOUL" />
+    <EntitySet Name="SOUL_ext" EntityType="SV_db1Model.SOUL_ext" />
+    <EntitySet Name="SUPPLIERs" EntityType="SV_db1Model.SUPPLIER" />
+    <EntitySet Name="SUPPLIER_ext" EntityType="SV_db1Model.SUPPLIER_ext" />
+    <EntitySet Name="top_search" EntityType="SV_db1Model.top_search" />
+    <EntitySet Name="TRANSACTIONs" EntityType="SV_db1Model.TRANSACTION" />
+    <EntitySet Name="TRANSACTION_ext" EntityType="SV_db1Model.TRANSACTION_ext" />
+    <EntitySet Name="USERs" EntityType="SV_db1Model.USER" />
+    <EntitySet Name="User_Card_Info" EntityType="SV_db1Model.User_Card_Info" />
+    <EntitySet Name="USER_ext" EntityType="SV_db1Model.USER_ext" />
+    <EntitySet Name="USER_type_access" EntityType="SV_db1Model.USER_type_access" />
+    <EntitySet Name="wellness_exam" EntityType="SV_db1Model.wellness_exam" />
+    <EntitySet Name="log_token_activity" EntityType="SV_db1Model.log_token_activity" />
+    <AssociationSet Name="FK_APPOINTMENT_ext_APPOINTMENT" Association="SV_db1Model.FK_APPOINTMENT_ext_APPOINTMENT">
+      <End Role="APPOINTMENT" EntitySet="APPOINTMENTs" />
+      <End Role="APPOINTMENT_ext" EntitySet="APPOINTMENT_ext" />
+    </AssociationSet>
+    <AssociationSet Name="FK_APPOINTMENT_ref_APPOINTMENT_STATUS" Association="SV_db1Model.FK_APPOINTMENT_ref_APPOINTMENT_STATUS">
+      <End Role="ref_APPOINTMENT_status" EntitySet="ref_APPOINTMENT_status" />
+      <End Role="APPOINTMENT" EntitySet="APPOINTMENTs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_APPOINTMENT_ref_APPOINTMENT_TYPE" Association="SV_db1Model.FK_APPOINTMENT_ref_APPOINTMENT_TYPE">
+      <End Role="ref_APPOINTMENT_type" EntitySet="ref_APPOINTMENT_type" />
+      <End Role="APPOINTMENT" EntitySet="APPOINTMENTs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_con_APPOINTMENT_NOTE_NOTE" Association="SV_db1Model.FK_con_APPOINTMENT_NOTE_NOTE">
+      <End Role="NOTE" EntitySet="NOTEs" />
+      <End Role="con_APPOINTMENT_NOTE" EntitySet="con_APPOINTMENT_NOTE" />
+    </AssociationSet>
+    <AssociationSet Name="FK_con_DOCTOR_Hospital" Association="SV_db1Model.FK_con_DOCTOR_Hospital">
+      <End Role="hs_Hospital" EntitySet="hs_Hospital" />
+      <End Role="con_DOCTOR_Hospital" EntitySet="con_DOCTOR_Hospital" />
+    </AssociationSet>
+    <AssociationSet Name="FK_con_DOCTOR_Hospital_DOCTOR" Association="SV_db1Model.FK_con_DOCTOR_Hospital_DOCTOR">
+      <End Role="hs_DOCTOR" EntitySet="hs_DOCTOR" />
+      <End Role="con_DOCTOR_Hospital" EntitySet="con_DOCTOR_Hospital" />
+    </AssociationSet>
+    <AssociationSet Name="FK_con_DOCTOR_NOTE_NOTE" Association="SV_db1Model.FK_con_DOCTOR_NOTE_NOTE">
+      <End Role="NOTE" EntitySet="NOTEs" />
+      <End Role="con_DOCTOR_NOTE" EntitySet="con_DOCTOR_NOTE" />
+    </AssociationSet>
+    <AssociationSet Name="FK_con_DOCTOR_ref_condition_DOCTOR" Association="SV_db1Model.FK_con_DOCTOR_ref_condition_DOCTOR">
+      <End Role="hs_DOCTOR" EntitySet="hs_DOCTOR" />
+      <End Role="con_DOCTOR_ref_condition" EntitySet="con_DOCTOR_ref_condition" />
+    </AssociationSet>
+    <AssociationSet Name="FK_con_DOCTOR_ref_hospital" Association="SV_db1Model.FK_con_DOCTOR_ref_hospital">
+      <End Role="hs_Hospital" EntitySet="hs_Hospital" />
+      <End Role="con_DOCTOR_ref_Hospital" EntitySet="con_DOCTOR_ref_Hospital" />
+    </AssociationSet>
+    <AssociationSet Name="FK_con_DOCTOR_ref_hospital_DOCTOR" Association="SV_db1Model.FK_con_DOCTOR_ref_hospital_DOCTOR">
+      <End Role="hs_DOCTOR" EntitySet="hs_DOCTOR" />
+      <End Role="con_DOCTOR_ref_Hospital" EntitySet="con_DOCTOR_ref_Hospital" />
+    </AssociationSet>
+    <AssociationSet Name="FK_con_DOCTOR_ref_insurance_DOCTOR" Association="SV_db1Model.FK_con_DOCTOR_ref_insurance_DOCTOR">
+      <End Role="hs_DOCTOR" EntitySet="hs_DOCTOR" />
+      <End Role="con_DOCTOR_ref_insurance" EntitySet="con_DOCTOR_ref_insurance" />
+    </AssociationSet>
+    <AssociationSet Name="FK_con_DOCTOR_ref_insurance_ref_insurance_provider" Association="SV_db1Model.FK_con_DOCTOR_ref_insurance_ref_insurance_provider">
+      <End Role="ref_insurance_provider" EntitySet="ref_insurance_provider" />
+      <End Role="con_DOCTOR_ref_insurance" EntitySet="con_DOCTOR_ref_insurance" />
+    </AssociationSet>
+    <AssociationSet Name="FK_con_DOCTOR_ref_language" Association="SV_db1Model.FK_con_DOCTOR_ref_language">
+      <End Role="ref_languages" EntitySet="ref_languages" />
+      <End Role="con_DOCTOR_ref_language" EntitySet="con_DOCTOR_ref_language" />
+    </AssociationSet>
+    <AssociationSet Name="FK_con_DOCTOR_ref_language_DOCTOR" Association="SV_db1Model.FK_con_DOCTOR_ref_language_DOCTOR">
+      <End Role="hs_DOCTOR" EntitySet="hs_DOCTOR" />
+      <End Role="con_DOCTOR_ref_language" EntitySet="con_DOCTOR_ref_language" />
+    </AssociationSet>
+    <AssociationSet Name="FK_con_DOCTOR_ref_specialty_DOCTOR" Association="SV_db1Model.FK_con_DOCTOR_ref_specialty_DOCTOR">
+      <End Role="hs_DOCTOR" EntitySet="hs_DOCTOR" />
+      <End Role="con_DOCTOR_ref_specialty" EntitySet="con_DOCTOR_ref_specialty" />
+    </AssociationSet>
+    <AssociationSet Name="FK_con_DOCTOR_ref_specialty_ref_specialties" Association="SV_db1Model.FK_con_DOCTOR_ref_specialty_ref_specialties">
+      <End Role="ref_specialty" EntitySet="ref_specialty" />
+      <End Role="con_DOCTOR_ref_specialty" EntitySet="con_DOCTOR_ref_specialty" />
+    </AssociationSet>
+    <AssociationSet Name="FK_con_DOCTOR_timeslot_ToTable" Association="SV_db1Model.FK_con_DOCTOR_timeslot_ToTable">
+      <End Role="hs_DOCTOR" EntitySet="hs_DOCTOR" />
+      <End Role="con_DOCTOR_timeslot" EntitySet="con_DOCTOR_timeslot" />
+    </AssociationSet>
+    <AssociationSet Name="FK_con_DOCTOR_ref_insurance_DOCTOR1" Association="SV_db1Model.FK_con_DOCTOR_ref_insurance_DOCTOR1">
+      <End Role="DOCTOR1" EntitySet="DOCTOR1" />
+      <End Role="con_DOCTOR1_ref_insurance" EntitySet="con_DOCTOR1_ref_insurance" />
+    </AssociationSet>
+    <AssociationSet Name="FK_con_DOCTOR_ref_insurance_ref_insurance_provider1" Association="SV_db1Model.FK_con_DOCTOR_ref_insurance_ref_insurance_provider1">
+      <End Role="ref_insurance_provider" EntitySet="ref_insurance_provider" />
+      <End Role="con_DOCTOR1_ref_insurance" EntitySet="con_DOCTOR1_ref_insurance" />
+    </AssociationSet>
+    <AssociationSet Name="FK_con_DOCTOR_ref_language_DOCTOR1" Association="SV_db1Model.FK_con_DOCTOR_ref_language_DOCTOR1">
+      <End Role="DOCTOR1" EntitySet="DOCTOR1" />
+      <End Role="con_DOCTOR1_ref_language" EntitySet="con_DOCTOR1_ref_language" />
+    </AssociationSet>
+    <AssociationSet Name="FK_con_DOCTOR_ref_language1" Association="SV_db1Model.FK_con_DOCTOR_ref_language1">
+      <End Role="ref_languages" EntitySet="ref_languages" />
+      <End Role="con_DOCTOR1_ref_language" EntitySet="con_DOCTOR1_ref_language" />
+    </AssociationSet>
+    <AssociationSet Name="FK_con_DOCTOR_ref_specialty_DOCTOR1" Association="SV_db1Model.FK_con_DOCTOR_ref_specialty_DOCTOR1">
+      <End Role="DOCTOR1" EntitySet="DOCTOR1" />
+      <End Role="con_DOCTOR1_ref_specialty" EntitySet="con_DOCTOR1_ref_specialty" />
+    </AssociationSet>
+    <AssociationSet Name="FK_con_DOCTOR_ref_specialty_ref_specialties1" Association="SV_db1Model.FK_con_DOCTOR_ref_specialty_ref_specialties1">
+      <End Role="ref_specialty1" EntitySet="ref_specialty1" />
+      <End Role="con_DOCTOR1_ref_specialty" EntitySet="con_DOCTOR1_ref_specialty" />
+    </AssociationSet>
+    <AssociationSet Name="FK_con_ORDER_NOTE_NOTE" Association="SV_db1Model.FK_con_ORDER_NOTE_NOTE">
+      <End Role="NOTE" EntitySet="NOTEs" />
+      <End Role="con_ORDER_NOTE" EntitySet="con_ORDER_NOTE" />
+    </AssociationSet>
+    <AssociationSet Name="FK_con_ORDER_PRODUCT_ORDER_ext" Association="SV_db1Model.FK_con_ORDER_PRODUCT_ORDER_ext">
+      <End Role="ORDER_ext" EntitySet="ORDER_ext" />
+      <End Role="con_ORDER_PRODUCT" EntitySet="con_ORDER_PRODUCT" />
+    </AssociationSet>
+    <AssociationSet Name="FK_con_ORDER_PRODUCT_PRODUCT_ext" Association="SV_db1Model.FK_con_ORDER_PRODUCT_PRODUCT_ext">
+      <End Role="PRODUCT_ext" EntitySet="PRODUCT_ext" />
+      <End Role="con_ORDER_PRODUCT" EntitySet="con_ORDER_PRODUCT" />
+    </AssociationSet>
+    <AssociationSet Name="FK_condition_ref_condition" Association="SV_db1Model.FK_condition_ref_condition">
+      <End Role="ref_condition" EntitySet="ref_condition" />
+      <End Role="con_ref_specialty_ref_condition" EntitySet="con_ref_specialty_ref_condition" />
+    </AssociationSet>
+    <AssociationSet Name="FK_condition_ref_specialty" Association="SV_db1Model.FK_condition_ref_specialty">
+      <End Role="ref_specialty1" EntitySet="ref_specialty1" />
+      <End Role="con_ref_specialty_ref_condition" EntitySet="con_ref_specialty_ref_condition" />
+    </AssociationSet>
+    <AssociationSet Name="FK_con_SOUL_LIST_LIST" Association="SV_db1Model.FK_con_SOUL_LIST_LIST">
+      <End Role="LIST" EntitySet="LISTs" />
+      <End Role="con_SOUL_LIST" EntitySet="con_SOUL_LIST" />
+    </AssociationSet>
+    <AssociationSet Name="FK_con_SOUL_LIST_SOUL" Association="SV_db1Model.FK_con_SOUL_LIST_SOUL">
+      <End Role="SOUL" EntitySet="SOULs" />
+      <End Role="con_SOUL_LIST" EntitySet="con_SOUL_LIST" />
+    </AssociationSet>
+    <AssociationSet Name="FK_con_SOUL_ref_insurance_ref_insurance_provider" Association="SV_db1Model.FK_con_SOUL_ref_insurance_ref_insurance_provider">
+      <End Role="ref_insurance_provider" EntitySet="ref_insurance_provider" />
+      <End Role="con_SOUL_ref_insurance" EntitySet="con_SOUL_ref_insurance" />
+    </AssociationSet>
+    <AssociationSet Name="FK_con_SOUL_ref_insurance_SOUL" Association="SV_db1Model.FK_con_SOUL_ref_insurance_SOUL">
+      <End Role="SOUL" EntitySet="SOULs" />
+      <End Role="con_SOUL_ref_insurance" EntitySet="con_SOUL_ref_insurance" />
+    </AssociationSet>
+    <AssociationSet Name="FK_con_TRANSACTION_NOTE_NOTE" Association="SV_db1Model.FK_con_TRANSACTION_NOTE_NOTE">
+      <End Role="NOTE" EntitySet="NOTEs" />
+      <End Role="con_TRANSACTION_NOTE" EntitySet="con_TRANSACTION_NOTE" />
+    </AssociationSet>
+    <AssociationSet Name="FK_con_USER_favorite_DOCTOR_ToTable" Association="SV_db1Model.FK_con_USER_favorite_DOCTOR_ToTable">
+      <End Role="hs_DOCTOR" EntitySet="hs_DOCTOR" />
+      <End Role="con_USER_favorite_DOCTOR" EntitySet="con_USER_favorite_DOCTOR" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DOCTOR_ext_DOCTOR" Association="SV_db1Model.FK_DOCTOR_ext_DOCTOR">
+      <End Role="DOCTOR" EntitySet="DOCTORs" />
+      <End Role="DOCTOR_ext" EntitySet="DOCTOR_ext" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DOCTOR_ref_zip" Association="SV_db1Model.FK_DOCTOR_ref_zip">
+      <End Role="ref_zip" EntitySet="ref_zip" />
+      <End Role="DOCTOR" EntitySet="DOCTORs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DOCTOR_ext_DOCTOR_NPI" Association="SV_db1Model.FK_DOCTOR_ext_DOCTOR_NPI">
+      <End Role="DOCTOR_NPI" EntitySet="DOCTOR_NPI" />
+      <End Role="DOCTOR_ext_NPI" EntitySet="DOCTOR_ext_NPI" />
+    </AssociationSet>
+    <AssociationSet Name="FK_hs_DOCTOR_ext_DOCTOR1" Association="SV_db1Model.FK_hs_DOCTOR_ext_DOCTOR1">
+      <End Role="DOCTOR1" EntitySet="DOCTOR1" />
+      <End Role="DOCTOR_ext1" EntitySet="DOCTOR_ext1" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DOCTOR_NPI_ref_zip" Association="SV_db1Model.FK_DOCTOR_NPI_ref_zip">
+      <End Role="ref_zip" EntitySet="ref_zip" />
+      <End Role="DOCTOR_NPI" EntitySet="DOCTOR_NPI" />
+    </AssociationSet>
+    <AssociationSet Name="FK_hsDOCTOR_ref_zip_p1" Association="SV_db1Model.FK_hsDOCTOR_ref_zip_p1">
+      <End Role="ref_zip" EntitySet="ref_zip" />
+      <End Role="DOCTOR1" EntitySet="DOCTOR1" />
+    </AssociationSet>
+    <AssociationSet Name="FK_hs_DOCTOR_ext_DOCTOR" Association="SV_db1Model.FK_hs_DOCTOR_ext_DOCTOR">
+      <End Role="hs_DOCTOR" EntitySet="hs_DOCTOR" />
+      <End Role="hs_DOCTOR_ext" EntitySet="hs_DOCTOR_ext" />
+    </AssociationSet>
+    <AssociationSet Name="FK_hsDOCTOR_ref_zip" Association="SV_db1Model.FK_hsDOCTOR_ref_zip">
+      <End Role="ref_zip" EntitySet="ref_zip" />
+      <End Role="hs_DOCTOR" EntitySet="hs_DOCTOR" />
+    </AssociationSet>
+    <AssociationSet Name="FK_hsDOCTOR_ref_zip_p" Association="SV_db1Model.FK_hsDOCTOR_ref_zip_p">
+      <End Role="ref_zip" EntitySet="ref_zip" />
+      <End Role="hs_DOCTOR" EntitySet="hs_DOCTOR" />
+    </AssociationSet>
+    <AssociationSet Name="FK_hs_Hospital_ext_DOCTOR" Association="SV_db1Model.FK_hs_Hospital_ext_DOCTOR">
+      <End Role="hs_Hospital" EntitySet="hs_Hospital" />
+      <End Role="hs_HOSPITAL_ext" EntitySet="hs_HOSPITAL_ext" />
+    </AssociationSet>
+    <AssociationSet Name="FK_hsHospital_ref_zip" Association="SV_db1Model.FK_hsHospital_ref_zip">
+      <End Role="ref_zip" EntitySet="ref_zip" />
+      <End Role="hs_Hospital" EntitySet="hs_Hospital" />
+    </AssociationSet>
+    <AssociationSet Name="FK_hsORGANIZATION_ref_zip" Association="SV_db1Model.FK_hsORGANIZATION_ref_zip">
+      <End Role="ref_zip" EntitySet="ref_zip" />
+      <End Role="hs_ORGANIZATION" EntitySet="hs_ORGANIZATION" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LIST_ext_LIST" Association="SV_db1Model.FK_LIST_ext_LIST">
+      <End Role="LIST" EntitySet="LISTs" />
+      <End Role="LIST_ext" EntitySet="LIST_ext" />
+    </AssociationSet>
+    <AssociationSet Name="FK_log_CALL_ref_CALL_type" Association="SV_db1Model.FK_log_CALL_ref_CALL_type">
+      <End Role="ref_CALL_type" EntitySet="ref_CALL_type" />
+      <End Role="log_CALL" EntitySet="log_CALL" />
+    </AssociationSet>
+    <AssociationSet Name="FK_log_payment_Card_Info" Association="SV_db1Model.FK_log_payment_Card_Info">
+      <End Role="User_Card_Info" EntitySet="User_Card_Info" />
+      <End Role="log_payment" EntitySet="log_payment" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MARKETER_ext_MARKETER" Association="SV_db1Model.FK_MARKETER_ext_MARKETER">
+      <End Role="MARKETER" EntitySet="MARKETERs" />
+      <End Role="MARKETER_ext" EntitySet="MARKETER_ext" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MARKETER_Toref_zip" Association="SV_db1Model.FK_MARKETER_Toref_zip">
+      <End Role="ref_zip" EntitySet="ref_zip" />
+      <End Role="MARKETER" EntitySet="MARKETERs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MARKETING_ToRef_Zip" Association="SV_db1Model.FK_MARKETING_ToRef_Zip">
+      <End Role="ref_zip" EntitySet="ref_zip" />
+      <End Role="MARKETER" EntitySet="MARKETERs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_NOTE_ref_NOTE_type" Association="SV_db1Model.FK_NOTE_ref_NOTE_type">
+      <End Role="ref_NOTE_type" EntitySet="ref_NOTE_type" />
+      <End Role="NOTE" EntitySet="NOTEs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_notification_USER" Association="SV_db1Model.FK_notification_USER">
+      <End Role="USER" EntitySet="USERs" />
+      <End Role="notification" EntitySet="notifications" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ORDER_ext_ORDER" Association="SV_db1Model.FK_ORDER_ext_ORDER">
+      <End Role="ORDER" EntitySet="ORDERs" />
+      <End Role="ORDER_ext" EntitySet="ORDER_ext" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PHARMACY_ext_PHARMACY" Association="SV_db1Model.FK_PHARMACY_ext_PHARMACY">
+      <End Role="PHARMACY" EntitySet="PHARMACies" />
+      <End Role="PHARMACY_ext" EntitySet="PHARMACY_ext" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PHARMACY_ToRef_Zip" Association="SV_db1Model.FK_PHARMACY_ToRef_Zip">
+      <End Role="ref_zip" EntitySet="ref_zip" />
+      <End Role="PHARMACY" EntitySet="PHARMACies" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PHYSICIAN_ext_PHYSICIAN" Association="SV_db1Model.FK_PHYSICIAN_ext_PHYSICIAN">
+      <End Role="PHYSICIAN" EntitySet="PHYSICIANs" />
+      <End Role="PHYSICIAN_ext" EntitySet="PHYSICIAN_ext" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PHYSICIAN_ToRef_Zip" Association="SV_db1Model.FK_PHYSICIAN_ToRef_Zip">
+      <End Role="ref_zip" EntitySet="ref_zip" />
+      <End Role="PHYSICIAN" EntitySet="PHYSICIANs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PRODUCT_ext_PRODUCT" Association="SV_db1Model.FK_PRODUCT_ext_PRODUCT">
+      <End Role="PRODUCT" EntitySet="PRODUCTs" />
+      <End Role="PRODUCT_ext" EntitySet="PRODUCT_ext" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ref_condition_specialty" Association="SV_db1Model.FK_ref_condition_specialty">
+      <End Role="ref_specialty1" EntitySet="ref_specialty1" />
+      <End Role="ref_condition" EntitySet="ref_condition" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ref_specialty1_provider" Association="SV_db1Model.FK_ref_specialty1_provider">
+      <End Role="ref_specialty_provider" EntitySet="ref_specialty_provider" />
+      <End Role="ref_specialty1" EntitySet="ref_specialty1" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ref_status_ref_status_type" Association="SV_db1Model.FK_ref_status_ref_status_type">
+      <End Role="ref_status_type" EntitySet="ref_status_type" />
+      <End Role="ref_status" EntitySet="ref_status" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TRANSACTION_ref_status" Association="SV_db1Model.FK_TRANSACTION_ref_status">
+      <End Role="ref_status" EntitySet="ref_status" />
+      <End Role="TRANSACTION" EntitySet="TRANSACTIONs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TRANSACTION_ref_TRANSACTION_type" Association="SV_db1Model.FK_TRANSACTION_ref_TRANSACTION_type">
+      <End Role="ref_TRANSACTION_type" EntitySet="ref_TRANSACTION_type" />
+      <End Role="TRANSACTION" EntitySet="TRANSACTIONs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_USER_ToTable" Association="SV_db1Model.FK_USER_ToTable">
+      <End Role="ref_USER_type" EntitySet="ref_USER_type" />
+      <End Role="USER" EntitySet="USERs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_wellness_exam_ToRef_wellness" Association="SV_db1Model.FK_wellness_exam_ToRef_wellness">
+      <End Role="ref_wellness_exam" EntitySet="ref_wellness_exam" />
+      <End Role="wellness_exam" EntitySet="wellness_exam" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SOUL_ref_zip" Association="SV_db1Model.FK_SOUL_ref_zip">
+      <End Role="ref_zip" EntitySet="ref_zip" />
+      <End Role="SOUL" EntitySet="SOULs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SUPPLIER_Toref_zip" Association="SV_db1Model.FK_SUPPLIER_Toref_zip">
+      <End Role="ref_zip" EntitySet="ref_zip" />
+      <End Role="SUPPLIER" EntitySet="SUPPLIERs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SOUL_ext_SOUL" Association="SV_db1Model.FK_SOUL_ext_SOUL">
+      <End Role="SOUL" EntitySet="SOULs" />
+      <End Role="SOUL_ext" EntitySet="SOUL_ext" />
+    </AssociationSet>
+    <AssociationSet Name="FK_wellness_exam_ToSOUL" Association="SV_db1Model.FK_wellness_exam_ToSOUL">
+      <End Role="SOUL" EntitySet="SOULs" />
+      <End Role="wellness_exam" EntitySet="wellness_exam" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SUPPLIER_ext_SUPPLIER" Association="SV_db1Model.FK_SUPPLIER_ext_SUPPLIER">
+      <End Role="SUPPLIER" EntitySet="SUPPLIERs" />
+      <End Role="SUPPLIER_ext" EntitySet="SUPPLIER_ext" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TRANSACTION_ext_TRANSACTION" Association="SV_db1Model.FK_TRANSACTION_ext_TRANSACTION">
+      <End Role="TRANSACTION" EntitySet="TRANSACTIONs" />
+      <End Role="TRANSACTION_ext" EntitySet="TRANSACTION_ext" />
+    </AssociationSet>
+    <AssociationSet Name="FK_User_Card_Info_ToTable" Association="SV_db1Model.FK_User_Card_Info_ToTable">
+      <End Role="USER" EntitySet="USERs" />
+      <End Role="User_Card_Info" EntitySet="User_Card_Info" />
+    </AssociationSet>
+    <AssociationSet Name="FK_USER_ext_USER" Association="SV_db1Model.FK_USER_ext_USER">
+      <End Role="USER" EntitySet="USERs" />
+      <End Role="USER_ext" EntitySet="USER_ext" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="con_APPOINTMENT_NOTE">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="rel_NOTE_id" Type="Int64" />
+    <Property Name="rel_APPOINTMENT_id" Type="Int64" />
+    <Property Name="dt_create" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="dt_update" Type="DateTime" Precision="3" />
+    <Property Name="create_by__USER_id" Type="Int64" Nullable="false" />
+    <Property Name="update_by__USER_id" Type="Int64" />
+    <NavigationProperty Name="NOTE" Relationship="SV_db1Model.FK_con_APPOINTMENT_NOTE_NOTE" FromRole="con_APPOINTMENT_NOTE" ToRole="NOTE" />
+  </EntityType>
+  <EntityType Name="con_DOCTOR_ref_insurance">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="rel_DOCTOR_id" Type="Int64" />
+    <Property Name="rel_ref_insurance_provider_id" Type="Int64" />
+    <Property Name="dt_create" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="dt_update" Type="DateTime" Precision="3" />
+    <Property Name="create_by__USER_id" Type="Int64" Nullable="false" />
+    <Property Name="update_by__USER_id" Type="Int64" />
+    <Property Name="rel_ref_status_id" Type="Int64" />
+    <NavigationProperty Name="hs_DOCTOR" Relationship="SV_db1Model.FK_con_DOCTOR_ref_insurance_DOCTOR" FromRole="con_DOCTOR_ref_insurance" ToRole="hs_DOCTOR" />
+    <NavigationProperty Name="ref_insurance_provider" Relationship="SV_db1Model.FK_con_DOCTOR_ref_insurance_ref_insurance_provider" FromRole="con_DOCTOR_ref_insurance" ToRole="ref_insurance_provider" />
+  </EntityType>
+  <EntityType Name="con_USER_favorite_DOCTOR">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="rel_doctor_id" Type="Int64" Nullable="false" />
+    <Property Name="favor" Type="Boolean" />
+    <Property Name="dt_create" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="create_by__USER_id" Type="Int64" Nullable="false" />
+    <Property Name="dt_update" Type="DateTime" Precision="3" />
+    <Property Name="update_by__USER_id" Type="Int64" />
+    <NavigationProperty Name="hs_DOCTOR" Relationship="SV_db1Model.FK_con_USER_favorite_DOCTOR_ToTable" FromRole="con_USER_favorite_DOCTOR" ToRole="hs_DOCTOR" />
+  </EntityType>
+  <EntityType Name="DOCTOR_ext">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="rel_DOCTOR_id" Type="Int64" />
+    <Property Name="attr_name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="dname" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="value" Type="String" MaxLength="3000" FixedLength="false" Unicode="true" />
+    <Property Name="rel_ref_datatype_id" Type="Int64" />
+    <Property Name="create_by__USER_id" Type="Int64" />
+    <Property Name="dt_create" Type="DateTime" Precision="3" />
+    <Property Name="update_by__USER_id" Type="Int64" />
+    <Property Name="dt_update" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="DOCTOR" Relationship="SV_db1Model.FK_DOCTOR_ext_DOCTOR" FromRole="DOCTOR_ext" ToRole="DOCTOR" />
+  </EntityType>
+  <EntityType Name="DOCTOR_ext_NPI">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="rel_DOCTOR_id" Type="Int64" />
+    <Property Name="attr_name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="dname" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="value" Type="String" MaxLength="3000" FixedLength="false" Unicode="true" />
+    <Property Name="rel_ref_datatype_id" Type="Int64" />
+    <Property Name="create_by__USER_id" Type="Int64" />
+    <Property Name="dt_create" Type="DateTime" Precision="3" />
+    <Property Name="update_by__USER_id" Type="Int64" />
+    <Property Name="dt_update" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="DOCTOR_NPI" Relationship="SV_db1Model.FK_DOCTOR_ext_DOCTOR_NPI" FromRole="DOCTOR_ext_NPI" ToRole="DOCTOR_NPI" />
+  </EntityType>
+  <EntityType Name="ref_specialty_category">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="dname" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="description" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <Property Name="actor" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="create_by__USER_id" Type="Int64" />
+    <Property Name="dt_create" Type="DateTime" Precision="3" />
+    <Property Name="update_by__USER_id" Type="Int64" />
+    <Property Name="dt_update" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="sysdiagram">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="app_authentication">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="password" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <Property Name="dt_create" Type="DateTime" Precision="3" />
+    <Property Name="create_by__USER_id" Type="Int64" />
+    <Property Name="dt_update" Type="DateTime" Precision="3" />
+    <Property Name="update_by__USER_id" Type="Int64" />
+  </EntityType>
+  <EntityType Name="APPOINTMENT">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="rel_ref_APPOINTMENT_type_id" Type="Int64" />
+    <Property Name="rel_ref_APPOINTMENT_status_id" Type="Int64" />
+    <Property Name="rel_SOUL_id" Type="Int64" />
+    <Property Name="rel_ref_status_id" Type="Int64" />
+    <Property Name="date" Type="DateTime" Precision="3" />
+    <Property Name="timezone" Type="Int64" />
+    <Property Name="doctor_id" Type="Int64" />
+    <Property Name="doctor_review" Type="String" MaxLength="5000" FixedLength="false" Unicode="false" />
+    <Property Name="doctor_rating" Type="Double" />
+    <Property Name="dt_create" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="create_by__USER_id" Type="Int64" />
+    <Property Name="dt_update" Type="DateTime" Precision="3" />
+    <Property Name="update_by__USER_id" Type="Int64" />
+    <NavigationProperty Name="APPOINTMENT_ext" Relationship="SV_db1Model.FK_APPOINTMENT_ext_APPOINTMENT" FromRole="APPOINTMENT" ToRole="APPOINTMENT_ext" />
+    <NavigationProperty Name="ref_APPOINTMENT_status" Relationship="SV_db1Model.FK_APPOINTMENT_ref_APPOINTMENT_STATUS" FromRole="APPOINTMENT" ToRole="ref_APPOINTMENT_status" />
+    <NavigationProperty Name="ref_APPOINTMENT_type" Relationship="SV_db1Model.FK_APPOINTMENT_ref_APPOINTMENT_TYPE" FromRole="APPOINTMENT" ToRole="ref_APPOINTMENT_type" />
+  </EntityType>
+  <EntityType Name="APPOINTMENT_ext">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="rel_APPOINTMENT_id" Type="Int64" />
+    <Property Name="attr_name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="dname" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="value" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="rel_ref_datatype_id" Type="Int64" />
+    <Property Name="create_by__USER_id" Type="Int64" />
+    <Property Name="dt_create" Type="DateTime" Precision="3" />
+    <Property Name="update_by__USER_id" Type="Int64" />
+    <Property Name="dt_update" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="APPOINTMENT" Relationship="SV_db1Model.FK_APPOINTMENT_ext_APPOINTMENT" FromRole="APPOINTMENT_ext" ToRole="APPOINTMENT" />
+  </EntityType>
+  <EntityType Name="con_DOCTOR_Hospital">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="rel_DOCTOR_id" Type="Int64" />
+    <Property Name="rel_Hospital_id" Type="Int64" />
+    <Property Name="dt_create" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="create_by__USER_id" Type="Int64" Nullable="false" />
+    <Property Name="dt_update" Type="DateTime" Precision="3" />
+    <Property Name="update_by__USER_id" Type="Int64" />
+    <Property Name="rel_ref_status_id" Type="Int64" />
+    <NavigationProperty Name="hs_Hospital" Relationship="SV_db1Model.FK_con_DOCTOR_Hospital" FromRole="con_DOCTOR_Hospital" ToRole="hs_Hospital" />
+    <NavigationProperty Name="hs_DOCTOR" Relationship="SV_db1Model.FK_con_DOCTOR_Hospital_DOCTOR" FromRole="con_DOCTOR_Hospital" ToRole="hs_DOCTOR" />
+  </EntityType>
+  <EntityType Name="con_DOCTOR_NOTE">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="rel_DOCTOR_id" Type="Int64" />
+    <Property Name="rel_NOTE_id" Type="Int64" />
+    <Property Name="dt_create" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="dt_update" Type="DateTime" Precision="3" />
+    <Property Name="create_by__USER_id" Type="Int64" Nullable="false" />
+    <Property Name="update_by__USER_id" Type="Int64" />
+    <NavigationProperty Name="NOTE" Relationship="SV_db1Model.FK_con_DOCTOR_NOTE_NOTE" FromRole="con_DOCTOR_NOTE" ToRole="NOTE" />
+  </EntityType>
+  <EntityType Name="con_DOCTOR_ref_condition">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="rel_DOCTOR_id" Type="Int64" />
+    <Property Name="rel_ref_condition_id" Type="Int64" />
+    <Property Name="dt_create" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="create_by__USER_id" Type="Int64" Nullable="false" />
+    <Property Name="dt_update" Type="DateTime" Precision="3" />
+    <Property Name="update_by__USER_id" Type="Int64" />
+    <Property Name="rel_ref_status_id" Type="Int64" />
+    <NavigationProperty Name="hs_DOCTOR" Relationship="SV_db1Model.FK_con_DOCTOR_ref_condition_DOCTOR" FromRole="con_DOCTOR_ref_condition" ToRole="hs_DOCTOR" />
+  </EntityType>
+  <EntityType Name="con_DOCTOR_ref_Hospital">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="rel_DOCTOR_id" Type="Int64" />
+    <Property Name="rel_ref_hospital_id" Type="Int64" />
+    <Property Name="dt_create" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="dt_update" Type="DateTime" Precision="3" />
+    <Property Name="create_by__USER_id" Type="Int64" Nullable="false" />
+    <Property Name="update_by__USER_id" Type="Int64" />
+    <NavigationProperty Name="hs_Hospital" Relationship="SV_db1Model.FK_con_DOCTOR_ref_hospital" FromRole="con_DOCTOR_ref_Hospital" ToRole="hs_Hospital" />
+    <NavigationProperty Name="hs_DOCTOR" Relationship="SV_db1Model.FK_con_DOCTOR_ref_hospital_DOCTOR" FromRole="con_DOCTOR_ref_Hospital" ToRole="hs_DOCTOR" />
+  </EntityType>
+  <EntityType Name="con_DOCTOR_ref_language">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="rel_DOCTOR_id" Type="Int64" />
+    <Property Name="rel_ref_language_id" Type="Int64" />
+    <Property Name="dt_create" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="create_by__USER_id" Type="Int64" Nullable="false" />
+    <Property Name="dt_update" Type="DateTime" Precision="3" />
+    <Property Name="update_by__USER_id" Type="Int64" />
+    <Property Name="rel_ref_status_id" Type="Int64" />
+    <NavigationProperty Name="ref_languages" Relationship="SV_db1Model.FK_con_DOCTOR_ref_language" FromRole="con_DOCTOR_ref_language" ToRole="ref_languages" />
+    <NavigationProperty Name="hs_DOCTOR" Relationship="SV_db1Model.FK_con_DOCTOR_ref_language_DOCTOR" FromRole="con_DOCTOR_ref_language" ToRole="hs_DOCTOR" />
+  </EntityType>
+  <EntityType Name="con_DOCTOR_ref_specialty">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="rel_DOCTOR_id" Type="Int64" />
+    <Property Name="rel_ref_specialty_id" Type="Int64" />
+    <Property Name="dt_create" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="dt_update" Type="DateTime" Precision="3" />
+    <Property Name="create_by__USER_id" Type="Int64" Nullable="false" />
+    <Property Name="update_by__USER_id" Type="Int64" />
+    <NavigationProperty Name="hs_DOCTOR" Relationship="SV_db1Model.FK_con_DOCTOR_ref_specialty_DOCTOR" FromRole="con_DOCTOR_ref_specialty" ToRole="hs_DOCTOR" />
+    <NavigationProperty Name="ref_specialty" Relationship="SV_db1Model.FK_con_DOCTOR_ref_specialty_ref_specialties" FromRole="con_DOCTOR_ref_specialty" ToRole="ref_specialty" />
+  </EntityType>
+  <EntityType Name="con_DOCTOR_timeslot">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="rel_DOCTOR_id" Type="Int64" Nullable="false" />
+    <Property Name="DOW" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="date" Type="DateTime" Precision="3" />
+    <Property Name="time" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="create_by__USER_id" Type="Int64" />
+    <Property Name="dt_create" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="update_by__USER_id" Type="Int64" />
+    <Property Name="dt_update" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="hs_DOCTOR" Relationship="SV_db1Model.FK_con_DOCTOR_timeslot_ToTable" FromRole="con_DOCTOR_timeslot" ToRole="hs_DOCTOR" />
+  </EntityType>
+  <EntityType Name="con_DOCTOR1_ref_insurance">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="rel_DOCTOR_id" Type="Int64" />
+    <Property Name="rel_ref_insurance_provider_id" Type="Int64" />
+    <Property Name="dt_create" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="dt_update" Type="DateTime" Precision="3" />
+    <Property Name="create_by__USER_id" Type="Int64" Nullable="false" />
+    <Property Name="update_by__USER_id" Type="Int64" />
+    <Property Name="rel_ref_status_id" Type="Int64" />
+    <NavigationProperty Name="DOCTOR1" Relationship="SV_db1Model.FK_con_DOCTOR_ref_insurance_DOCTOR1" FromRole="con_DOCTOR1_ref_insurance" ToRole="DOCTOR1" />
+    <NavigationProperty Name="ref_insurance_provider" Relationship="SV_db1Model.FK_con_DOCTOR_ref_insurance_ref_insurance_provider1" FromRole="con_DOCTOR1_ref_insurance" ToRole="ref_insurance_provider" />
+  </EntityType>
+  <EntityType Name="con_DOCTOR1_ref_language">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="rel_DOCTOR_id" Type="Int64" />
+    <Property Name="rel_ref_language_id" Type="Int64" />
+    <Property Name="dt_create" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="create_by__USER_id" Type="Int64" Nullable="false" />
+    <Property Name="dt_update" Type="DateTime" Precision="3" />
+    <Property Name="update_by__USER_id" Type="Int64" />
+    <Property Name="rel_ref_status_id" Type="Int64" />
+    <NavigationProperty Name="DOCTOR1" Relationship="SV_db1Model.FK_con_DOCTOR_ref_language_DOCTOR1" FromRole="con_DOCTOR1_ref_language" ToRole="DOCTOR1" />
+    <NavigationProperty Name="ref_languages" Relationship="SV_db1Model.FK_con_DOCTOR_ref_language1" FromRole="con_DOCTOR1_ref_language" ToRole="ref_languages" />
+  </EntityType>
+  <EntityType Name="con_DOCTOR1_ref_specialty">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="rel_DOCTOR_id" Type="Int64" />
+    <Property Name="rel_ref_specialty_id" Type="Int64" />
+    <Property Name="dt_create" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="dt_update" Type="DateTime" Precision="3" />
+    <Property Name="create_by__USER_id" Type="Int64" Nullable="false" />
+    <Property Name="update_by__USER_id" Type="Int64" />
+    <NavigationProperty Name="DOCTOR1" Relationship="SV_db1Model.FK_con_DOCTOR_ref_specialty_DOCTOR1" FromRole="con_DOCTOR1_ref_specialty" ToRole="DOCTOR1" />
+    <NavigationProperty Name="ref_specialty1" Relationship="SV_db1Model.FK_con_DOCTOR_ref_specialty_ref_specialties1" FromRole="con_DOCTOR1_ref_specialty" ToRole="ref_specialty1" />
+  </EntityType>
+  <EntityType Name="con_ORDER_NOTE">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="rel_ORDER_id" Type="Int64" />
+    <Property Name="rel_NOTE_id" Type="Int64" />
+    <Property Name="dt_create" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="dt_update" Type="DateTime" Precision="3" />
+    <Property Name="create_by__USER_id" Type="Int64" Nullable="false" />
+    <Property Name="update_by__USER_id" Type="Int64" />
+    <NavigationProperty Name="NOTE" Relationship="SV_db1Model.FK_con_ORDER_NOTE_NOTE" FromRole="con_ORDER_NOTE" ToRole="NOTE" />
+  </EntityType>
+  <EntityType Name="con_ORDER_PRODUCT">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="rel_ORDER_id" Type="Int64" />
+    <Property Name="rel_PRODUCT_id" Type="Int64" />
+    <Property Name="dt_create" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="dt_update" Type="DateTime" Precision="3" />
+    <Property Name="create_by__USER_id" Type="Int64" Nullable="false" />
+    <Property Name="update_by__USER_id" Type="Int64" />
+    <NavigationProperty Name="ORDER_ext" Relationship="SV_db1Model.FK_con_ORDER_PRODUCT_ORDER_ext" FromRole="con_ORDER_PRODUCT" ToRole="ORDER_ext" />
+    <NavigationProperty Name="PRODUCT_ext" Relationship="SV_db1Model.FK_con_ORDER_PRODUCT_PRODUCT_ext" FromRole="con_ORDER_PRODUCT" ToRole="PRODUCT_ext" />
+  </EntityType>
+  <EntityType Name="con_ref_specialty_ref_condition">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="rel_con_DOCTOR1_specialty_id" Type="Int64" />
+    <Property Name="rel_ref_specialty_id" Type="Int64" />
+    <Property Name="rel_ref_condition_id" Type="Int64" />
+    <Property Name="dt_create" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="create_by__USER_id" Type="Int64" Nullable="false" />
+    <Property Name="dt_update" Type="DateTime" Precision="3" />
+    <Property Name="update_by__USER_id" Type="Int64" />
+    <NavigationProperty Name="ref_condition" Relationship="SV_db1Model.FK_condition_ref_condition" FromRole="con_ref_specialty_ref_condition" ToRole="ref_condition" />
+    <NavigationProperty Name="ref_specialty1" Relationship="SV_db1Model.FK_condition_ref_specialty" FromRole="con_ref_specialty_ref_condition" ToRole="ref_specialty1" />
+  </EntityType>
+  <EntityType Name="con_SOUL_LIST">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="rel_SOUL_id" Type="Int64" />
+    <Property Name="rel_LIST_id" Type="Int64" />
+    <Property Name="dt_create" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="dt_update" Type="DateTime" Precision="3" />
+    <Property Name="create_by__USER_id" Type="Int64" Nullable="false" />
+    <Property Name="update_by__USER_id" Type="Int64" />
+    <NavigationProperty Name="LIST" Relationship="SV_db1Model.FK_con_SOUL_LIST_LIST" FromRole="con_SOUL_LIST" ToRole="LIST" />
+    <NavigationProperty Name="SOUL" Relationship="SV_db1Model.FK_con_SOUL_LIST_SOUL" FromRole="con_SOUL_LIST" ToRole="SOUL" />
+  </EntityType>
+  <EntityType Name="con_SOUL_mailing_list">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="soul_id" Type="Int32" />
+    <Property Name="rel_ref_status_id" Type="Int32" />
+    <Property Name="date_created" Type="DateTime" Precision="3" />
+    <Property Name="date_updated" Type="DateTime" Precision="3" />
+    <Property Name="subcriber_hash" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="con_SOUL_ref_insurance">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="rel_SOUL_id" Type="Int64" />
+    <Property Name="rel_ref_insurance_provider_id" Type="Int64" />
+    <Property Name="policy_no" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="group_no" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="dt_create" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="dt_update" Type="DateTime" Precision="3" />
+    <Property Name="create_by__USER_id" Type="Int64" Nullable="false" />
+    <Property Name="update_by__USER_id" Type="Int64" />
+    <NavigationProperty Name="ref_insurance_provider" Relationship="SV_db1Model.FK_con_SOUL_ref_insurance_ref_insurance_provider" FromRole="con_SOUL_ref_insurance" ToRole="ref_insurance_provider" />
+    <NavigationProperty Name="SOUL" Relationship="SV_db1Model.FK_con_SOUL_ref_insurance_SOUL" FromRole="con_SOUL_ref_insurance" ToRole="SOUL" />
+  </EntityType>
+  <EntityType Name="con_TRANSACTION_NOTE">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="rel_TRANSACTION_id" Type="Int64" />
+    <Property Name="rel_NOTE_id" Type="Int64" />
+    <Property Name="dt_create" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="dt_update" Type="DateTime" Precision="3" />
+    <Property Name="create_by__USER_id" Type="Int64" Nullable="false" />
+    <Property Name="update_by__USER_id" Type="Int64" />
+    <NavigationProperty Name="NOTE" Relationship="SV_db1Model.FK_con_TRANSACTION_NOTE_NOTE" FromRole="con_TRANSACTION_NOTE" ToRole="NOTE" />
+  </EntityType>
+  <EntityType Name="DOCTOR">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NPI" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="name_first" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="name_last" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="name_middle" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="gender" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="title" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="organization_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="phone" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="medicare_upin" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="license_no" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="pecos_certification" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="fax_to" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="home_phone" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="home_fax" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="home_addr_1" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="home_addr_2" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="home_addr_zip_id" Type="Int64" />
+    <Property Name="practice_phone" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="practice_fax" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="practice_addr_1" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="practice_addr_2" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="practice_addr_zip_id" Type="Int64" />
+    <Property Name="image_url" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="bio" Type="String" MaxLength="4000" FixedLength="false" Unicode="false" />
+    <Property Name="dob" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="is_claim" Type="Boolean" />
+    <Property Name="create_by__USER_id" Type="Int64" Nullable="false" />
+    <Property Name="dt_create" Type="DateTime" Precision="3" />
+    <Property Name="update_by__USER_id" Type="Int64" />
+    <Property Name="dt_update" Type="DateTime" Precision="3" />
+    <Property Name="rel_ref_status_id" Type="Int64" />
+    <NavigationProperty Name="DOCTOR_ext" Relationship="SV_db1Model.FK_DOCTOR_ext_DOCTOR" FromRole="DOCTOR" ToRole="DOCTOR_ext" />
+    <NavigationProperty Name="ref_zip" Relationship="SV_db1Model.FK_DOCTOR_ref_zip" FromRole="DOCTOR" ToRole="ref_zip" />
+  </EntityType>
+  <EntityType Name="DOCTOR_ext1">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="rel_DOCTOR_id" Type="Int64" />
+    <Property Name="attr_name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="dname" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="value" Type="String" MaxLength="3000" FixedLength="false" Unicode="true" />
+    <Property Name="rel_ref_datatype_id" Type="Int64" />
+    <Property Name="create_by__USER_id" Type="Int64" />
+    <Property Name="dt_create" Type="DateTime" Precision="3" />
+    <Property Name="update_by__USER_id" Type="Int64" />
+    <Property Name="dt_update" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="DOCTOR1" Relationship="SV_db1Model.FK_hs_DOCTOR_ext_DOCTOR1" FromRole="DOCTOR_ext1" ToRole="DOCTOR1" />
+  </EntityType>
+  <EntityType Name="DOCTOR_NPI">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NPI" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="organ_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="name_first" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="name_last" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="name_middle" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="gender" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="title" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="phone" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="medicare_upin" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="license_no" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="pecos_cert" Type="Boolean" />
+    <Property Name="fax_to" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="addr_address1" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="addr_address2" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="addr_rel_ref_zip_id" Type="Int64" />
+    <Property Name="image_url" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="bio" Type="String" MaxLength="4000" FixedLength="false" Unicode="false" />
+    <Property Name="create_by__USER_id" Type="Int64" Nullable="false" />
+    <Property Name="dt_create" Type="DateTime" Precision="3" />
+    <Property Name="update_by__USER_id" Type="Int64" />
+    <Property Name="dt_update" Type="DateTime" Precision="3" />
+    <Property Name="rel_ref_status_id" Type="Int64" />
+    <NavigationProperty Name="DOCTOR_ext_NPI" Relationship="SV_db1Model.FK_DOCTOR_ext_DOCTOR_NPI" FromRole="DOCTOR_NPI" ToRole="DOCTOR_ext_NPI" />
+    <NavigationProperty Name="ref_zip" Relationship="SV_db1Model.FK_DOCTOR_NPI_ref_zip" FromRole="DOCTOR_NPI" ToRole="ref_zip" />
+  </EntityType>
+  <EntityType Name="DOCTOR1">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NPI" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="name_first" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="name_last" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="name_middle" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="gender" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="title" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="practice_name" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="organization_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="phone" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="medicare_upin" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="license_no" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="pecos_certification" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="fax_to" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="home_phone" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="home_fax" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="home_addr_1" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="home_addr_2" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="home_addr_zip_id" Type="Int64" />
+    <Property Name="practice_phone" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="practice_fax" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="practice_addr_1" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="practice_addr_2" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="practice_addr_zip_id" Type="Int64" />
+    <Property Name="image_url" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="bio" Type="String" MaxLength="4000" FixedLength="false" Unicode="false" />
+    <Property Name="dob" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="is_claim" Type="Boolean" />
+    <Property Name="create_by__USER_id" Type="Int64" Nullable="false" />
+    <Property Name="dt_create" Type="DateTime" Precision="3" />
+    <Property Name="update_by__USER_id" Type="Int64" />
+    <Property Name="dt_update" Type="DateTime" Precision="3" />
+    <Property Name="rel_ref_status_id" Type="Int64" />
+    <NavigationProperty Name="con_DOCTOR1_ref_insurance" Relationship="SV_db1Model.FK_con_DOCTOR_ref_insurance_DOCTOR1" FromRole="DOCTOR1" ToRole="con_DOCTOR1_ref_insurance" />
+    <NavigationProperty Name="con_DOCTOR1_ref_language" Relationship="SV_db1Model.FK_con_DOCTOR_ref_language_DOCTOR1" FromRole="DOCTOR1" ToRole="con_DOCTOR1_ref_language" />
+    <NavigationProperty Name="con_DOCTOR1_ref_specialty" Relationship="SV_db1Model.FK_con_DOCTOR_ref_specialty_DOCTOR1" FromRole="DOCTOR1" ToRole="con_DOCTOR1_ref_specialty" />
+    <NavigationProperty Name="DOCTOR_ext1" Relationship="SV_db1Model.FK_hs_DOCTOR_ext_DOCTOR1" FromRole="DOCTOR1" ToRole="DOCTOR_ext1" />
+    <NavigationProperty Name="ref_zip" Relationship="SV_db1Model.FK_hsDOCTOR_ref_zip_p1" FromRole="DOCTOR1" ToRole="ref_zip" />
+  </EntityType>
+  <EntityType Name="hs_DOCTOR">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NPI" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="name_first" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="name_last" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="name_middle" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="gender" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="title" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="phone" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="medicare_upin" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="license_no" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="pecos_certification" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="fax_to" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="organization_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="home_addr_1" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="home_addr_2" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="home_addr_zip_id" Type="Int64" />
+    <Property Name="practice_addr_1" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="practice_addr_2" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="practice_addr_zip_id" Type="Int64" />
+    <Property Name="image_url" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="bio" Type="String" MaxLength="4000" FixedLength="false" Unicode="false" />
+    <Property Name="dob" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="create_by__USER_id" Type="Int64" Nullable="false" />
+    <Property Name="dt_create" Type="DateTime" Precision="3" />
+    <Property Name="update_by__USER_id" Type="Int64" />
+    <Property Name="dt_update" Type="DateTime" Precision="3" />
+    <Property Name="rel_ref_status_id" Type="Int64" />
+    <NavigationProperty Name="con_DOCTOR_Hospital" Relationship="SV_db1Model.FK_con_DOCTOR_Hospital_DOCTOR" FromRole="hs_DOCTOR" ToRole="con_DOCTOR_Hospital" />
+    <NavigationProperty Name="con_DOCTOR_ref_condition" Relationship="SV_db1Model.FK_con_DOCTOR_ref_condition_DOCTOR" FromRole="hs_DOCTOR" ToRole="con_DOCTOR_ref_condition" />
+    <NavigationProperty Name="con_DOCTOR_ref_Hospital" Relationship="SV_db1Model.FK_con_DOCTOR_ref_hospital_DOCTOR" FromRole="hs_DOCTOR" ToRole="con_DOCTOR_ref_Hospital" />
+    <NavigationProperty Name="con_DOCTOR_ref_insurance" Relationship="SV_db1Model.FK_con_DOCTOR_ref_insurance_DOCTOR" FromRole="hs_DOCTOR" ToRole="con_DOCTOR_ref_insurance" />
+    <NavigationProperty Name="con_DOCTOR_ref_language" Relationship="SV_db1Model.FK_con_DOCTOR_ref_language_DOCTOR" FromRole="hs_DOCTOR" ToRole="con_DOCTOR_ref_language" />
+    <NavigationProperty Name="con_DOCTOR_ref_specialty" Relationship="SV_db1Model.FK_con_DOCTOR_ref_specialty_DOCTOR" FromRole="hs_DOCTOR" ToRole="con_DOCTOR_ref_specialty" />
+    <NavigationProperty Name="con_DOCTOR_timeslot" Relationship="SV_db1Model.FK_con_DOCTOR_timeslot_ToTable" FromRole="hs_DOCTOR" ToRole="con_DOCTOR_timeslot" />
+    <NavigationProperty Name="con_USER_favorite_DOCTOR" Relationship="SV_db1Model.FK_con_USER_favorite_DOCTOR_ToTable" FromRole="hs_DOCTOR" ToRole="con_USER_favorite_DOCTOR" />
+    <NavigationProperty Name="hs_DOCTOR_ext" Relationship="SV_db1Model.FK_hs_DOCTOR_ext_DOCTOR" FromRole="hs_DOCTOR" ToRole="hs_DOCTOR_ext" />
+    <NavigationProperty Name="ref_zip" Relationship="SV_db1Model.FK_hsDOCTOR_ref_zip" FromRole="hs_DOCTOR" ToRole="ref_zip" />
+    <NavigationProperty Name="ref_zip1" Relationship="SV_db1Model.FK_hsDOCTOR_ref_zip_p" FromRole="hs_DOCTOR" ToRole="ref_zip" />
+  </EntityType>
+  <EntityType Name="hs_DOCTOR_ext">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="rel_DOCTOR_id" Type="Int64" />
+    <Property Name="attr_name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="dname" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="value" Type="String" MaxLength="3000" FixedLength="false" Unicode="true" />
+    <Property Name="rel_ref_datatype_id" Type="Int64" />
+    <Property Name="create_by__USER_id" Type="Int64" />
+    <Property Name="dt_create" Type="DateTime" Precision="3" />
+    <Property Name="update_by__USER_id" Type="Int64" />
+    <Property Name="dt_update" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="hs_DOCTOR" Relationship="SV_db1Model.FK_hs_DOCTOR_ext_DOCTOR" FromRole="hs_DOCTOR_ext" ToRole="hs_DOCTOR" />
+  </EntityType>
+  <EntityType Name="hs_Hospital">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NPI" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="org_name" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="authorize_name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="auth_title" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="phone" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="medicare_upin" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="license_no" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="pecos_cert" Type="Boolean" />
+    <Property Name="fax_to" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="addr_address1" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="addr_address2" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="addr_rel_ref_zip_id" Type="Int64" />
+    <Property Name="image_url" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="bio" Type="String" MaxLength="4000" FixedLength="false" Unicode="false" />
+    <Property Name="create_by__USER_id" Type="Int64" Nullable="false" />
+    <Property Name="dt_create" Type="DateTime" Precision="3" />
+    <Property Name="update_by__USER_id" Type="Int64" />
+    <Property Name="dt_update" Type="DateTime" Precision="3" />
+    <Property Name="rel_ref_status_id" Type="Int64" />
+    <NavigationProperty Name="con_DOCTOR_Hospital" Relationship="SV_db1Model.FK_con_DOCTOR_Hospital" FromRole="hs_Hospital" ToRole="con_DOCTOR_Hospital" />
+    <NavigationProperty Name="con_DOCTOR_ref_Hospital" Relationship="SV_db1Model.FK_con_DOCTOR_ref_hospital" FromRole="hs_Hospital" ToRole="con_DOCTOR_ref_Hospital" />
+    <NavigationProperty Name="hs_HOSPITAL_ext" Relationship="SV_db1Model.FK_hs_Hospital_ext_DOCTOR" FromRole="hs_Hospital" ToRole="hs_HOSPITAL_ext" />
+    <NavigationProperty Name="ref_zip" Relationship="SV_db1Model.FK_hsHospital_ref_zip" FromRole="hs_Hospital" ToRole="ref_zip" />
+  </EntityType>
+  <EntityType Name="hs_HOSPITAL_ext">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="rel_HOSPITAL_id" Type="Int64" />
+    <Property Name="attr_name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="dname" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="value" Type="String" MaxLength="3000" FixedLength="false" Unicode="true" />
+    <Property Name="rel_ref_datatype_id" Type="Int64" />
+    <Property Name="create_by__USER_id" Type="Int64" />
+    <Property Name="dt_create" Type="DateTime" Precision="3" />
+    <Property Name="update_by__USER_id" Type="Int64" />
+    <Property Name="dt_update" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="hs_Hospital" Relationship="SV_db1Model.FK_hs_Hospital_ext_DOCTOR" FromRole="hs_HOSPITAL_ext" ToRole="hs_Hospital" />
+  </EntityType>
+  <EntityType Name="hs_ORGANIZATION">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NPI" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="org_name" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="authorize_name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="auth_title" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="phone" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="medicare_upin" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="license_no" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="pecos_cert" Type="Boolean" />
+    <Property Name="fax_to" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="addr_address1" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="addr_address2" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="addr_rel_ref_zip_id" Type="Int64" />
+    <Property Name="image_url" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="bio" Type="String" MaxLength="4000" FixedLength="false" Unicode="false" />
+    <Property Name="create_by__USER_id" Type="Int64" Nullable="false" />
+    <Property Name="dt_create" Type="DateTime" Precision="3" />
+    <Property Name="update_by__USER_id" Type="Int64" />
+    <Property Name="dt_update" Type="DateTime" Precision="3" />
+    <Property Name="rel_ref_status_id" Type="Int64" />
+    <NavigationProperty Name="ref_zip" Relationship="SV_db1Model.FK_hsORGANIZATION_ref_zip" FromRole="hs_ORGANIZATION" ToRole="ref_zip" />
+  </EntityType>
+  <EntityType Name="LIST">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="create_by__USER_id" Type="Int64" />
+    <Property Name="dt_create" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="update_by__USER_id" Type="Int64" />
+    <Property Name="dt_update" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="con_SOUL_LIST" Relationship="SV_db1Model.FK_con_SOUL_LIST_LIST" FromRole="LIST" ToRole="con_SOUL_LIST" />
+    <NavigationProperty Name="LIST_ext" Relationship="SV_db1Model.FK_LIST_ext_LIST" FromRole="LIST" ToRole="LIST_ext" />
+  </EntityType>
+  <EntityType Name="LIST_ext">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="rel_LIST_id" Type="Int64" />
+    <Property Name="attr_name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="dname" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="value" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="rel_ref_datatype_id" Type="Int64" />
+    <Property Name="create_by__USER_id" Type="Int64" />
+    <Property Name="dt_create" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="update_by__USER_id" Type="Int64" />
+    <Property Name="dt_update" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="LIST" Relationship="SV_db1Model.FK_LIST_ext_LIST" FromRole="LIST_ext" ToRole="LIST" />
+  </EntityType>
+  <EntityType Name="log_CALL">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="rel_ref_CALL_type_id" Type="Int64" />
+    <Property Name="term_phone" Type="String" MaxLength="16" FixedLength="false" Unicode="false" />
+    <Property Name="origin_phone" Type="String" MaxLength="16" FixedLength="false" Unicode="false" />
+    <Property Name="create_by__USER_id" Type="Int64" />
+    <Property Name="dt_create" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="update_by__USER_id" Type="Int64" />
+    <Property Name="dt_update" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="ref_CALL_type" Relationship="SV_db1Model.FK_log_CALL_ref_CALL_type" FromRole="log_CALL" ToRole="ref_CALL_type" />
+  </EntityType>
+  <EntityType Name="log_payment">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="card_id" Type="Int64" />
+    <Property Name="amount" Type="Double" />
+    <Property Name="payment_date" Type="DateTime" Precision="3" />
+    <Property Name="dt_create" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="create_by__USER_id" Type="Int64" Nullable="false" />
+    <Property Name="dt_update" Type="DateTime" Precision="3" />
+    <Property Name="update_by__USER_id" Type="Int64" />
+    <NavigationProperty Name="User_Card_Info" Relationship="SV_db1Model.FK_log_payment_Card_Info" FromRole="log_payment" ToRole="User_Card_Info" />
+  </EntityType>
+  <EntityType Name="log_token">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="token" Type="String" Nullable="false" MaxLength="36" FixedLength="true" Unicode="false" />
+    <Property Name="dt_create" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="rel_ref_status_id" Type="Int64" Nullable="false" />
+    <Property Name="dt_lastactivity" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="create_by__USER_id" Type="String" Nullable="false" MaxLength="16" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="MARKETER">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="legal_entity_name" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="healthsplash_contact" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="addr_address1" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="addr_address2" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="addr_zip_id" Type="Int64" />
+    <Property Name="federal_tax_number" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="primary_phone" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="supplier_partner" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="telemedicine_partner" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="prim_contact_name_first" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="prim_contact_name_last" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="prim_contact_phone" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="prim_contact_email" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="oper_contact_name_first" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="oper_contact_name_last" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="oper_contact_phone" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="oper_contact_email" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="fina_contact_name_first" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="fina_contact_name_last" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="fina_contact_phone" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="fina_contact_email" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="auth_contact_name_first" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="auth_contact_name_last" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="auth_contact_phone" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="auth_contact_email" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="MARKETER_ext" Relationship="SV_db1Model.FK_MARKETER_ext_MARKETER" FromRole="MARKETER" ToRole="MARKETER_ext" />
+    <NavigationProperty Name="ref_zip" Relationship="SV_db1Model.FK_MARKETER_Toref_zip" FromRole="MARKETER" ToRole="ref_zip" />
+    <NavigationProperty Name="ref_zip1" Relationship="SV_db1Model.FK_MARKETING_ToRef_Zip" FromRole="MARKETER" ToRole="ref_zip" />
+  </EntityType>
+  <EntityType Name="MARKETER_ext">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="rel_MARKETER_id" Type="Int64" />
+    <Property Name="attr_name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="dname" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="value" Type="String" MaxLength="3000" FixedLength="false" Unicode="true" />
+    <Property Name="rel_ref_datatype_id" Type="Int64" />
+    <Property Name="create_by__USER_id" Type="Int64" />
+    <Property Name="dt_create" Type="DateTime" Precision="3" />
+    <Property Name="update_by__USER_id" Type="Int64" />
+    <Property Name="dt_update" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="MARKETER" Relationship="SV_db1Model.FK_MARKETER_ext_MARKETER" FromRole="MARKETER_ext" ToRole="MARKETER" />
+  </EntityType>
+  <EntityType Name="NOTE">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="value" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="rel_ref_NOTE_type_id" Type="Int64" Nullable="false" />
+    <Property Name="create_by__USER_id" Type="Int64" />
+    <Property Name="dt_create" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="update_by__USER_id" Type="Int64" />
+    <Property Name="dt_update" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="con_APPOINTMENT_NOTE" Relationship="SV_db1Model.FK_con_APPOINTMENT_NOTE_NOTE" FromRole="NOTE" ToRole="con_APPOINTMENT_NOTE" />
+    <NavigationProperty Name="con_DOCTOR_NOTE" Relationship="SV_db1Model.FK_con_DOCTOR_NOTE_NOTE" FromRole="NOTE" ToRole="con_DOCTOR_NOTE" />
+    <NavigationProperty Name="con_ORDER_NOTE" Relationship="SV_db1Model.FK_con_ORDER_NOTE_NOTE" FromRole="NOTE" ToRole="con_ORDER_NOTE" />
+    <NavigationProperty Name="con_TRANSACTION_NOTE" Relationship="SV_db1Model.FK_con_TRANSACTION_NOTE_NOTE" FromRole="NOTE" ToRole="con_TRANSACTION_NOTE" />
+    <NavigationProperty Name="ref_NOTE_type" Relationship="SV_db1Model.FK_NOTE_ref_NOTE_type" FromRole="NOTE" ToRole="ref_NOTE_type" />
+  </EntityType>
+  <EntityType Name="notification">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="rel_USER_id" Type="Int64" Nullable="false" />
+    <Property Name="APPOINTMENT_id" Type="Int64" Nullable="false" />
+    <Property Name="SOUL_id" Type="Int64" />
+    <Property Name="text" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="link" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="is_unread" Type="Boolean" />
+    <Property Name="dt_create" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="create_by__USER_id" Type="Int64" Nullable="false" />
+    <Property Name="dt_update" Type="DateTime" Precision="3" />
+    <Property Name="update_by__USER_id" Type="Int64" />
+    <NavigationProperty Name="USER" Relationship="SV_db1Model.FK_notification_USER" FromRole="notification" ToRole="USER" />
+  </EntityType>
+  <EntityType Name="ORDER">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="create_by__USER_id" Type="Int64" />
+    <Property Name="dt_create" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="update_by__USER_id" Type="Int64" />
+    <Property Name="dt_update" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="ORDER_ext" Relationship="SV_db1Model.FK_ORDER_ext_ORDER" FromRole="ORDER" ToRole="ORDER_ext" />
+  </EntityType>
+  <EntityType Name="ORDER_ext">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="rel_ORDER_id" Type="Int64" />
+    <Property Name="attr_name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="dname" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="value" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="rel_ref_datatype_id" Type="Int64" />
+    <Property Name="create_by__USER_id" Type="Int64" />
+    <Property Name="dt_create" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="update_by__USER_id" Type="Int64" />
+    <Property Name="dt_update" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="con_ORDER_PRODUCT" Relationship="SV_db1Model.FK_con_ORDER_PRODUCT_ORDER_ext" FromRole="ORDER_ext" ToRole="con_ORDER_PRODUCT" />
+    <NavigationProperty Name="ORDER" Relationship="SV_db1Model.FK_ORDER_ext_ORDER" FromRole="ORDER_ext" ToRole="ORDER" />
+  </EntityType>
+  <EntityType Name="PHARMACY">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="legal_entity_name" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="healthsplash_contact" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="addr_address1" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="addr_address2" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="addr_zip_id" Type="Int64" />
+    <Property Name="federal_tax_number" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="primary_phone" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="specialty_service" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <Property Name="customer_service_number" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="technology_platform_retrieval" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="NCPDP_number" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="practice_npi_number" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="prim_contact_name_first" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="prim_contact_name_last" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="prim_contact_phone" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="prim_contact_email" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="oper_contact_name_first" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="oper_contact_name_last" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="oper_contact_phone" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="oper_contact_email" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="fina_contact_name_first" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="fina_contact_name_last" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="fina_contact_phone" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="fina_contact_email" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="auth_contact_name_first" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="auth_contact_name_last" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="auth_contact_phone" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="auth_contact_email" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="PHARMACY_ext" Relationship="SV_db1Model.FK_PHARMACY_ext_PHARMACY" FromRole="PHARMACY" ToRole="PHARMACY_ext" />
+    <NavigationProperty Name="ref_zip" Relationship="SV_db1Model.FK_PHARMACY_ToRef_Zip" FromRole="PHARMACY" ToRole="ref_zip" />
+  </EntityType>
+  <EntityType Name="PHARMACY_ext">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="rel_PHARMACY_id" Type="Int64" />
+    <Property Name="attr_name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="dname" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="value" Type="String" MaxLength="3000" FixedLength="false" Unicode="true" />
+    <Property Name="rel_ref_datatype_id" Type="Int64" />
+    <Property Name="create_by__USER_id" Type="Int64" />
+    <Property Name="dt_create" Type="DateTime" Precision="3" />
+    <Property Name="update_by__USER_id" Type="Int64" />
+    <Property Name="dt_update" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="PHARMACY" Relationship="SV_db1Model.FK_PHARMACY_ext_PHARMACY" FromRole="PHARMACY_ext" ToRole="PHARMACY" />
+  </EntityType>
+  <EntityType Name="PHYSICIAN">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="legal_entity_name" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="healthsplash_contact" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="addr_address1" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="addr_address2" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="addr_zip_id" Type="Int64" />
+    <Property Name="practice_type" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="practice_npi" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="federal_tax_number" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="primary_phone" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="customer_service_number" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="number_clinicians" Type="Int32" />
+    <Property Name="number_exams_per_week" Type="Int32" />
+    <Property Name="geographic_market" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <Property Name="insurance_providers" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="EMR_software_used" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="prim_contact_name_first" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="prim_contact_name_last" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="prim_contact_phone" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="prim_contact_email" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="oper_contact_name_first" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="oper_contact_name_last" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="oper_contact_phone" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="oper_contact_email" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="fina_contact_name_first" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="fina_contact_name_last" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="fina_contact_phone" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="fina_contact_email" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="auth_contact_name_first" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="auth_contact_name_last" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="auth_contact_phone" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="auth_contact_email" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="PHYSICIAN_ext" Relationship="SV_db1Model.FK_PHYSICIAN_ext_PHYSICIAN" FromRole="PHYSICIAN" ToRole="PHYSICIAN_ext" />
+    <NavigationProperty Name="ref_zip" Relationship="SV_db1Model.FK_PHYSICIAN_ToRef_Zip" FromRole="PHYSICIAN" ToRole="ref_zip" />
+  </EntityType>
+  <EntityType Name="PHYSICIAN_ext">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="rel_PHYSICIAN_id" Type="Int64" />
+    <Property Name="attr_name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="dname" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="value" Type="String" MaxLength="3000" FixedLength="false" Unicode="true" />
+    <Property Name="rel_ref_datatype_id" Type="Int64" />
+    <Property Name="create_by__USER_id" Type="Int64" />
+    <Property Name="dt_create" Type="DateTime" Precision="3" />
+    <Property Name="update_by__USER_id" Type="Int64" />
+    <Property Name="dt_update" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="PHYSICIAN" Relationship="SV_db1Model.FK_PHYSICIAN_ext_PHYSICIAN" FromRole="PHYSICIAN_ext" ToRole="PHYSICIAN" />
+  </EntityType>
+  <EntityType Name="PRODUCT">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="create_by__USER_id" Type="Int64" />
+    <Property Name="dt_create" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="update_by__USER_id" Type="Int64" />
+    <Property Name="dt_update" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="PRODUCT_ext" Relationship="SV_db1Model.FK_PRODUCT_ext_PRODUCT" FromRole="PRODUCT" ToRole="PRODUCT_ext" />
+  </EntityType>
+  <EntityType Name="PRODUCT_ext">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="rel_PRODUCT_id" Type="Int64" />
+    <Property Name="attr_name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="dname" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="value" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="rel_ref_datatype_id" Type="Int64" />
+    <Property Name="create_by__USER_id" Type="Int64" />
+    <Property Name="dt_create" Type="DateTime" Precision="3" />
+    <Property Name="update_by__USER_id" Type="Int64" />
+    <Property Name="dt_update" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="con_ORDER_PRODUCT" Relationship="SV_db1Model.FK_con_ORDER_PRODUCT_PRODUCT_ext" FromRole="PRODUCT_ext" ToRole="con_ORDER_PRODUCT" />
+    <NavigationProperty Name="PRODUCT" Relationship="SV_db1Model.FK_PRODUCT_ext_PRODUCT" FromRole="PRODUCT_ext" ToRole="PRODUCT" />
+  </EntityType>
+  <EntityType Name="ref_APPOINTMENT_status">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="dname" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="create_by__USER_id" Type="Int64" />
+    <Property Name="dt_create" Type="DateTime" Precision="3" />
+    <Property Name="update_by__USER_id" Type="Int64" />
+    <Property Name="dt_update" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="APPOINTMENTs" Relationship="SV_db1Model.FK_APPOINTMENT_ref_APPOINTMENT_STATUS" FromRole="ref_APPOINTMENT_status" ToRole="APPOINTMENT" />
+  </EntityType>
+  <EntityType Name="ref_APPOINTMENT_type">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="dname" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="create_by__USER_id" Type="Int64" />
+    <Property Name="dt_create" Type="DateTime" Precision="3" />
+    <Property Name="update_by__USER_id" Type="Int64" />
+    <Property Name="dt_update" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="APPOINTMENTs" Relationship="SV_db1Model.FK_APPOINTMENT_ref_APPOINTMENT_TYPE" FromRole="ref_APPOINTMENT_type" ToRole="APPOINTMENT" />
+  </EntityType>
+  <EntityType Name="ref_CALL_type">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="dname" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="create_by__USER_id" Type="Int64" />
+    <Property Name="dt_create" Type="DateTime" Precision="3" />
+    <Property Name="update_by__USER_id" Type="Int64" />
+    <Property Name="dt_update" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="log_CALL" Relationship="SV_db1Model.FK_log_CALL_ref_CALL_type" FromRole="ref_CALL_type" ToRole="log_CALL" />
+  </EntityType>
+  <EntityType Name="ref_condition">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="rel_ref_specialty_id" Type="Int64" />
+    <Property Name="dname" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <Property Name="dt_create" Type="DateTime" Precision="3" />
+    <Property Name="create_by__USER_id" Type="Int64" Nullable="false" />
+    <Property Name="dt_update" Type="DateTime" Precision="3" />
+    <Property Name="update_by__USER_id" Type="Int64" />
+    <NavigationProperty Name="con_ref_specialty_ref_condition" Relationship="SV_db1Model.FK_condition_ref_condition" FromRole="ref_condition" ToRole="con_ref_specialty_ref_condition" />
+    <NavigationProperty Name="ref_specialty1" Relationship="SV_db1Model.FK_ref_condition_specialty" FromRole="ref_condition" ToRole="ref_specialty1" />
+  </EntityType>
+  <EntityType Name="ref_data_type">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="attr_name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="create_by__USER_id" Type="Int64" />
+    <Property Name="dt_create" Type="DateTime" Precision="3" />
+    <Property Name="update_by__USER_id" Type="Int64" />
+    <Property Name="dt_update" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="ref_insurance_provider">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PayerID" Type="String" MaxLength="400" FixedLength="false" Unicode="false" />
+    <Property Name="PayerName" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="con_DOCTOR_ref_insurance" Relationship="SV_db1Model.FK_con_DOCTOR_ref_insurance_ref_insurance_provider" FromRole="ref_insurance_provider" ToRole="con_DOCTOR_ref_insurance" />
+    <NavigationProperty Name="con_DOCTOR1_ref_insurance" Relationship="SV_db1Model.FK_con_DOCTOR_ref_insurance_ref_insurance_provider1" FromRole="ref_insurance_provider" ToRole="con_DOCTOR1_ref_insurance" />
+    <NavigationProperty Name="con_SOUL_ref_insurance" Relationship="SV_db1Model.FK_con_SOUL_ref_insurance_ref_insurance_provider" FromRole="ref_insurance_provider" ToRole="con_SOUL_ref_insurance" />
+  </EntityType>
+  <EntityType Name="ref_languages">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="dname" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="dt_create" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="create_by__USER_id" Type="Int64" Nullable="false" />
+    <Property Name="dt_update" Type="DateTime" Precision="3" />
+    <Property Name="update_by__USER_id" Type="Int64" />
+    <NavigationProperty Name="con_DOCTOR_ref_language" Relationship="SV_db1Model.FK_con_DOCTOR_ref_language" FromRole="ref_languages" ToRole="con_DOCTOR_ref_language" />
+    <NavigationProperty Name="con_DOCTOR1_ref_language" Relationship="SV_db1Model.FK_con_DOCTOR_ref_language1" FromRole="ref_languages" ToRole="con_DOCTOR1_ref_language" />
+  </EntityType>
+  <EntityType Name="ref_NOTE_type">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="dname" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="create_by__USER_id" Type="Int64" />
+    <Property Name="dt_create" Type="DateTime" Precision="3" />
+    <Property Name="update_by__USER_id" Type="Int64" />
+    <Property Name="dt_update" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="NOTEs" Relationship="SV_db1Model.FK_NOTE_ref_NOTE_type" FromRole="ref_NOTE_type" ToRole="NOTE" />
+  </EntityType>
+  <EntityType Name="ref_specialty">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="code" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="name" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="level" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="group" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="provider_type" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="specialization" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="conditions" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+    <Property Name="rel_ref_specialty_category_id" Type="Int64" />
+    <Property Name="create_by__USER_id" Type="Int64" />
+    <Property Name="dt_create" Type="DateTime" Precision="3" />
+    <Property Name="update_by__USER_id" Type="Int64" />
+    <Property Name="dt_update" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="con_DOCTOR_ref_specialty" Relationship="SV_db1Model.FK_con_DOCTOR_ref_specialty_ref_specialties" FromRole="ref_specialty" ToRole="con_DOCTOR_ref_specialty" />
+  </EntityType>
+  <EntityType Name="ref_specialty_provider">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="description" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <Property Name="type" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="create_by__USER_id" Type="Int64" />
+    <Property Name="dt_create" Type="DateTime" Precision="3" />
+    <Property Name="update_by__USER_id" Type="Int64" />
+    <Property Name="dt_update" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="ref_specialty1" Relationship="SV_db1Model.FK_ref_specialty1_provider" FromRole="ref_specialty_provider" ToRole="ref_specialty1" />
+  </EntityType>
+  <EntityType Name="ref_specialty1">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="rel_ref_provider_type_id" Type="Int64" />
+    <Property Name="level2_classification" Type="String" MaxLength="130" FixedLength="false" Unicode="true" />
+    <Property Name="level2_classification_code" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="level3_specialization" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="level3_specialization_code" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="xconditions" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+    <Property Name="status" Type="Boolean" />
+    <Property Name="create_by__USER_id" Type="Int64" />
+    <Property Name="dt_create" Type="DateTime" Precision="3" />
+    <Property Name="update_by__USER_id" Type="Int64" />
+    <Property Name="dt_update" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="con_DOCTOR1_ref_specialty" Relationship="SV_db1Model.FK_con_DOCTOR_ref_specialty_ref_specialties1" FromRole="ref_specialty1" ToRole="con_DOCTOR1_ref_specialty" />
+    <NavigationProperty Name="con_ref_specialty_ref_condition" Relationship="SV_db1Model.FK_condition_ref_specialty" FromRole="ref_specialty1" ToRole="con_ref_specialty_ref_condition" />
+    <NavigationProperty Name="ref_condition" Relationship="SV_db1Model.FK_ref_condition_specialty" FromRole="ref_specialty1" ToRole="ref_condition" />
+    <NavigationProperty Name="ref_specialty_provider" Relationship="SV_db1Model.FK_ref_specialty1_provider" FromRole="ref_specialty1" ToRole="ref_specialty_provider" />
+  </EntityType>
+  <EntityType Name="ref_status">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="dname" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="rel_ref_status_type_id" Type="Int64" />
+    <Property Name="create_by__USER_id" Type="Int64" />
+    <Property Name="dt_create" Type="DateTime" Precision="3" />
+    <Property Name="update_by__USER_id" Type="Int64" />
+    <Property Name="dt_update" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="ref_status_type" Relationship="SV_db1Model.FK_ref_status_ref_status_type" FromRole="ref_status" ToRole="ref_status_type" />
+    <NavigationProperty Name="TRANSACTIONs" Relationship="SV_db1Model.FK_TRANSACTION_ref_status" FromRole="ref_status" ToRole="TRANSACTION" />
+  </EntityType>
+  <EntityType Name="ref_status_type">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="dname" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="create_by__USER_id" Type="Int64" />
+    <Property Name="dt_create" Type="DateTime" Precision="3" />
+    <Property Name="update_by__USER_id" Type="Int64" />
+    <Property Name="dt_update" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="ref_status" Relationship="SV_db1Model.FK_ref_status_ref_status_type" FromRole="ref_status_type" ToRole="ref_status" />
+  </EntityType>
+  <EntityType Name="ref_TRANSACTION_type">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="dname" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="create_by__USER_id" Type="Int64" />
+    <Property Name="dt_create" Type="DateTime" Precision="3" />
+    <Property Name="update_by__USER_id" Type="Int64" />
+    <Property Name="dt_update" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="TRANSACTIONs" Relationship="SV_db1Model.FK_TRANSACTION_ref_TRANSACTION_type" FromRole="ref_TRANSACTION_type" ToRole="TRANSACTION" />
+  </EntityType>
+  <EntityType Name="ref_USER_type">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="dname" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="create_by__USER_id" Type="Int64" />
+    <Property Name="dt_create" Type="DateTime" Precision="3" />
+    <Property Name="update_by__USER_id" Type="Int64" />
+    <Property Name="dt_update" Type="DateTime" Precision="3" />
+    <Property Name="rel_ref_status_id" Type="Int32" />
+    <NavigationProperty Name="USERs" Relationship="SV_db1Model.FK_USER_ToTable" FromRole="ref_USER_type" ToRole="USER" />
+  </EntityType>
+  <EntityType Name="ref_wellness_exam">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="dname" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="create_by__USER" Type="Int64" Nullable="false" />
+    <Property Name="dt_create" Type="DateTime" Precision="3" />
+    <Property Name="update_by__USER" Type="DateTime" Precision="3" />
+    <Property Name="dt_update" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="wellness_exam" Relationship="SV_db1Model.FK_wellness_exam_ToRef_wellness" FromRole="ref_wellness_exam" ToRole="wellness_exam" />
+  </EntityType>
+  <EntityType Name="ref_zip">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="zip" Type="String" Nullable="false" MaxLength="5" FixedLength="true" Unicode="false" />
+    <Property Name="city_name" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="city_state" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="city_state_long" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="city_lat" Type="Double" Nullable="false" />
+    <Property Name="city_lon" Type="Double" Nullable="false" />
+    <Property Name="city_county" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="DOCTORs" Relationship="SV_db1Model.FK_DOCTOR_ref_zip" FromRole="ref_zip" ToRole="DOCTOR" />
+    <NavigationProperty Name="DOCTOR_NPI" Relationship="SV_db1Model.FK_DOCTOR_NPI_ref_zip" FromRole="ref_zip" ToRole="DOCTOR_NPI" />
+    <NavigationProperty Name="DOCTOR1" Relationship="SV_db1Model.FK_hsDOCTOR_ref_zip_p1" FromRole="ref_zip" ToRole="DOCTOR1" />
+    <NavigationProperty Name="hs_DOCTOR" Relationship="SV_db1Model.FK_hsDOCTOR_ref_zip" FromRole="ref_zip" ToRole="hs_DOCTOR" />
+    <NavigationProperty Name="hs_DOCTOR1" Relationship="SV_db1Model.FK_hsDOCTOR_ref_zip_p" FromRole="ref_zip" ToRole="hs_DOCTOR" />
+    <NavigationProperty Name="hs_Hospital" Relationship="SV_db1Model.FK_hsHospital_ref_zip" FromRole="ref_zip" ToRole="hs_Hospital" />
+    <NavigationProperty Name="hs_ORGANIZATION" Relationship="SV_db1Model.FK_hsORGANIZATION_ref_zip" FromRole="ref_zip" ToRole="hs_ORGANIZATION" />
+    <NavigationProperty Name="MARKETERs" Relationship="SV_db1Model.FK_MARKETER_Toref_zip" FromRole="ref_zip" ToRole="MARKETER" />
+    <NavigationProperty Name="MARKETERs1" Relationship="SV_db1Model.FK_MARKETING_ToRef_Zip" FromRole="ref_zip" ToRole="MARKETER" />
+    <NavigationProperty Name="PHARMACies" Relationship="SV_db1Model.FK_PHARMACY_ToRef_Zip" FromRole="ref_zip" ToRole="PHARMACY" />
+    <NavigationProperty Name="PHYSICIANs" Relationship="SV_db1Model.FK_PHYSICIAN_ToRef_Zip" FromRole="ref_zip" ToRole="PHYSICIAN" />
+    <NavigationProperty Name="SOULs" Relationship="SV_db1Model.FK_SOUL_ref_zip" FromRole="ref_zip" ToRole="SOUL" />
+    <NavigationProperty Name="SUPPLIERs" Relationship="SV_db1Model.FK_SUPPLIER_Toref_zip" FromRole="ref_zip" ToRole="SUPPLIER" />
+  </EntityType>
+  <EntityType Name="SOUL">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name_first" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="name_last" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="phone" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="addr_address1" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="addr_address2" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="addr_rel_ref_zip_id" Type="Int64" />
+    <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="gender" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="dob" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="image_url" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="salutation" Type="String" MaxLength="5" FixedLength="true" Unicode="false" />
+    <Property Name="is_prime" Type="Boolean" />
+    <Property Name="dt_create" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="dt_update" Type="DateTime" Precision="3" />
+    <Property Name="create_by__USER_id" Type="Int64" Nullable="false" />
+    <Property Name="update_by__USER_id" Type="Int64" />
+    <Property Name="taken_by__USER_id" Type="Int64" />
+    <Property Name="dt_taken" Type="DateTime" Precision="3" />
+    <Property Name="rel_ref_status_id" Type="Int64" Nullable="false" />
+    <NavigationProperty Name="con_SOUL_LIST" Relationship="SV_db1Model.FK_con_SOUL_LIST_SOUL" FromRole="SOUL" ToRole="con_SOUL_LIST" />
+    <NavigationProperty Name="con_SOUL_ref_insurance" Relationship="SV_db1Model.FK_con_SOUL_ref_insurance_SOUL" FromRole="SOUL" ToRole="con_SOUL_ref_insurance" />
+    <NavigationProperty Name="ref_zip" Relationship="SV_db1Model.FK_SOUL_ref_zip" FromRole="SOUL" ToRole="ref_zip" />
+    <NavigationProperty Name="SOUL_ext" Relationship="SV_db1Model.FK_SOUL_ext_SOUL" FromRole="SOUL" ToRole="SOUL_ext" />
+    <NavigationProperty Name="wellness_exam" Relationship="SV_db1Model.FK_wellness_exam_ToSOUL" FromRole="SOUL" ToRole="wellness_exam" />
+  </EntityType>
+  <EntityType Name="SOUL_ext">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="rel_SOUL_id" Type="Int64" />
+    <Property Name="attr_name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="dname" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="value" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="rel_ref_datatype_id" Type="Int64" />
+    <Property Name="create_by__USER_id" Type="Int64" />
+    <Property Name="dt_create" Type="DateTime" Precision="3" />
+    <Property Name="update_by__USER_id" Type="Int64" />
+    <Property Name="dt_update" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="SOUL" Relationship="SV_db1Model.FK_SOUL_ext_SOUL" FromRole="SOUL_ext" ToRole="SOUL" />
+  </EntityType>
+  <EntityType Name="SUPPLIER">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="legal_entity_name" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="healthsplash_contact" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="addr_address1" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="addr_address2" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="addr_zip_id" Type="Int64" />
+    <Property Name="federal_tax_number" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="primary_phone" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="telemedicine_partner" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="organization_npi" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="insurance_provider" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <Property Name="preferred_geographic_market" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <Property Name="products_hcpcs" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <Property Name="patient_deductible_threshold" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <Property Name="prim_contact_name_first" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="prim_contact_name_last" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="prim_contact_phone" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="prim_contact_email" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="oper_contact_name_first" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="oper_contact_name_last" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="oper_contact_phone" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="oper_contact_email" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="fina_contact_name_first" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="fina_contact_name_last" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="fina_contact_phone" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="fina_contact_email" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="auth_contact_name_first" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="auth_contact_name_last" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="auth_contact_phone" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="auth_contact_email" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="ref_zip" Relationship="SV_db1Model.FK_SUPPLIER_Toref_zip" FromRole="SUPPLIER" ToRole="ref_zip" />
+    <NavigationProperty Name="SUPPLIER_ext" Relationship="SV_db1Model.FK_SUPPLIER_ext_SUPPLIER" FromRole="SUPPLIER" ToRole="SUPPLIER_ext" />
+  </EntityType>
+  <EntityType Name="SUPPLIER_ext">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="rel_SUPPLIER_id" Type="Int64" />
+    <Property Name="attr_name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="dname" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="value" Type="String" MaxLength="3000" FixedLength="false" Unicode="true" />
+    <Property Name="rel_ref_datatype_id" Type="Int64" />
+    <Property Name="create_by__USER_id" Type="Int64" />
+    <Property Name="dt_create" Type="DateTime" Precision="3" />
+    <Property Name="update_by__USER_id" Type="Int64" />
+    <Property Name="dt_update" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="SUPPLIER" Relationship="SV_db1Model.FK_SUPPLIER_ext_SUPPLIER" FromRole="SUPPLIER_ext" ToRole="SUPPLIER" />
+  </EntityType>
+  <EntityType Name="top_search">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="attr_name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="value" Type="String" MaxLength="3000" FixedLength="false" Unicode="true" />
+    <Property Name="display_value" Type="String" MaxLength="3000" FixedLength="false" Unicode="true" />
+    <Property Name="url" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" />
+    <Property Name="create_by__USER_id" Type="Int64" />
+    <Property Name="dt_create" Type="DateTime" Precision="3" />
+    <Property Name="update_by__USER_id" Type="Int64" />
+    <Property Name="dt_update" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="TRANSACTION">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="rel_ref_TRANSACTION_type_id" Type="Int64" Nullable="false" />
+    <Property Name="rel_ref_status_id" Type="Int64" />
+    <Property Name="create_by__USER_id" Type="Int64" />
+    <Property Name="dt_create" Type="DateTime" Precision="3" />
+    <Property Name="update_by__USER_id" Type="Int64" />
+    <Property Name="dt_update" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="ref_status" Relationship="SV_db1Model.FK_TRANSACTION_ref_status" FromRole="TRANSACTION" ToRole="ref_status" />
+    <NavigationProperty Name="ref_TRANSACTION_type" Relationship="SV_db1Model.FK_TRANSACTION_ref_TRANSACTION_type" FromRole="TRANSACTION" ToRole="ref_TRANSACTION_type" />
+    <NavigationProperty Name="TRANSACTION_ext" Relationship="SV_db1Model.FK_TRANSACTION_ext_TRANSACTION" FromRole="TRANSACTION" ToRole="TRANSACTION_ext" />
+  </EntityType>
+  <EntityType Name="TRANSACTION_ext">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="rel_TRANSACTION_id" Type="Int64" />
+    <Property Name="attr_name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="dname" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="value" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="rel_ref_datatype_id" Type="Int64" />
+    <Property Name="create_by__USER_id" Type="Int64" />
+    <Property Name="dt_create" Type="DateTime" Precision="3" />
+    <Property Name="update_by__USER_id" Type="Int64" />
+    <Property Name="dt_update" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="TRANSACTION" Relationship="SV_db1Model.FK_TRANSACTION_ext_TRANSACTION" FromRole="TRANSACTION_ext" ToRole="TRANSACTION" />
+  </EntityType>
+  <EntityType Name="USER">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name_first" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="name_last" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="username" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="phash" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="tlas" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="social_id" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="social_type" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="image_url" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="verification_code" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+    <Property Name="verified" Type="Boolean" />
+    <Property Name="platform" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="device_token" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="HIPAA_authorization" Type="Boolean" />
+    <Property Name="terms_condition" Type="Boolean" />
+    <Property Name="dt_create" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="dt_update" Type="DateTime" Precision="3" />
+    <Property Name="create_by__USER_id" Type="Int64" Nullable="false" />
+    <Property Name="update_by__USER_id" Type="Int64" />
+    <Property Name="dt_lastin" Type="DateTime" Precision="3" />
+    <Property Name="url_lastin" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="rel_ref_status_id" Type="Int64" Nullable="false" />
+    <Property Name="rel_ref_USER_type_id" Type="Int64" Nullable="false" />
+    <Property Name="token_current" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="rel_USER_type_access_id" Type="Int64" />
+    <NavigationProperty Name="notifications" Relationship="SV_db1Model.FK_notification_USER" FromRole="USER" ToRole="notification" />
+    <NavigationProperty Name="ref_USER_type" Relationship="SV_db1Model.FK_USER_ToTable" FromRole="USER" ToRole="ref_USER_type" />
+    <NavigationProperty Name="User_Card_Info" Relationship="SV_db1Model.FK_User_Card_Info_ToTable" FromRole="USER" ToRole="User_Card_Info" />
+    <NavigationProperty Name="USER_ext" Relationship="SV_db1Model.FK_USER_ext_USER" FromRole="USER" ToRole="USER_ext" />
+  </EntityType>
+  <EntityType Name="User_Card_Info">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="user_id" Type="Int64" Nullable="false" />
+    <Property Name="card_number" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="cvv" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="expiry_date" Type="DateTime" Precision="3" />
+    <Property Name="payment_date" Type="DateTime" Precision="3" />
+    <Property Name="dt_create" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="create_by__USER_id" Type="Int64" Nullable="false" />
+    <Property Name="dt_update" Type="DateTime" Precision="3" />
+    <Property Name="update_by__USER_id" Type="Int64" />
+    <NavigationProperty Name="log_payment" Relationship="SV_db1Model.FK_log_payment_Card_Info" FromRole="User_Card_Info" ToRole="log_payment" />
+    <NavigationProperty Name="USER" Relationship="SV_db1Model.FK_User_Card_Info_ToTable" FromRole="User_Card_Info" ToRole="USER" />
+  </EntityType>
+  <EntityType Name="USER_ext">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="rel_USER_id" Type="Int64" />
+    <Property Name="attr_name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="dname" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="value" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="rel_ref_datatype_id" Type="Int64" />
+    <Property Name="create_by__USER_id" Type="Int64" />
+    <Property Name="dt_create" Type="DateTime" Precision="3" />
+    <Property Name="update_by__USER_id" Type="Int64" />
+    <Property Name="dt_update" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="USER" Relationship="SV_db1Model.FK_USER_ext_USER" FromRole="USER_ext" ToRole="USER" />
+  </EntityType>
+  <EntityType Name="USER_type_access">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="dname" Type="String" Nullable="false" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="rel_ref_USER_type_id" Type="Int64" Nullable="false" />
+    <Property Name="allowed" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="dt_create" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="dt_update" Type="DateTime" Precision="3" />
+    <Property Name="create_by__USER_id" Type="Int64" Nullable="false" />
+    <Property Name="update_by__USER_id" Type="Int64" />
+    <Property Name="url_home" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="menu" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="wellness_exam">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="rel_SOUL_id" Type="Int64" Nullable="false" />
+    <Property Name="rel_exam_id" Type="Int64" Nullable="false" />
+    <Property Name="dt_taken" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="create_by__USER" Type="Int64" Nullable="false" />
+    <Property Name="dt_create" Type="DateTime" Precision="3" />
+    <Property Name="update_by__USER" Type="DateTime" Precision="3" />
+    <Property Name="dt_update" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="ref_wellness_exam" Relationship="SV_db1Model.FK_wellness_exam_ToRef_wellness" FromRole="wellness_exam" ToRole="ref_wellness_exam" />
+    <NavigationProperty Name="SOUL" Relationship="SV_db1Model.FK_wellness_exam_ToSOUL" FromRole="wellness_exam" ToRole="SOUL" />
+  </EntityType>
+  <EntityType Name="log_token_activity">
+    <Key>
+      <PropertyRef Name="token" />
+      <PropertyRef Name="dt_create" />
+      <PropertyRef Name="action_type" />
+      <PropertyRef Name="trigger" />
+      <PropertyRef Name="create_by__USER_id" />
+    </Key>
+    <Property Name="token" Type="String" Nullable="false" MaxLength="36" FixedLength="true" Unicode="false" />
+    <Property Name="dt_create" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="action_type" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="trigger" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="var_from" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="var_to" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="create_by__USER_id" Type="Int64" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_APPOINTMENT_ext_APPOINTMENT">
+    <End Type="SV_db1Model.APPOINTMENT" Role="APPOINTMENT" Multiplicity="0..1" />
+    <End Type="SV_db1Model.APPOINTMENT_ext" Role="APPOINTMENT_ext" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="APPOINTMENT">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="APPOINTMENT_ext">
+        <PropertyRef Name="rel_APPOINTMENT_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_APPOINTMENT_ref_APPOINTMENT_STATUS">
+    <End Type="SV_db1Model.ref_APPOINTMENT_status" Role="ref_APPOINTMENT_status" Multiplicity="0..1" />
+    <End Type="SV_db1Model.APPOINTMENT" Role="APPOINTMENT" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ref_APPOINTMENT_status">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="APPOINTMENT">
+        <PropertyRef Name="rel_ref_APPOINTMENT_status_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_APPOINTMENT_ref_APPOINTMENT_TYPE">
+    <End Type="SV_db1Model.ref_APPOINTMENT_type" Role="ref_APPOINTMENT_type" Multiplicity="0..1" />
+    <End Type="SV_db1Model.APPOINTMENT" Role="APPOINTMENT" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ref_APPOINTMENT_type">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="APPOINTMENT">
+        <PropertyRef Name="rel_ref_APPOINTMENT_type_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_con_APPOINTMENT_NOTE_NOTE">
+    <End Type="SV_db1Model.NOTE" Role="NOTE" Multiplicity="0..1" />
+    <End Type="SV_db1Model.con_APPOINTMENT_NOTE" Role="con_APPOINTMENT_NOTE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NOTE">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="con_APPOINTMENT_NOTE">
+        <PropertyRef Name="rel_NOTE_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_con_DOCTOR_Hospital">
+    <End Type="SV_db1Model.hs_Hospital" Role="hs_Hospital" Multiplicity="0..1" />
+    <End Type="SV_db1Model.con_DOCTOR_Hospital" Role="con_DOCTOR_Hospital" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="hs_Hospital">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="con_DOCTOR_Hospital">
+        <PropertyRef Name="rel_Hospital_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_con_DOCTOR_Hospital_DOCTOR">
+    <End Type="SV_db1Model.hs_DOCTOR" Role="hs_DOCTOR" Multiplicity="0..1" />
+    <End Type="SV_db1Model.con_DOCTOR_Hospital" Role="con_DOCTOR_Hospital" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="hs_DOCTOR">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="con_DOCTOR_Hospital">
+        <PropertyRef Name="rel_DOCTOR_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_con_DOCTOR_NOTE_NOTE">
+    <End Type="SV_db1Model.NOTE" Role="NOTE" Multiplicity="0..1" />
+    <End Type="SV_db1Model.con_DOCTOR_NOTE" Role="con_DOCTOR_NOTE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NOTE">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="con_DOCTOR_NOTE">
+        <PropertyRef Name="rel_NOTE_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_con_DOCTOR_ref_condition_DOCTOR">
+    <End Type="SV_db1Model.hs_DOCTOR" Role="hs_DOCTOR" Multiplicity="0..1" />
+    <End Type="SV_db1Model.con_DOCTOR_ref_condition" Role="con_DOCTOR_ref_condition" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="hs_DOCTOR">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="con_DOCTOR_ref_condition">
+        <PropertyRef Name="rel_DOCTOR_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_con_DOCTOR_ref_hospital">
+    <End Type="SV_db1Model.hs_Hospital" Role="hs_Hospital" Multiplicity="0..1" />
+    <End Type="SV_db1Model.con_DOCTOR_ref_Hospital" Role="con_DOCTOR_ref_Hospital" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="hs_Hospital">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="con_DOCTOR_ref_Hospital">
+        <PropertyRef Name="rel_ref_hospital_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_con_DOCTOR_ref_hospital_DOCTOR">
+    <End Type="SV_db1Model.hs_DOCTOR" Role="hs_DOCTOR" Multiplicity="0..1" />
+    <End Type="SV_db1Model.con_DOCTOR_ref_Hospital" Role="con_DOCTOR_ref_Hospital" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="hs_DOCTOR">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="con_DOCTOR_ref_Hospital">
+        <PropertyRef Name="rel_DOCTOR_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_con_DOCTOR_ref_insurance_DOCTOR">
+    <End Type="SV_db1Model.hs_DOCTOR" Role="hs_DOCTOR" Multiplicity="0..1" />
+    <End Type="SV_db1Model.con_DOCTOR_ref_insurance" Role="con_DOCTOR_ref_insurance" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="hs_DOCTOR">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="con_DOCTOR_ref_insurance">
+        <PropertyRef Name="rel_DOCTOR_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_con_DOCTOR_ref_insurance_ref_insurance_provider">
+    <End Type="SV_db1Model.ref_insurance_provider" Role="ref_insurance_provider" Multiplicity="0..1" />
+    <End Type="SV_db1Model.con_DOCTOR_ref_insurance" Role="con_DOCTOR_ref_insurance" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ref_insurance_provider">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="con_DOCTOR_ref_insurance">
+        <PropertyRef Name="rel_ref_insurance_provider_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_con_DOCTOR_ref_language">
+    <End Type="SV_db1Model.ref_languages" Role="ref_languages" Multiplicity="0..1" />
+    <End Type="SV_db1Model.con_DOCTOR_ref_language" Role="con_DOCTOR_ref_language" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ref_languages">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="con_DOCTOR_ref_language">
+        <PropertyRef Name="rel_ref_language_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_con_DOCTOR_ref_language_DOCTOR">
+    <End Type="SV_db1Model.hs_DOCTOR" Role="hs_DOCTOR" Multiplicity="0..1" />
+    <End Type="SV_db1Model.con_DOCTOR_ref_language" Role="con_DOCTOR_ref_language" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="hs_DOCTOR">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="con_DOCTOR_ref_language">
+        <PropertyRef Name="rel_DOCTOR_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_con_DOCTOR_ref_specialty_DOCTOR">
+    <End Type="SV_db1Model.hs_DOCTOR" Role="hs_DOCTOR" Multiplicity="0..1" />
+    <End Type="SV_db1Model.con_DOCTOR_ref_specialty" Role="con_DOCTOR_ref_specialty" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="hs_DOCTOR">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="con_DOCTOR_ref_specialty">
+        <PropertyRef Name="rel_DOCTOR_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_con_DOCTOR_ref_specialty_ref_specialties">
+    <End Type="SV_db1Model.ref_specialty" Role="ref_specialty" Multiplicity="0..1" />
+    <End Type="SV_db1Model.con_DOCTOR_ref_specialty" Role="con_DOCTOR_ref_specialty" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ref_specialty">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="con_DOCTOR_ref_specialty">
+        <PropertyRef Name="rel_ref_specialty_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_con_DOCTOR_timeslot_ToTable">
+    <End Type="SV_db1Model.hs_DOCTOR" Role="hs_DOCTOR" Multiplicity="1" />
+    <End Type="SV_db1Model.con_DOCTOR_timeslot" Role="con_DOCTOR_timeslot" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="hs_DOCTOR">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="con_DOCTOR_timeslot">
+        <PropertyRef Name="rel_DOCTOR_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_con_DOCTOR_ref_insurance_DOCTOR1">
+    <End Type="SV_db1Model.DOCTOR1" Role="DOCTOR1" Multiplicity="0..1" />
+    <End Type="SV_db1Model.con_DOCTOR1_ref_insurance" Role="con_DOCTOR1_ref_insurance" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DOCTOR1">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="con_DOCTOR1_ref_insurance">
+        <PropertyRef Name="rel_DOCTOR_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_con_DOCTOR_ref_insurance_ref_insurance_provider1">
+    <End Type="SV_db1Model.ref_insurance_provider" Role="ref_insurance_provider" Multiplicity="0..1" />
+    <End Type="SV_db1Model.con_DOCTOR1_ref_insurance" Role="con_DOCTOR1_ref_insurance" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ref_insurance_provider">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="con_DOCTOR1_ref_insurance">
+        <PropertyRef Name="rel_ref_insurance_provider_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_con_DOCTOR_ref_language_DOCTOR1">
+    <End Type="SV_db1Model.DOCTOR1" Role="DOCTOR1" Multiplicity="0..1" />
+    <End Type="SV_db1Model.con_DOCTOR1_ref_language" Role="con_DOCTOR1_ref_language" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DOCTOR1">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="con_DOCTOR1_ref_language">
+        <PropertyRef Name="rel_DOCTOR_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_con_DOCTOR_ref_language1">
+    <End Type="SV_db1Model.ref_languages" Role="ref_languages" Multiplicity="0..1" />
+    <End Type="SV_db1Model.con_DOCTOR1_ref_language" Role="con_DOCTOR1_ref_language" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ref_languages">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="con_DOCTOR1_ref_language">
+        <PropertyRef Name="rel_ref_language_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_con_DOCTOR_ref_specialty_DOCTOR1">
+    <End Type="SV_db1Model.DOCTOR1" Role="DOCTOR1" Multiplicity="0..1" />
+    <End Type="SV_db1Model.con_DOCTOR1_ref_specialty" Role="con_DOCTOR1_ref_specialty" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DOCTOR1">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="con_DOCTOR1_ref_specialty">
+        <PropertyRef Name="rel_DOCTOR_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_con_DOCTOR_ref_specialty_ref_specialties1">
+    <End Type="SV_db1Model.ref_specialty1" Role="ref_specialty1" Multiplicity="0..1" />
+    <End Type="SV_db1Model.con_DOCTOR1_ref_specialty" Role="con_DOCTOR1_ref_specialty" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ref_specialty1">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="con_DOCTOR1_ref_specialty">
+        <PropertyRef Name="rel_ref_specialty_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_con_ORDER_NOTE_NOTE">
+    <End Type="SV_db1Model.NOTE" Role="NOTE" Multiplicity="0..1" />
+    <End Type="SV_db1Model.con_ORDER_NOTE" Role="con_ORDER_NOTE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NOTE">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="con_ORDER_NOTE">
+        <PropertyRef Name="rel_NOTE_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_con_ORDER_PRODUCT_ORDER_ext">
+    <End Type="SV_db1Model.ORDER_ext" Role="ORDER_ext" Multiplicity="0..1" />
+    <End Type="SV_db1Model.con_ORDER_PRODUCT" Role="con_ORDER_PRODUCT" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ORDER_ext">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="con_ORDER_PRODUCT">
+        <PropertyRef Name="rel_ORDER_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_con_ORDER_PRODUCT_PRODUCT_ext">
+    <End Type="SV_db1Model.PRODUCT_ext" Role="PRODUCT_ext" Multiplicity="0..1" />
+    <End Type="SV_db1Model.con_ORDER_PRODUCT" Role="con_ORDER_PRODUCT" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PRODUCT_ext">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="con_ORDER_PRODUCT">
+        <PropertyRef Name="rel_PRODUCT_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_condition_ref_condition">
+    <End Type="SV_db1Model.ref_condition" Role="ref_condition" Multiplicity="0..1" />
+    <End Type="SV_db1Model.con_ref_specialty_ref_condition" Role="con_ref_specialty_ref_condition" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ref_condition">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="con_ref_specialty_ref_condition">
+        <PropertyRef Name="rel_ref_condition_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_condition_ref_specialty">
+    <End Type="SV_db1Model.ref_specialty1" Role="ref_specialty1" Multiplicity="0..1" />
+    <End Type="SV_db1Model.con_ref_specialty_ref_condition" Role="con_ref_specialty_ref_condition" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ref_specialty1">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="con_ref_specialty_ref_condition">
+        <PropertyRef Name="rel_ref_specialty_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_con_SOUL_LIST_LIST">
+    <End Type="SV_db1Model.LIST" Role="LIST" Multiplicity="0..1" />
+    <End Type="SV_db1Model.con_SOUL_LIST" Role="con_SOUL_LIST" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LIST">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="con_SOUL_LIST">
+        <PropertyRef Name="rel_LIST_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_con_SOUL_LIST_SOUL">
+    <End Type="SV_db1Model.SOUL" Role="SOUL" Multiplicity="0..1" />
+    <End Type="SV_db1Model.con_SOUL_LIST" Role="con_SOUL_LIST" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SOUL">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="con_SOUL_LIST">
+        <PropertyRef Name="rel_SOUL_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_con_SOUL_ref_insurance_ref_insurance_provider">
+    <End Type="SV_db1Model.ref_insurance_provider" Role="ref_insurance_provider" Multiplicity="0..1" />
+    <End Type="SV_db1Model.con_SOUL_ref_insurance" Role="con_SOUL_ref_insurance" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ref_insurance_provider">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="con_SOUL_ref_insurance">
+        <PropertyRef Name="rel_ref_insurance_provider_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_con_SOUL_ref_insurance_SOUL">
+    <End Type="SV_db1Model.SOUL" Role="SOUL" Multiplicity="0..1" />
+    <End Type="SV_db1Model.con_SOUL_ref_insurance" Role="con_SOUL_ref_insurance" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SOUL">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="con_SOUL_ref_insurance">
+        <PropertyRef Name="rel_SOUL_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_con_TRANSACTION_NOTE_NOTE">
+    <End Type="SV_db1Model.NOTE" Role="NOTE" Multiplicity="0..1" />
+    <End Type="SV_db1Model.con_TRANSACTION_NOTE" Role="con_TRANSACTION_NOTE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NOTE">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="con_TRANSACTION_NOTE">
+        <PropertyRef Name="rel_NOTE_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_con_USER_favorite_DOCTOR_ToTable">
+    <End Type="SV_db1Model.hs_DOCTOR" Role="hs_DOCTOR" Multiplicity="1" />
+    <End Type="SV_db1Model.con_USER_favorite_DOCTOR" Role="con_USER_favorite_DOCTOR" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="hs_DOCTOR">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="con_USER_favorite_DOCTOR">
+        <PropertyRef Name="rel_doctor_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DOCTOR_ext_DOCTOR">
+    <End Type="SV_db1Model.DOCTOR" Role="DOCTOR" Multiplicity="0..1" />
+    <End Type="SV_db1Model.DOCTOR_ext" Role="DOCTOR_ext" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DOCTOR">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="DOCTOR_ext">
+        <PropertyRef Name="rel_DOCTOR_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DOCTOR_ref_zip">
+    <End Type="SV_db1Model.ref_zip" Role="ref_zip" Multiplicity="0..1" />
+    <End Type="SV_db1Model.DOCTOR" Role="DOCTOR" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ref_zip">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="DOCTOR">
+        <PropertyRef Name="practice_addr_zip_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DOCTOR_ext_DOCTOR_NPI">
+    <End Type="SV_db1Model.DOCTOR_NPI" Role="DOCTOR_NPI" Multiplicity="0..1" />
+    <End Type="SV_db1Model.DOCTOR_ext_NPI" Role="DOCTOR_ext_NPI" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DOCTOR_NPI">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="DOCTOR_ext_NPI">
+        <PropertyRef Name="rel_DOCTOR_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_hs_DOCTOR_ext_DOCTOR1">
+    <End Type="SV_db1Model.DOCTOR1" Role="DOCTOR1" Multiplicity="0..1" />
+    <End Type="SV_db1Model.DOCTOR_ext1" Role="DOCTOR_ext1" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DOCTOR1">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="DOCTOR_ext1">
+        <PropertyRef Name="rel_DOCTOR_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DOCTOR_NPI_ref_zip">
+    <End Type="SV_db1Model.ref_zip" Role="ref_zip" Multiplicity="0..1" />
+    <End Type="SV_db1Model.DOCTOR_NPI" Role="DOCTOR_NPI" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ref_zip">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="DOCTOR_NPI">
+        <PropertyRef Name="addr_rel_ref_zip_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_hsDOCTOR_ref_zip_p1">
+    <End Type="SV_db1Model.ref_zip" Role="ref_zip" Multiplicity="0..1" />
+    <End Type="SV_db1Model.DOCTOR1" Role="DOCTOR1" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ref_zip">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="DOCTOR1">
+        <PropertyRef Name="practice_addr_zip_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_hs_DOCTOR_ext_DOCTOR">
+    <End Type="SV_db1Model.hs_DOCTOR" Role="hs_DOCTOR" Multiplicity="0..1" />
+    <End Type="SV_db1Model.hs_DOCTOR_ext" Role="hs_DOCTOR_ext" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="hs_DOCTOR">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="hs_DOCTOR_ext">
+        <PropertyRef Name="rel_DOCTOR_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_hsDOCTOR_ref_zip">
+    <End Type="SV_db1Model.ref_zip" Role="ref_zip" Multiplicity="0..1" />
+    <End Type="SV_db1Model.hs_DOCTOR" Role="hs_DOCTOR" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ref_zip">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="hs_DOCTOR">
+        <PropertyRef Name="home_addr_zip_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_hsDOCTOR_ref_zip_p">
+    <End Type="SV_db1Model.ref_zip" Role="ref_zip" Multiplicity="0..1" />
+    <End Type="SV_db1Model.hs_DOCTOR" Role="hs_DOCTOR" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ref_zip">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="hs_DOCTOR">
+        <PropertyRef Name="practice_addr_zip_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_hs_Hospital_ext_DOCTOR">
+    <End Type="SV_db1Model.hs_Hospital" Role="hs_Hospital" Multiplicity="0..1" />
+    <End Type="SV_db1Model.hs_HOSPITAL_ext" Role="hs_HOSPITAL_ext" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="hs_Hospital">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="hs_HOSPITAL_ext">
+        <PropertyRef Name="rel_HOSPITAL_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_hsHospital_ref_zip">
+    <End Type="SV_db1Model.ref_zip" Role="ref_zip" Multiplicity="0..1" />
+    <End Type="SV_db1Model.hs_Hospital" Role="hs_Hospital" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ref_zip">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="hs_Hospital">
+        <PropertyRef Name="addr_rel_ref_zip_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_hsORGANIZATION_ref_zip">
+    <End Type="SV_db1Model.ref_zip" Role="ref_zip" Multiplicity="0..1" />
+    <End Type="SV_db1Model.hs_ORGANIZATION" Role="hs_ORGANIZATION" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ref_zip">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="hs_ORGANIZATION">
+        <PropertyRef Name="addr_rel_ref_zip_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_LIST_ext_LIST">
+    <End Type="SV_db1Model.LIST" Role="LIST" Multiplicity="0..1" />
+    <End Type="SV_db1Model.LIST_ext" Role="LIST_ext" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LIST">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="LIST_ext">
+        <PropertyRef Name="rel_LIST_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_log_CALL_ref_CALL_type">
+    <End Type="SV_db1Model.ref_CALL_type" Role="ref_CALL_type" Multiplicity="0..1" />
+    <End Type="SV_db1Model.log_CALL" Role="log_CALL" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ref_CALL_type">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="log_CALL">
+        <PropertyRef Name="rel_ref_CALL_type_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_log_payment_Card_Info">
+    <End Type="SV_db1Model.User_Card_Info" Role="User_Card_Info" Multiplicity="0..1" />
+    <End Type="SV_db1Model.log_payment" Role="log_payment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User_Card_Info">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="log_payment">
+        <PropertyRef Name="card_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MARKETER_ext_MARKETER">
+    <End Type="SV_db1Model.MARKETER" Role="MARKETER" Multiplicity="0..1" />
+    <End Type="SV_db1Model.MARKETER_ext" Role="MARKETER_ext" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MARKETER">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="MARKETER_ext">
+        <PropertyRef Name="rel_MARKETER_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MARKETER_Toref_zip">
+    <End Type="SV_db1Model.ref_zip" Role="ref_zip" Multiplicity="0..1" />
+    <End Type="SV_db1Model.MARKETER" Role="MARKETER" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ref_zip">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="MARKETER">
+        <PropertyRef Name="addr_zip_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MARKETING_ToRef_Zip">
+    <End Type="SV_db1Model.ref_zip" Role="ref_zip" Multiplicity="0..1" />
+    <End Type="SV_db1Model.MARKETER" Role="MARKETER" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ref_zip">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="MARKETER">
+        <PropertyRef Name="addr_zip_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_NOTE_ref_NOTE_type">
+    <End Type="SV_db1Model.ref_NOTE_type" Role="ref_NOTE_type" Multiplicity="1" />
+    <End Type="SV_db1Model.NOTE" Role="NOTE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ref_NOTE_type">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="NOTE">
+        <PropertyRef Name="rel_ref_NOTE_type_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_notification_USER">
+    <End Type="SV_db1Model.USER" Role="USER" Multiplicity="1" />
+    <End Type="SV_db1Model.notification" Role="notification" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="USER">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="notification">
+        <PropertyRef Name="rel_USER_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ORDER_ext_ORDER">
+    <End Type="SV_db1Model.ORDER" Role="ORDER" Multiplicity="0..1" />
+    <End Type="SV_db1Model.ORDER_ext" Role="ORDER_ext" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ORDER">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="ORDER_ext">
+        <PropertyRef Name="rel_ORDER_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PHARMACY_ext_PHARMACY">
+    <End Type="SV_db1Model.PHARMACY" Role="PHARMACY" Multiplicity="0..1" />
+    <End Type="SV_db1Model.PHARMACY_ext" Role="PHARMACY_ext" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PHARMACY">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="PHARMACY_ext">
+        <PropertyRef Name="rel_PHARMACY_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PHARMACY_ToRef_Zip">
+    <End Type="SV_db1Model.ref_zip" Role="ref_zip" Multiplicity="0..1" />
+    <End Type="SV_db1Model.PHARMACY" Role="PHARMACY" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ref_zip">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="PHARMACY">
+        <PropertyRef Name="addr_zip_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PHYSICIAN_ext_PHYSICIAN">
+    <End Type="SV_db1Model.PHYSICIAN" Role="PHYSICIAN" Multiplicity="0..1" />
+    <End Type="SV_db1Model.PHYSICIAN_ext" Role="PHYSICIAN_ext" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PHYSICIAN">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="PHYSICIAN_ext">
+        <PropertyRef Name="rel_PHYSICIAN_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PHYSICIAN_ToRef_Zip">
+    <End Type="SV_db1Model.ref_zip" Role="ref_zip" Multiplicity="0..1" />
+    <End Type="SV_db1Model.PHYSICIAN" Role="PHYSICIAN" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ref_zip">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="PHYSICIAN">
+        <PropertyRef Name="addr_zip_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PRODUCT_ext_PRODUCT">
+    <End Type="SV_db1Model.PRODUCT" Role="PRODUCT" Multiplicity="0..1" />
+    <End Type="SV_db1Model.PRODUCT_ext" Role="PRODUCT_ext" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PRODUCT">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="PRODUCT_ext">
+        <PropertyRef Name="rel_PRODUCT_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ref_condition_specialty">
+    <End Type="SV_db1Model.ref_specialty1" Role="ref_specialty1" Multiplicity="0..1" />
+    <End Type="SV_db1Model.ref_condition" Role="ref_condition" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ref_specialty1">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="ref_condition">
+        <PropertyRef Name="rel_ref_specialty_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ref_specialty1_provider">
+    <End Type="SV_db1Model.ref_specialty_provider" Role="ref_specialty_provider" Multiplicity="0..1" />
+    <End Type="SV_db1Model.ref_specialty1" Role="ref_specialty1" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ref_specialty_provider">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="ref_specialty1">
+        <PropertyRef Name="rel_ref_provider_type_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ref_status_ref_status_type">
+    <End Type="SV_db1Model.ref_status_type" Role="ref_status_type" Multiplicity="0..1" />
+    <End Type="SV_db1Model.ref_status" Role="ref_status" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ref_status_type">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="ref_status">
+        <PropertyRef Name="rel_ref_status_type_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TRANSACTION_ref_status">
+    <End Type="SV_db1Model.ref_status" Role="ref_status" Multiplicity="0..1" />
+    <End Type="SV_db1Model.TRANSACTION" Role="TRANSACTION" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ref_status">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="TRANSACTION">
+        <PropertyRef Name="rel_ref_status_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TRANSACTION_ref_TRANSACTION_type">
+    <End Type="SV_db1Model.ref_TRANSACTION_type" Role="ref_TRANSACTION_type" Multiplicity="0..1" />
+    <End Type="SV_db1Model.TRANSACTION" Role="TRANSACTION" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ref_TRANSACTION_type">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="TRANSACTION">
+        <PropertyRef Name="rel_ref_status_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_USER_ToTable">
+    <End Type="SV_db1Model.ref_USER_type" Role="ref_USER_type" Multiplicity="1" />
+    <End Type="SV_db1Model.USER" Role="USER" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ref_USER_type">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="USER">
+        <PropertyRef Name="rel_ref_USER_type_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_wellness_exam_ToRef_wellness">
+    <End Type="SV_db1Model.ref_wellness_exam" Role="ref_wellness_exam" Multiplicity="1" />
+    <End Type="SV_db1Model.wellness_exam" Role="wellness_exam" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ref_wellness_exam">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="wellness_exam">
+        <PropertyRef Name="rel_exam_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SOUL_ref_zip">
+    <End Type="SV_db1Model.ref_zip" Role="ref_zip" Multiplicity="0..1" />
+    <End Type="SV_db1Model.SOUL" Role="SOUL" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ref_zip">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="SOUL">
+        <PropertyRef Name="addr_rel_ref_zip_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SUPPLIER_Toref_zip">
+    <End Type="SV_db1Model.ref_zip" Role="ref_zip" Multiplicity="0..1" />
+    <End Type="SV_db1Model.SUPPLIER" Role="SUPPLIER" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ref_zip">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="SUPPLIER">
+        <PropertyRef Name="addr_zip_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SOUL_ext_SOUL">
+    <End Type="SV_db1Model.SOUL" Role="SOUL" Multiplicity="0..1" />
+    <End Type="SV_db1Model.SOUL_ext" Role="SOUL_ext" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SOUL">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="SOUL_ext">
+        <PropertyRef Name="rel_SOUL_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_wellness_exam_ToSOUL">
+    <End Type="SV_db1Model.SOUL" Role="SOUL" Multiplicity="1" />
+    <End Type="SV_db1Model.wellness_exam" Role="wellness_exam" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SOUL">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="wellness_exam">
+        <PropertyRef Name="rel_SOUL_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SUPPLIER_ext_SUPPLIER">
+    <End Type="SV_db1Model.SUPPLIER" Role="SUPPLIER" Multiplicity="0..1" />
+    <End Type="SV_db1Model.SUPPLIER_ext" Role="SUPPLIER_ext" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SUPPLIER">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="SUPPLIER_ext">
+        <PropertyRef Name="rel_SUPPLIER_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TRANSACTION_ext_TRANSACTION">
+    <End Type="SV_db1Model.TRANSACTION" Role="TRANSACTION" Multiplicity="0..1" />
+    <End Type="SV_db1Model.TRANSACTION_ext" Role="TRANSACTION_ext" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TRANSACTION">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="TRANSACTION_ext">
+        <PropertyRef Name="rel_TRANSACTION_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_User_Card_Info_ToTable">
+    <End Type="SV_db1Model.USER" Role="USER" Multiplicity="1" />
+    <End Type="SV_db1Model.User_Card_Info" Role="User_Card_Info" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="USER">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="User_Card_Info">
+        <PropertyRef Name="user_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_USER_ext_USER">
+    <End Type="SV_db1Model.USER" Role="USER" Multiplicity="0..1" />
+    <End Type="SV_db1Model.USER_ext" Role="USER_ext" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="USER">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="USER_ext">
+        <PropertyRef Name="rel_USER_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

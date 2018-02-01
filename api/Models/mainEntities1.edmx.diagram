@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="0ab9d94926d6431bafc8207d302299e3" Name="Diagram1">
+        <EntityTypeShape EntityType="HS_sc_mainModel.ADDRESS" Width="1.5" PointX="3" PointY="2.5" />
+        <EntityTypeShape EntityType="HS_sc_mainModel.CAMPAIGN" Width="1.5" PointX="0.75" PointY="14.25" />
+        <EntityTypeShape EntityType="HS_sc_mainModel.con_LIST_SOUL" Width="1.5" PointX="16.5" PointY="2" />
+        <EntityTypeShape EntityType="HS_sc_mainModel.con_ORDERPROC_DOCTOR" Width="1.5" PointX="13.5" PointY="10" />
+        <EntityTypeShape EntityType="HS_sc_mainModel.con_SOUL_ref_upsell" Width="1.5" PointX="13.5" PointY="1.75" />
+        <EntityTypeShape EntityType="HS_sc_mainModel.Conditions_Profile" Width="1.5" PointX="2.75" PointY="14.25" />
+        <EntityTypeShape EntityType="HS_sc_mainModel.Doc_Education" Width="1.5" PointX="13.5" PointY="25.5" />
+        <EntityTypeShape EntityType="HS_sc_mainModel.Doc_Insurance" Width="1.5" PointX="17.25" PointY="17.125" />
+        <EntityTypeShape EntityType="HS_sc_mainModel.Doc_Insurance_Affiliation" Width="1.5" PointX="17.25" PointY="20.125" />
+        <EntityTypeShape EntityType="HS_sc_mainModel.Doc_Specialties_Profile" Width="1.5" PointX="13.5" PointY="21.875" />
+        <EntityTypeShape EntityType="HS_sc_mainModel.DOCTOR" Width="1.5" PointX="11.25" PointY="20.125" />
+        <EntityTypeShape EntityType="HS_sc_mainModel.Entity" Width="1.5" PointX="8" PointY="2.5" />
+        <EntityTypeShape EntityType="HS_sc_mainModel.Filter" Width="1.5" PointX="12.75" PointY="6.25" />
+        <EntityTypeShape EntityType="HS_sc_mainModel.INS_info_2" Width="1.5" PointX="4.75" PointY="14.25" />
+        <EntityTypeShape EntityType="HS_sc_mainModel.Insurance_Profile" Width="1.5" PointX="6.75" PointY="15.25" />
+        <EntityTypeShape EntityType="HS_sc_mainModel.ITEM" Width="1.5" PointX="14.75" PointY="5.25" />
+        <EntityTypeShape EntityType="HS_sc_mainModel.LIST" Width="1.5" PointX="14.25" PointY="28.5" />
+        <EntityTypeShape EntityType="HS_sc_mainModel.log_EXTERNAL" Width="1.5" PointX="15.75" PointY="8.25" />
+        <EntityTypeShape EntityType="HS_sc_mainModel.log_ORPROC" Width="1.5" PointX="6.75" PointY="18.25" />
+        <EntityTypeShape EntityType="HS_sc_mainModel.log_ORPROC_ALL" Width="1.5" PointX="13.75" PointY="18.25" />
+        <EntityTypeShape EntityType="HS_sc_mainModel.LOG_Q1" Width="1.5" PointX="16.75" PointY="5.25" />
+        <EntityTypeShape EntityType="HS_sc_mainModel.log_USER" Width="1.5" PointX="5.25" PointY="9.875" />
+        <EntityTypeShape EntityType="HS_sc_mainModel.Med_Specialties" Width="1.5" PointX="0.75" PointY="19.25" />
+        <EntityTypeShape EntityType="HS_sc_mainModel.NOTE" Width="1.5" PointX="2.75" PointY="19.25" />
+        <EntityTypeShape EntityType="HS_sc_mainModel.ORDER_info_2" Width="1.5" PointX="10.5" PointY="16.625" />
+        <EntityTypeShape EntityType="HS_sc_mainModel.ORDER_shipping" Width="1.5" PointX="10.5" PointY="6.25" />
+        <EntityTypeShape EntityType="HS_sc_mainModel.ORDERPROC" Width="1.5" PointX="8.25" PointY="8.75" />
+        <EntityTypeShape EntityType="HS_sc_mainModel.ref_EntityDefinition" Width="1.5" PointX="17.75" PointY="8.25" />
+        <EntityTypeShape EntityType="HS_sc_mainModel.ref_EntityType" Width="1.5" PointX="5.75" PointY="2.625" />
+        <EntityTypeShape EntityType="HS_sc_mainModel.ref_insurance_plan" Width="1.5" PointX="15" PointY="14.625" />
+        <EntityTypeShape EntityType="HS_sc_mainModel.ref_insurancecompanies" Width="1.5" PointX="12.75" PointY="15" />
+        <EntityTypeShape EntityType="HS_sc_mainModel.ref_orproc_state" Width="1.5" PointX="6" PointY="7.25" />
+        <EntityTypeShape EntityType="HS_sc_mainModel.ref_orproc_state_group" Width="1.5" PointX="17.75" PointY="12.25" />
+        <EntityTypeShape EntityType="HS_sc_mainModel.ref_specialties" Width="1.5" PointX="11.25" PointY="28.625" />
+        <EntityTypeShape EntityType="HS_sc_mainModel.ref_TAG" Width="1.5" PointX="18.75" PointY="2.25" />
+        <EntityTypeShape EntityType="HS_sc_mainModel.ref_trans_type" Width="1.5" PointX="18.75" PointY="5.25" />
+        <EntityTypeShape EntityType="HS_sc_mainModel.ref_upsell" Width="1.5" PointX="11.25" PointY="32.625" />
+        <EntityTypeShape EntityType="HS_sc_mainModel.ref_user_type" Width="1.5" PointX="0.75" PointY="10.25" />
+        <EntityTypeShape EntityType="HS_sc_mainModel.ref_zip" Width="1.5" PointX="0.75" PointY="2.875" />
+        <EntityTypeShape EntityType="HS_sc_mainModel.rel_EntityType_EntityDefinition" Width="1.5" PointX="19.75" PointY="8.25" />
+        <EntityTypeShape EntityType="HS_sc_mainModel.SETTING" Width="1.5" PointX="19.75" PointY="12.25" />
+        <EntityTypeShape EntityType="HS_sc_mainModel.SOUL" Width="1.5" PointX="11.25" PointY="0.75" />
+        <EntityTypeShape EntityType="HS_sc_mainModel.SOUL_info_2" Width="1.5" PointX="19.75" PointY="15.25" />
+        <EntityTypeShape EntityType="HS_sc_mainModel.SOUL_info_3" Width="1.5" PointX="4.75" PointY="22.25" />
+        <EntityTypeShape EntityType="HS_sc_mainModel.Table" Width="1.5" PointX="20.75" PointY="2.25" />
+        <EntityTypeShape EntityType="HS_sc_mainModel.TAG" Width="1.5" PointX="10.5" PointY="9.375" />
+        <EntityTypeShape EntityType="HS_sc_mainModel.USER" Width="1.5" PointX="3" PointY="9.25" />
+        <EntityTypeShape EntityType="HS_sc_mainModel.Table_1" Width="1.5" PointX="6.75" PointY="22.25" />
+        <AssociationConnector Association="HS_sc_mainModel.FK_ADDRESS_ref_zip" />
+        <AssociationConnector Association="HS_sc_mainModel.FK_con_LIST_SOUL_LIST" />
+        <AssociationConnector Association="HS_sc_mainModel.FK_con_LIST_SOUL_SOUL" />
+        <AssociationConnector Association="HS_sc_mainModel.FK_con_ORDERPROC_DOCTOR_DOCTOR" />
+        <AssociationConnector Association="HS_sc_mainModel.FK_con_ORDERPROC_DOCTOR_ORDERPROC" />
+        <AssociationConnector Association="HS_sc_mainModel.FK_con_ORDERPROC_DOCTOR_SOUL" />
+        <AssociationConnector Association="HS_sc_mainModel.FK_con_SOUL_ref_upsell_ref_upsell" />
+        <AssociationConnector Association="HS_sc_mainModel.FK_con_SOUL_ref_upsell_SOUL" />
+        <AssociationConnector Association="HS_sc_mainModel.FK_Doc_Education_ToTable" />
+        <AssociationConnector Association="HS_sc_mainModel.FK_DOCTOR" />
+        <AssociationConnector Association="HS_sc_mainModel.FK_ref_Insurance" />
+        <AssociationConnector Association="HS_sc_mainModel.FK_Table_DOCTOR" />
+        <AssociationConnector Association="HS_sc_mainModel.FK_Table_Insurance" />
+        <AssociationConnector Association="HS_sc_mainModel.FK_Doc_Specialties_Profile_ToTable" />
+        <AssociationConnector Association="HS_sc_mainModel.FK_Doc_Specialties_Profile_ToTable_1" />
+        <AssociationConnector Association="HS_sc_mainModel.FK__Entity__ref_Enti__7B7B4DDC" />
+        <AssociationConnector Association="HS_sc_mainModel.FK_log_USER_USER" />
+        <AssociationConnector Association="HS_sc_mainModel.FK_ORDER_info_2_ORDERPROC" />
+        <AssociationConnector Association="HS_sc_mainModel.FK_ORDER_shipping_ORDERPROC" />
+        <AssociationConnector Association="HS_sc_mainModel.FK_ORDERPROC_ref_orproc_state" />
+        <AssociationConnector Association="HS_sc_mainModel.FK_ORDERPROC_USER" />
+        <AssociationConnector Association="HS_sc_mainModel.FK_tags_ORDERPROC" />
+        <AssociationConnector Association="HS_sc_mainModel.FK_Table_ToTable" />
+        <AssociationConnector Association="HS_sc_mainModel.FK_USER_ref_user_type" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

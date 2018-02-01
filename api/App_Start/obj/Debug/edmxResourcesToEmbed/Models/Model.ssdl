@@ -1,0 +1,870 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Models.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="ADDRESS">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="address1" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="address2" Type="varchar" MaxLength="100" />
+    <Property Name="xus_city" Type="varchar" MaxLength="50" />
+    <Property Name="xus_state" Type="varchar" MaxLength="10" />
+    <Property Name="xus_zip" Type="varchar" MaxLength="10" />
+    <Property Name="rel_ref_zip_id" Type="bigint" Nullable="false" />
+    <Property Name="OR_zip_city" Type="varchar" MaxLength="100" />
+    <Property Name="rel_ref_country_id" Type="bigint" Nullable="false" />
+    <Property Name="last_update" Type="datetime" />
+    <Property Name="last_updated_by" Type="bigint" />
+  </EntityType>
+  <EntityType Name="CAMPAIGN">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="code" Type="varchar" MaxLength="50" />
+    <Property Name="name" Type="varchar" MaxLength="50" />
+    <Property Name="drop_date_set" Type="date" />
+    <Property Name="drop_date_actual" Type="date" />
+    <Property Name="rel_ref_campaign_type" Type="bigint" />
+    <Property Name="type" Type="varchar" MaxLength="50" />
+    <Property Name="quantity" Type="bigint" />
+    <Property Name="phone" Type="varchar" MaxLength="50" />
+    <Property Name="created_on" Type="datetime" />
+    <Property Name="created_by" Type="bigint" />
+    <Property Name="updated_on" Type="datetime" />
+    <Property Name="updated_by" Type="bigint" />
+  </EntityType>
+  <EntityType Name="con_LIST_SOUL">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="rel_LIST_id" Type="bigint" Nullable="false" />
+    <Property Name="rel_SOUL_id" Type="bigint" Nullable="false" />
+    <Property Name="rc_tail" Type="bigint" />
+  </EntityType>
+  <EntityType Name="con_ORDERPROC_DOCTOR">
+    <Key>
+      <PropertyRef Name="rel_ORDERPROC_id" />
+    </Key>
+    <Property Name="rel_ORDERPROC_id" Type="bigint" Nullable="false" />
+    <Property Name="rel_SOUL_id" Type="bigint" Nullable="false" />
+    <Property Name="rel_DOCTOR_id" Type="bigint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="con_SOUL_ref_upsell">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="rel_SOUL_id" Type="bigint" Nullable="false" />
+    <Property Name="rel_ref_upsell_id" Type="bigint" Nullable="false" />
+    <Property Name="meta" Type="varchar(max)" />
+    <Property Name="meta_2" Type="varchar" MaxLength="150" />
+    <Property Name="timestamp" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Conditions_Profile">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="description" Type="nvarchar" MaxLength="100" />
+    <Property Name="symptoms" Type="nvarchar" MaxLength="100" />
+    <Property Name="category" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Doc_Insurance_Affiliation">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="doc_id" Type="bigint" />
+    <Property Name="insurance_id" Type="bigint" />
+  </EntityType>
+  <EntityType Name="Doc_Specialties_Profile">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="doctor_id" Type="int" />
+    <Property Name="specialty_id" Type="nchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="DOCTOR">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="doctor_name" Type="varchar" MaxLength="200" />
+    <Property Name="gender" Type="nchar" MaxLength="10" />
+    <Property Name="title" Type="nvarchar" MaxLength="50" />
+    <Property Name="doctor_phone" Type="varchar" MaxLength="50" />
+    <Property Name="doctor_fax" Type="varchar" MaxLength="50" />
+    <Property Name="doctor_NPI" Type="varchar" MaxLength="50" />
+    <Property Name="doctor_NPI_type" Type="nchar" MaxLength="20" />
+    <Property Name="doctor_org_name" Type="nvarchar" MaxLength="200" />
+    <Property Name="doctor_rel_ADDRESS_id" Type="bigint" />
+    <Property Name="doctor_state_m_id" Type="varchar" MaxLength="50" />
+    <Property Name="doctor_medicare_upin" Type="varchar" MaxLength="50" />
+    <Property Name="doctor_license_no" Type="varchar" MaxLength="50" />
+    <Property Name="doctor_pecos_cert" Type="bit" />
+    <Property Name="doctor_fax_to" Type="varchar" MaxLength="50" />
+    <Property Name="doctor_address1" Type="nvarchar" MaxLength="500" />
+    <Property Name="doctor_address2" Type="nvarchar" MaxLength="500" />
+    <Property Name="doctor_address_state" Type="varchar" MaxLength="2" />
+    <Property Name="doctor_address_city" Type="varchar" MaxLength="50" />
+    <Property Name="doctor_address" Type="varchar" MaxLength="100" />
+    <Property Name="doctor_address_zip" Type="varchar" MaxLength="50" />
+    <Property Name="last_update_by" Type="bigint" />
+    <Property Name="last_update" Type="datetime" />
+    <Property Name="status" Type="int" />
+  </EntityType>
+  <EntityType Name="INS_info_2">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="benefit_level" Type="varchar" MaxLength="50" />
+    <Property Name="DME_benefits" Type="bit" />
+    <Property Name="effective_date" Type="datetime" />
+    <Property Name="deductible" Type="decimal" Precision="18" Scale="4" />
+    <Property Name="deductible_met" Type="decimal" Precision="18" Scale="4" />
+    <Property Name="percent_coverage" Type="float" />
+    <Property Name="out_of_pocket" Type="decimal" Precision="18" Scale="4" />
+    <Property Name="co_pay" Type="bit" />
+    <Property Name="co_pay_amount" Type="decimal" Precision="18" Scale="4" />
+    <Property Name="preauth_req" Type="bit" />
+    <Property Name="preauth_contact" Type="varchar" MaxLength="50" />
+    <Property Name="payor_id" Type="varchar" MaxLength="50" />
+    <Property Name="preauth_info" Type="varchar" MaxLength="800" />
+  </EntityType>
+  <EntityType Name="Insurance_Profile">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="plan_name" Type="nvarchar" MaxLength="100" />
+    <Property Name="provider" Type="nvarchar" MaxLength="100" />
+    <Property Name="category" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="ITEM">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" Nullable="false" />
+    <Property Name="name" Type="varchar" MaxLength="50" />
+    <Property Name="code" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="description" Type="varchar" MaxLength="200" />
+    <Property Name="HCPC" Type="varchar" MaxLength="10" />
+    <Property Name="price" Type="decimal" Precision="18" Scale="2" />
+  </EntityType>
+  <EntityType Name="LIST">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="description" Type="varchar" MaxLength="200" />
+    <Property Name="segment" Type="varchar" MaxLength="50" />
+    <Property Name="order_number" Type="bigint" />
+    <Property Name="res_code" Type="varchar" MaxLength="10" />
+    <Property Name="order_quantity" Type="bigint" />
+    <Property Name="date_emailed" Type="date" />
+    <Property Name="final_quantity" Type="bigint" />
+    <Property Name="date_mailed" Type="date" />
+    <Property Name="mail_quantity" Type="bigint" />
+    <Property Name="response_count" Type="bigint" />
+    <Property Name="accepted_count" Type="bigint" />
+    <Property Name="last_hit" Type="datetime" />
+    <Property Name="last_update" Type="datetime" />
+    <Property Name="last_update_by" Type="datetime" />
+    <Property Name="drop_description" Type="varchar" MaxLength="50" />
+    <Property Name="phone_number" Type="varchar" MaxLength="10" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6013: The table/view 'HS_sc_main.dbo.log_Audit' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="log_Audit">
+          <Property Name="Type" Type="char" MaxLength="1" />
+          <Property Name="TableName" Type="varchar" MaxLength="128" />
+          <Property Name="PK" Type="varchar" MaxLength="1000" />
+          <Property Name="FieldName" Type="varchar" MaxLength="128" />
+          <Property Name="OldValue" Type="varchar" MaxLength="1000" />
+          <Property Name="NewValue" Type="varchar" MaxLength="1000" />
+          <Property Name="UpdateDate" Type="datetime" />
+          <Property Name="UserName" Type="varchar" MaxLength="128" />
+        </EntityType>-->
+  <EntityType Name="log_EXTERNAL">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="rel_ref_external_type_id" Type="bigint" />
+    <Property Name="external_type" Type="varchar" MaxLength="50" />
+    <Property Name="data_out" Type="varchar(max)" />
+    <Property Name="data_in" Type="varchar(max)" />
+    <Property Name="meta" Type="varchar(max)" />
+    <Property Name="timestamp" Type="datetime" Nullable="false" />
+    <Property Name="rel_SOUL_id" Type="bigint" />
+    <Property Name="executed_by" Type="bigint" />
+    <Property Name="rel_ORPROC_id" Type="bigint" />
+  </EntityType>
+  <EntityType Name="log_ORPROC">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="rel_ORDERPROC_id" Type="bigint" Nullable="false" />
+    <Property Name="action" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="meta" Type="varchar" MaxLength="500" />
+    <Property Name="executed_by" Type="bigint" Nullable="false" />
+    <Property Name="executed_on" Type="datetime" Nullable="false" />
+    <Property Name="var_from" Type="varchar" MaxLength="100" />
+    <Property Name="var_to" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="log_ORPROC_ALL">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="rel_ORDERPROC_id" Type="bigint" Nullable="false" />
+    <Property Name="action" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="meta" Type="varchar" MaxLength="500" />
+    <Property Name="executed_by" Type="bigint" Nullable="false" />
+    <Property Name="executed_on" Type="datetime" Nullable="false" />
+    <Property Name="var_from" Type="varchar" MaxLength="100" />
+    <Property Name="var_to" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="LOG_Q1">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="acct_manager" Type="bigint" Nullable="false" />
+    <Property Name="rel_ref_orprocstate_id" Type="bigint" Nullable="false" />
+    <Property Name="count" Type="bigint" Nullable="false" />
+    <Property Name="order_ids" Type="varchar(max)" />
+    <Property Name="date" Type="date" Nullable="false" />
+  </EntityType>
+  <EntityType Name="log_USER">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="rel_USER_id" Type="bigint" />
+    <Property Name="action_note" Type="varchar" MaxLength="100" />
+    <Property Name="rel_ref_action_id" Type="bigint" />
+    <Property Name="timestamp" Type="datetime" />
+    <Property Name="ip" Type="varchar" MaxLength="20" />
+    <Property Name="page" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Med_Specialties">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="nvarchar" MaxLength="100" />
+    <Property Name="description" Type="nvarchar" MaxLength="100" />
+    <Property Name="category" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="NOTE">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="text" Type="varchar" MaxLength="800" Nullable="false" />
+    <Property Name="written_by" Type="bigint" Nullable="false" />
+    <Property Name="written_on" Type="datetime" Nullable="false" />
+    <Property Name="note_type" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="rel_ref_note_type_id" Type="bigint" />
+    <Property Name="rel_parent_id" Type="bigint" />
+    <Property Name="tags" Type="varchar" MaxLength="500" />
+  </EntityType>
+  <EntityType Name="ORDER_info_2">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="rel_ORDERPROC_id" Type="bigint" Nullable="false" />
+    <Property Name="date_actual_ship" Type="datetime" />
+    <Property Name="shipped_through" Type="varchar" MaxLength="50" />
+    <Property Name="tracking_no" Type="varchar" MaxLength="50" />
+    <Property Name="date_AOB_received" Type="datetime" />
+  </EntityType>
+  <EntityType Name="ORDER_shipping">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="date" Type="date" Nullable="false" />
+    <Property Name="trackng_number" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="rel_ref_shipping_status_id" Type="bigint" />
+    <Property Name="notes" Type="varchar" MaxLength="500" />
+    <Property Name="rel_ORDERPROC_id" Type="bigint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ORDERPROC">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="rel_TRANSACTION_id" Type="bigint" Nullable="false" />
+    <Property Name="rel_ref_orproc_state_id" Type="bigint" Nullable="false" />
+    <Property Name="taken_by" Type="bigint" />
+    <Property Name="taken_on" Type="datetime" />
+    <Property Name="last_update" Type="datetime" />
+    <Property Name="last_update_by" Type="bigint" />
+    <Property Name="rel_ITEM_id" Type="bigint" Nullable="false" />
+    <Property Name="date_added" Type="datetime" />
+    <Property Name="meta" Type="varchar(max)" />
+    <Property Name="stay_taken" Type="bit" />
+    <Property Name="acct_managed_by" Type="bigint" />
+    <Property Name="tags" Type="varchar" MaxLength="500" />
+    <Property Name="tags_sys" Type="varchar" MaxLength="500" />
+  </EntityType>
+  <EntityType Name="ref_orproc_state">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" Nullable="false" />
+    <Property Name="name" Type="varchar" MaxLength="50" />
+    <Property Name="description" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="ref_orproc_state_group">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" Nullable="false" />
+    <Property Name="code" Type="varchar" MaxLength="10" />
+    <Property Name="members" Type="varchar" MaxLength="800" />
+    <Property Name="active" Type="nchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="ref_TAG">
+    <Key>
+      <PropertyRef Name="tag" />
+    </Key>
+    <Property Name="tag" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="pname" Type="varchar" MaxLength="100" />
+    <Property Name="rel_ref_tag_type_code" Type="char" MaxLength="4" Nullable="false" />
+    <Property Name="tag_parent" Type="varchar" MaxLength="100" />
+    <Property Name="active" Type="bit" />
+  </EntityType>
+  <EntityType Name="ref_trans_type">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" Nullable="false" />
+    <Property Name="name" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="description" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="ref_upsell">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="description" Type="varchar" MaxLength="200" />
+  </EntityType>
+  <EntityType Name="ref_user_type">
+    <Key>
+      <PropertyRef Name="code" />
+    </Key>
+    <Property Name="code" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="description" Type="varchar" MaxLength="100" />
+    <Property Name="meta" Type="varchar" MaxLength="200" />
+  </EntityType>
+  <EntityType Name="ref_zip">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="zip" Type="char" MaxLength="5" Nullable="false" />
+    <Property Name="city_name" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="city_state" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="city_lat" Type="float" Nullable="false" />
+    <Property Name="city_lon" Type="float" Nullable="false" />
+    <Property Name="city_county" Type="varchar" MaxLength="100" Nullable="false" />
+  </EntityType>
+  <EntityType Name="SETTINGS">
+    <Key>
+      <PropertyRef Name="setting_name" />
+    </Key>
+    <Property Name="setting_name" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="value" Type="varchar(max)" />
+  </EntityType>
+  <EntityType Name="SOUL">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name_first" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="name_last" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="phone_number" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="rel_ADDRESS_id" Type="bigint" Nullable="false" />
+    <Property Name="email" Type="varchar" MaxLength="100" />
+    <Property Name="meta" Type="varchar(max)" />
+    <Property Name="OR_LIST_res_code" Type="varchar" MaxLength="10" />
+    <Property Name="last_contact" Type="datetime" />
+    <Property Name="last_contact_by" Type="bigint" />
+    <Property Name="last_update" Type="datetime" />
+    <Property Name="last_update_by" Type="bigint" />
+    <Property Name="timestamp" Type="datetime" />
+    <Property Name="alt_name" Type="varchar" MaxLength="200" />
+    <Property Name="alt_phone" Type="varchar" MaxLength="50" />
+    <Property Name="alt_relationship" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="SOUL_info_2">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="rel_SOUL_id" Type="bigint" Nullable="false" />
+    <Property Name="authorized_representative" Type="bit" />
+    <Property Name="received_similar_product" Type="bit" />
+    <Property Name="received_similar_covered" Type="bit" />
+    <Property Name="list_other_health_concerns" Type="varchar" MaxLength="500" />
+    <Property Name="name_on_ins_card" Type="varchar" MaxLength="200" />
+    <Property Name="date_birth" Type="date" />
+    <Property Name="height" Type="float" />
+    <Property Name="weight" Type="float" />
+    <Property Name="doctor_name" Type="varchar" MaxLength="200" />
+    <Property Name="doctor_phone" Type="varchar" MaxLength="50" />
+    <Property Name="doctor_fax" Type="varchar" MaxLength="50" />
+    <Property Name="ins_primary" Type="varchar" MaxLength="50" />
+    <Property Name="pins_policy_number" Type="varchar" MaxLength="50" />
+    <Property Name="pins_rel_ADDRESS_id" Type="bigint" />
+    <Property Name="pins_phone" Type="varchar" MaxLength="50" />
+    <Property Name="sins_policy_number" Type="varchar" MaxLength="50" />
+    <Property Name="sins_rel_ADDRESS_id" Type="bigint" />
+    <Property Name="sins_phone" Type="varchar" MaxLength="50" />
+    <Property Name="waist_size" Type="int" />
+    <Property Name="pins_name" Type="varchar" MaxLength="100" />
+    <Property Name="sins_name" Type="varchar" MaxLength="100" />
+    <Property Name="pins_group_no" Type="varchar" MaxLength="50" />
+    <Property Name="sins_group_no" Type="varchar" MaxLength="50" />
+    <Property Name="interested_in_AED" Type="bit" />
+    <Property Name="doctor_NPI" Type="varchar" MaxLength="50" />
+    <Property Name="doctor_rel_ADDRESS_id" Type="bigint" />
+    <Property Name="SSN" Type="varchar" MaxLength="50" />
+    <Property Name="doctor_state_m_id" Type="varchar" MaxLength="50" />
+    <Property Name="doctor_medicare_upin" Type="varchar" MaxLength="50" />
+    <Property Name="doctor_license_no" Type="varchar" MaxLength="50" />
+    <Property Name="doctor_pecos_cert" Type="bit" />
+    <Property Name="doctor_fax_to" Type="varchar" MaxLength="50" />
+    <Property Name="doctor_address_state" Type="varchar" MaxLength="2" />
+    <Property Name="doctor_address_city" Type="varchar" MaxLength="50" />
+    <Property Name="doctor_address" Type="varchar" MaxLength="100" />
+    <Property Name="doctor_address_zip" Type="varchar" MaxLength="50" />
+    <Property Name="pins_info_2_id" Type="bigint" />
+    <Property Name="sins_info_2_id" Type="bigint" />
+    <Property Name="injury_covered_under" Type="varchar" MaxLength="100" />
+    <Property Name="injury_covered_claimno" Type="varchar" MaxLength="50" />
+    <Property Name="gender" Type="char" MaxLength="1" />
+    <Property Name="diabetic" Type="bit" />
+    <Property Name="cpap" Type="bit" />
+    <Property Name="diabetic_confirm" Type="bit" />
+    <Property Name="ppo" Type="bit" />
+    <Property Name="jpc_interested" Type="bit" />
+  </EntityType>
+  <EntityType Name="SOUL_info_3">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="rel_SOUL_id" Type="bigint" Nullable="false" />
+    <Property Name="home_phone2" Type="varchar" MaxLength="50" />
+    <Property Name="home_phone_co" Type="varchar" MaxLength="50" />
+    <Property Name="emgcy_contact1_name" Type="varchar" MaxLength="200" />
+    <Property Name="emgcy_contact1_relation" Type="varchar" MaxLength="50" />
+    <Property Name="emgcy_contact1_phone1" Type="varchar" MaxLength="50" />
+    <Property Name="emgcy_contact1_phone2" Type="varchar" MaxLength="50" />
+    <Property Name="emgcy_contact1_phone3" Type="varchar" MaxLength="50" />
+    <Property Name="emgcy_contact1_hasaccess" Type="bit" />
+    <Property Name="emgcy_contact2_name" Type="varchar" MaxLength="200" />
+    <Property Name="emgcy_contact2_relation" Type="varchar" MaxLength="50" />
+    <Property Name="emgcy_contact2_phone1" Type="varchar" MaxLength="50" />
+    <Property Name="emgcy_contact2_phone2" Type="varchar" MaxLength="50" />
+    <Property Name="emgcy_contact2_phone3" Type="varchar" MaxLength="50" />
+    <Property Name="emgcy_contact2_hasaccess" Type="bit" />
+    <Property Name="emgcy_contact3_name" Type="varchar" MaxLength="200" />
+    <Property Name="emgcy_contact3_relation" Type="varchar" MaxLength="50" />
+    <Property Name="emgcy_contact3_phone1" Type="varchar" MaxLength="50" />
+    <Property Name="emgcy_contact3_phone2" Type="varchar" MaxLength="50" />
+    <Property Name="emgcy_contact3_phone3" Type="varchar" MaxLength="50" />
+    <Property Name="emgcy_contact3_hasaccess" Type="bit" />
+    <Property Name="pref_hospital_name" Type="varchar" MaxLength="200" />
+    <Property Name="pref_hospital_city" Type="varchar" MaxLength="50" />
+    <Property Name="pref_hospital_state" Type="varchar" MaxLength="2" />
+    <Property Name="pref_hospital_phone" Type="varchar" MaxLength="50" />
+    <Property Name="allergies" Type="varchar" MaxLength="500" />
+    <Property Name="emgcy_special_instructions" Type="varchar" MaxLength="500" />
+    <Property Name="home_hidden_key_loc" Type="varchar" MaxLength="200" />
+    <Property Name="medical_conditions" Type="varchar" MaxLength="500" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'HS_sc_main.dbo.Table_1' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Table_1">
+    <Key>
+      <PropertyRef Name="id" />
+      <PropertyRef Name="rel_TRANSACTION_id" />
+      <PropertyRef Name="rel_ref_orproc_state_id" />
+      <PropertyRef Name="taken_by" />
+      <PropertyRef Name="taken_on" />
+    </Key>
+    <Property Name="id" Type="bigint" Nullable="false" />
+    <Property Name="rel_TRANSACTION_id" Type="bigint" Nullable="false" />
+    <Property Name="rel_ref_orproc_state_id" Type="bigint" Nullable="false" />
+    <Property Name="taken_by" Type="bigint" Nullable="false" />
+    <Property Name="taken_on" Type="bigint" Nullable="false" />
+    <Property Name="last_update" Type="datetime" />
+    <Property Name="last_update_by" Type="bigint" />
+  </EntityType>
+  <EntityType Name="TAG">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="value" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="rel_ORDERPROC_id" Type="bigint" Nullable="false" />
+    <Property Name="rel_NOTE_id" Type="bigint" />
+    <Property Name="date1" Type="datetime" />
+    <Property Name="date2" Type="datetime" />
+    <Property Name="type" Type="varchar" MaxLength="10" />
+    <Property Name="created_on" Type="datetime" Nullable="false" />
+    <Property Name="created_by" Type="bigint" Nullable="false" />
+    <Property Name="status" Type="varchar" MaxLength="10" />
+    <Property Name="updated_on" Type="datetime" />
+    <Property Name="updated_by" Type="bigint" />
+  </EntityType>
+  <EntityType Name="USER">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" Nullable="false" />
+    <Property Name="rel_ref_user_type_code" Type="varchar" MaxLength="50" />
+    <Property Name="username" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="password" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="name_first" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="name_last" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="last_login" Type="datetime" />
+    <Property Name="active" Type="bit" Nullable="false" />
+    <Property Name="meta" Type="varchar(max)" />
+    <Property Name="logged_in" Type="bit" />
+  </EntityType>
+  <Association Name="FK_ADDRESS_ref_zip">
+    <End Role="ref_zip" Type="Self.ref_zip" Multiplicity="1" />
+    <End Role="ADDRESS" Type="Self.ADDRESS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ref_zip">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="ADDRESS">
+        <PropertyRef Name="rel_ref_zip_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_con_LIST_SOUL_LIST">
+    <End Role="LIST" Type="Self.LIST" Multiplicity="1" />
+    <End Role="con_LIST_SOUL" Type="Self.con_LIST_SOUL" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LIST">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="con_LIST_SOUL">
+        <PropertyRef Name="rel_LIST_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_con_LIST_SOUL_SOUL">
+    <End Role="SOUL" Type="Self.SOUL" Multiplicity="1" />
+    <End Role="con_LIST_SOUL" Type="Self.con_LIST_SOUL" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SOUL">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="con_LIST_SOUL">
+        <PropertyRef Name="rel_SOUL_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_con_ORDERPROC_DOCTOR_DOCTOR">
+    <End Role="DOCTOR" Type="Self.DOCTOR" Multiplicity="1" />
+    <End Role="con_ORDERPROC_DOCTOR" Type="Self.con_ORDERPROC_DOCTOR" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DOCTOR">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="con_ORDERPROC_DOCTOR">
+        <PropertyRef Name="rel_DOCTOR_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_con_ORDERPROC_DOCTOR_ORDERPROC">
+    <End Role="ORDERPROC" Type="Self.ORDERPROC" Multiplicity="1" />
+    <End Role="con_ORDERPROC_DOCTOR" Type="Self.con_ORDERPROC_DOCTOR" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="ORDERPROC">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="con_ORDERPROC_DOCTOR">
+        <PropertyRef Name="rel_ORDERPROC_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_con_ORDERPROC_DOCTOR_SOUL">
+    <End Role="SOUL" Type="Self.SOUL" Multiplicity="1" />
+    <End Role="con_ORDERPROC_DOCTOR" Type="Self.con_ORDERPROC_DOCTOR" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SOUL">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="con_ORDERPROC_DOCTOR">
+        <PropertyRef Name="rel_SOUL_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_con_SOUL_ref_upsell_ref_upsell">
+    <End Role="ref_upsell" Type="Self.ref_upsell" Multiplicity="1" />
+    <End Role="con_SOUL_ref_upsell" Type="Self.con_SOUL_ref_upsell" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ref_upsell">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="con_SOUL_ref_upsell">
+        <PropertyRef Name="rel_ref_upsell_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_con_SOUL_ref_upsell_SOUL">
+    <End Role="SOUL" Type="Self.SOUL" Multiplicity="1" />
+    <End Role="con_SOUL_ref_upsell" Type="Self.con_SOUL_ref_upsell" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SOUL">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="con_SOUL_ref_upsell">
+        <PropertyRef Name="rel_SOUL_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_log_USER_USER">
+    <End Role="USER" Type="Self.USER" Multiplicity="0..1" />
+    <End Role="log_USER" Type="Self.log_USER" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="USER">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="log_USER">
+        <PropertyRef Name="rel_USER_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ORDER_info_2_ORDERPROC">
+    <End Role="ORDERPROC" Type="Self.ORDERPROC" Multiplicity="1" />
+    <End Role="ORDER_info_2" Type="Self.ORDER_info_2" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ORDERPROC">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="ORDER_info_2">
+        <PropertyRef Name="rel_ORDERPROC_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ORDER_shipping_ORDERPROC">
+    <End Role="ORDERPROC" Type="Self.ORDERPROC" Multiplicity="1" />
+    <End Role="ORDER_shipping" Type="Self.ORDER_shipping" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ORDERPROC">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="ORDER_shipping">
+        <PropertyRef Name="rel_ORDERPROC_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ORDERPROC_ref_orproc_state">
+    <End Role="ref_orproc_state" Type="Self.ref_orproc_state" Multiplicity="1" />
+    <End Role="ORDERPROC" Type="Self.ORDERPROC" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ref_orproc_state">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="ORDERPROC">
+        <PropertyRef Name="rel_ref_orproc_state_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ORDERPROC_USER">
+    <End Role="USER" Type="Self.USER" Multiplicity="0..1" />
+    <End Role="ORDERPROC" Type="Self.ORDERPROC" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="USER">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="ORDERPROC">
+        <PropertyRef Name="acct_managed_by" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Table_DOCTOR">
+    <End Role="DOCTOR" Type="Self.DOCTOR" Multiplicity="0..1" />
+    <End Role="Doc_Insurance_Affiliation" Type="Self.Doc_Insurance_Affiliation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DOCTOR">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Doc_Insurance_Affiliation">
+        <PropertyRef Name="doc_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Table_Insurance">
+    <End Role="Insurance_Profile" Type="Self.Insurance_Profile" Multiplicity="0..1" />
+    <End Role="Doc_Insurance_Affiliation" Type="Self.Doc_Insurance_Affiliation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Insurance_Profile">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Doc_Insurance_Affiliation">
+        <PropertyRef Name="insurance_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tags_ORDERPROC">
+    <End Role="ORDERPROC" Type="Self.ORDERPROC" Multiplicity="1" />
+    <End Role="TAG" Type="Self.TAG" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ORDERPROC">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="TAG">
+        <PropertyRef Name="rel_ORDERPROC_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_USER_ref_user_type">
+    <End Role="ref_user_type" Type="Self.ref_user_type" Multiplicity="0..1" />
+    <End Role="USER" Type="Self.USER" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ref_user_type">
+        <PropertyRef Name="code" />
+      </Principal>
+      <Dependent Role="USER">
+        <PropertyRef Name="rel_ref_user_type_code" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="ModelsStoreContainer">
+    <EntitySet Name="ADDRESS" EntityType="Self.ADDRESS" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CAMPAIGN" EntityType="Self.CAMPAIGN" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="con_LIST_SOUL" EntityType="Self.con_LIST_SOUL" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="con_ORDERPROC_DOCTOR" EntityType="Self.con_ORDERPROC_DOCTOR" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="con_SOUL_ref_upsell" EntityType="Self.con_SOUL_ref_upsell" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Conditions_Profile" EntityType="Self.Conditions_Profile" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Doc_Insurance_Affiliation" EntityType="Self.Doc_Insurance_Affiliation" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Doc_Specialties_Profile" EntityType="Self.Doc_Specialties_Profile" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DOCTOR" EntityType="Self.DOCTOR" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="INS_info_2" EntityType="Self.INS_info_2" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Insurance_Profile" EntityType="Self.Insurance_Profile" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ITEM" EntityType="Self.ITEM" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="LIST" EntityType="Self.LIST" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="log_EXTERNAL" EntityType="Self.log_EXTERNAL" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="log_ORPROC" EntityType="Self.log_ORPROC" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="log_ORPROC_ALL" EntityType="Self.log_ORPROC_ALL" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="LOG_Q1" EntityType="Self.LOG_Q1" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="log_USER" EntityType="Self.log_USER" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Med_Specialties" EntityType="Self.Med_Specialties" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="NOTE" EntityType="Self.NOTE" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ORDER_info_2" EntityType="Self.ORDER_info_2" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ORDER_shipping" EntityType="Self.ORDER_shipping" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ORDERPROC" EntityType="Self.ORDERPROC" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ref_orproc_state" EntityType="Self.ref_orproc_state" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ref_orproc_state_group" EntityType="Self.ref_orproc_state_group" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ref_TAG" EntityType="Self.ref_TAG" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ref_trans_type" EntityType="Self.ref_trans_type" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ref_upsell" EntityType="Self.ref_upsell" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ref_user_type" EntityType="Self.ref_user_type" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ref_zip" EntityType="Self.ref_zip" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SETTINGS" EntityType="Self.SETTINGS" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SOUL" EntityType="Self.SOUL" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SOUL_info_2" EntityType="Self.SOUL_info_2" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SOUL_info_3" EntityType="Self.SOUL_info_3" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TAG" EntityType="Self.TAG" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="USER" EntityType="Self.USER" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Table_1" EntityType="Self.Table_1" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Table_1].[id] AS [id], 
+    [Table_1].[rel_TRANSACTION_id] AS [rel_TRANSACTION_id], 
+    [Table_1].[rel_ref_orproc_state_id] AS [rel_ref_orproc_state_id], 
+    [Table_1].[taken_by] AS [taken_by], 
+    [Table_1].[taken_on] AS [taken_on], 
+    [Table_1].[last_update] AS [last_update], 
+    [Table_1].[last_update_by] AS [last_update_by]
+    FROM [dbo].[Table_1] AS [Table_1]</DefiningQuery>
+    </EntitySet>
+    <AssociationSet Name="FK_ADDRESS_ref_zip" Association="Self.FK_ADDRESS_ref_zip">
+      <End Role="ref_zip" EntitySet="ref_zip" />
+      <End Role="ADDRESS" EntitySet="ADDRESS" />
+    </AssociationSet>
+    <AssociationSet Name="FK_con_LIST_SOUL_LIST" Association="Self.FK_con_LIST_SOUL_LIST">
+      <End Role="LIST" EntitySet="LIST" />
+      <End Role="con_LIST_SOUL" EntitySet="con_LIST_SOUL" />
+    </AssociationSet>
+    <AssociationSet Name="FK_con_LIST_SOUL_SOUL" Association="Self.FK_con_LIST_SOUL_SOUL">
+      <End Role="SOUL" EntitySet="SOUL" />
+      <End Role="con_LIST_SOUL" EntitySet="con_LIST_SOUL" />
+    </AssociationSet>
+    <AssociationSet Name="FK_con_ORDERPROC_DOCTOR_DOCTOR" Association="Self.FK_con_ORDERPROC_DOCTOR_DOCTOR">
+      <End Role="DOCTOR" EntitySet="DOCTOR" />
+      <End Role="con_ORDERPROC_DOCTOR" EntitySet="con_ORDERPROC_DOCTOR" />
+    </AssociationSet>
+    <AssociationSet Name="FK_con_ORDERPROC_DOCTOR_ORDERPROC" Association="Self.FK_con_ORDERPROC_DOCTOR_ORDERPROC">
+      <End Role="ORDERPROC" EntitySet="ORDERPROC" />
+      <End Role="con_ORDERPROC_DOCTOR" EntitySet="con_ORDERPROC_DOCTOR" />
+    </AssociationSet>
+    <AssociationSet Name="FK_con_ORDERPROC_DOCTOR_SOUL" Association="Self.FK_con_ORDERPROC_DOCTOR_SOUL">
+      <End Role="SOUL" EntitySet="SOUL" />
+      <End Role="con_ORDERPROC_DOCTOR" EntitySet="con_ORDERPROC_DOCTOR" />
+    </AssociationSet>
+    <AssociationSet Name="FK_con_SOUL_ref_upsell_ref_upsell" Association="Self.FK_con_SOUL_ref_upsell_ref_upsell">
+      <End Role="ref_upsell" EntitySet="ref_upsell" />
+      <End Role="con_SOUL_ref_upsell" EntitySet="con_SOUL_ref_upsell" />
+    </AssociationSet>
+    <AssociationSet Name="FK_con_SOUL_ref_upsell_SOUL" Association="Self.FK_con_SOUL_ref_upsell_SOUL">
+      <End Role="SOUL" EntitySet="SOUL" />
+      <End Role="con_SOUL_ref_upsell" EntitySet="con_SOUL_ref_upsell" />
+    </AssociationSet>
+    <AssociationSet Name="FK_log_USER_USER" Association="Self.FK_log_USER_USER">
+      <End Role="USER" EntitySet="USER" />
+      <End Role="log_USER" EntitySet="log_USER" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ORDER_info_2_ORDERPROC" Association="Self.FK_ORDER_info_2_ORDERPROC">
+      <End Role="ORDERPROC" EntitySet="ORDERPROC" />
+      <End Role="ORDER_info_2" EntitySet="ORDER_info_2" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ORDER_shipping_ORDERPROC" Association="Self.FK_ORDER_shipping_ORDERPROC">
+      <End Role="ORDERPROC" EntitySet="ORDERPROC" />
+      <End Role="ORDER_shipping" EntitySet="ORDER_shipping" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ORDERPROC_ref_orproc_state" Association="Self.FK_ORDERPROC_ref_orproc_state">
+      <End Role="ref_orproc_state" EntitySet="ref_orproc_state" />
+      <End Role="ORDERPROC" EntitySet="ORDERPROC" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ORDERPROC_USER" Association="Self.FK_ORDERPROC_USER">
+      <End Role="USER" EntitySet="USER" />
+      <End Role="ORDERPROC" EntitySet="ORDERPROC" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Table_DOCTOR" Association="Self.FK_Table_DOCTOR">
+      <End Role="DOCTOR" EntitySet="DOCTOR" />
+      <End Role="Doc_Insurance_Affiliation" EntitySet="Doc_Insurance_Affiliation" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Table_Insurance" Association="Self.FK_Table_Insurance">
+      <End Role="Insurance_Profile" EntitySet="Insurance_Profile" />
+      <End Role="Doc_Insurance_Affiliation" EntitySet="Doc_Insurance_Affiliation" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tags_ORDERPROC" Association="Self.FK_tags_ORDERPROC">
+      <End Role="ORDERPROC" EntitySet="ORDERPROC" />
+      <End Role="TAG" EntitySet="TAG" />
+    </AssociationSet>
+    <AssociationSet Name="FK_USER_ref_user_type" Association="Self.FK_USER_ref_user_type">
+      <End Role="ref_user_type" EntitySet="ref_user_type" />
+      <End Role="USER" EntitySet="USER" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,2351 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="Models.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="ADDRESS">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="address1" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="address2" Type="varchar" MaxLength="100" />
+          <Property Name="xus_city" Type="varchar" MaxLength="50" />
+          <Property Name="xus_state" Type="varchar" MaxLength="10" />
+          <Property Name="xus_zip" Type="varchar" MaxLength="10" />
+          <Property Name="rel_ref_zip_id" Type="bigint" Nullable="false" />
+          <Property Name="OR_zip_city" Type="varchar" MaxLength="100" />
+          <Property Name="rel_ref_country_id" Type="bigint" Nullable="false" />
+          <Property Name="last_update" Type="datetime" />
+          <Property Name="last_updated_by" Type="bigint" />
+        </EntityType>
+        <EntityType Name="CAMPAIGN">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="code" Type="varchar" MaxLength="50" />
+          <Property Name="name" Type="varchar" MaxLength="50" />
+          <Property Name="drop_date_set" Type="date" />
+          <Property Name="drop_date_actual" Type="date" />
+          <Property Name="rel_ref_campaign_type" Type="bigint" />
+          <Property Name="type" Type="varchar" MaxLength="50" />
+          <Property Name="quantity" Type="bigint" />
+          <Property Name="phone" Type="varchar" MaxLength="50" />
+          <Property Name="created_on" Type="datetime" />
+          <Property Name="created_by" Type="bigint" />
+          <Property Name="updated_on" Type="datetime" />
+          <Property Name="updated_by" Type="bigint" />
+        </EntityType>
+        <EntityType Name="con_LIST_SOUL">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="rel_LIST_id" Type="bigint" Nullable="false" />
+          <Property Name="rel_SOUL_id" Type="bigint" Nullable="false" />
+          <Property Name="rc_tail" Type="bigint" />
+        </EntityType>
+        <EntityType Name="con_ORDERPROC_DOCTOR">
+          <Key>
+            <PropertyRef Name="rel_ORDERPROC_id" />
+          </Key>
+          <Property Name="rel_ORDERPROC_id" Type="bigint" Nullable="false" />
+          <Property Name="rel_SOUL_id" Type="bigint" Nullable="false" />
+          <Property Name="rel_DOCTOR_id" Type="bigint" Nullable="false" />
+        </EntityType>
+        <EntityType Name="con_SOUL_ref_upsell">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="rel_SOUL_id" Type="bigint" Nullable="false" />
+          <Property Name="rel_ref_upsell_id" Type="bigint" Nullable="false" />
+          <Property Name="meta" Type="varchar(max)" />
+          <Property Name="meta_2" Type="varchar" MaxLength="150" />
+          <Property Name="timestamp" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Conditions_Profile">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="description" Type="nvarchar" MaxLength="100" />
+          <Property Name="symptoms" Type="nvarchar" MaxLength="100" />
+          <Property Name="category" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Doc_Insurance_Affiliation">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="doc_id" Type="bigint" />
+          <Property Name="insurance_id" Type="bigint" />
+        </EntityType>
+        <EntityType Name="Doc_Specialties_Profile">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="doctor_id" Type="int" />
+          <Property Name="specialty_id" Type="nchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="DOCTOR">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="doctor_name" Type="varchar" MaxLength="200" />
+          <Property Name="gender" Type="nchar" MaxLength="10" />
+          <Property Name="title" Type="nvarchar" MaxLength="50" />
+          <Property Name="doctor_phone" Type="varchar" MaxLength="50" />
+          <Property Name="doctor_fax" Type="varchar" MaxLength="50" />
+          <Property Name="doctor_NPI" Type="varchar" MaxLength="50" />
+          <Property Name="doctor_NPI_type" Type="nchar" MaxLength="20" />
+          <Property Name="doctor_org_name" Type="nvarchar" MaxLength="200" />
+          <Property Name="doctor_rel_ADDRESS_id" Type="bigint" />
+          <Property Name="doctor_state_m_id" Type="varchar" MaxLength="50" />
+          <Property Name="doctor_medicare_upin" Type="varchar" MaxLength="50" />
+          <Property Name="doctor_license_no" Type="varchar" MaxLength="50" />
+          <Property Name="doctor_pecos_cert" Type="bit" />
+          <Property Name="doctor_fax_to" Type="varchar" MaxLength="50" />
+          <Property Name="doctor_address1" Type="nvarchar" MaxLength="500" />
+          <Property Name="doctor_address2" Type="nvarchar" MaxLength="500" />
+          <Property Name="doctor_address_state" Type="varchar" MaxLength="2" />
+          <Property Name="doctor_address_city" Type="varchar" MaxLength="50" />
+          <Property Name="doctor_address" Type="varchar" MaxLength="100" />
+          <Property Name="doctor_address_zip" Type="varchar" MaxLength="50" />
+          <Property Name="last_update_by" Type="bigint" />
+          <Property Name="last_update" Type="datetime" />
+          <Property Name="status" Type="int" />
+        </EntityType>
+        <EntityType Name="INS_info_2">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="benefit_level" Type="varchar" MaxLength="50" />
+          <Property Name="DME_benefits" Type="bit" />
+          <Property Name="effective_date" Type="datetime" />
+          <Property Name="deductible" Type="decimal" Precision="18" Scale="4" />
+          <Property Name="deductible_met" Type="decimal" Precision="18" Scale="4" />
+          <Property Name="percent_coverage" Type="float" />
+          <Property Name="out_of_pocket" Type="decimal" Precision="18" Scale="4" />
+          <Property Name="co_pay" Type="bit" />
+          <Property Name="co_pay_amount" Type="decimal" Precision="18" Scale="4" />
+          <Property Name="preauth_req" Type="bit" />
+          <Property Name="preauth_contact" Type="varchar" MaxLength="50" />
+          <Property Name="payor_id" Type="varchar" MaxLength="50" />
+          <Property Name="preauth_info" Type="varchar" MaxLength="800" />
+        </EntityType>
+        <EntityType Name="Insurance_Profile">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="plan_name" Type="nvarchar" MaxLength="100" />
+          <Property Name="provider" Type="nvarchar" MaxLength="100" />
+          <Property Name="category" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="ITEM">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="bigint" Nullable="false" />
+          <Property Name="name" Type="varchar" MaxLength="50" />
+          <Property Name="code" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="description" Type="varchar" MaxLength="200" />
+          <Property Name="HCPC" Type="varchar" MaxLength="10" />
+          <Property Name="price" Type="decimal" Precision="18" Scale="2" />
+        </EntityType>
+        <EntityType Name="LIST">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="description" Type="varchar" MaxLength="200" />
+          <Property Name="segment" Type="varchar" MaxLength="50" />
+          <Property Name="order_number" Type="bigint" />
+          <Property Name="res_code" Type="varchar" MaxLength="10" />
+          <Property Name="order_quantity" Type="bigint" />
+          <Property Name="date_emailed" Type="date" />
+          <Property Name="final_quantity" Type="bigint" />
+          <Property Name="date_mailed" Type="date" />
+          <Property Name="mail_quantity" Type="bigint" />
+          <Property Name="response_count" Type="bigint" />
+          <Property Name="accepted_count" Type="bigint" />
+          <Property Name="last_hit" Type="datetime" />
+          <Property Name="last_update" Type="datetime" />
+          <Property Name="last_update_by" Type="datetime" />
+          <Property Name="drop_description" Type="varchar" MaxLength="50" />
+          <Property Name="phone_number" Type="varchar" MaxLength="10" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6013: The table/view 'HS_sc_main.dbo.log_Audit' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="log_Audit">
+          <Property Name="Type" Type="char" MaxLength="1" />
+          <Property Name="TableName" Type="varchar" MaxLength="128" />
+          <Property Name="PK" Type="varchar" MaxLength="1000" />
+          <Property Name="FieldName" Type="varchar" MaxLength="128" />
+          <Property Name="OldValue" Type="varchar" MaxLength="1000" />
+          <Property Name="NewValue" Type="varchar" MaxLength="1000" />
+          <Property Name="UpdateDate" Type="datetime" />
+          <Property Name="UserName" Type="varchar" MaxLength="128" />
+        </EntityType>-->
+        <EntityType Name="log_EXTERNAL">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="rel_ref_external_type_id" Type="bigint" />
+          <Property Name="external_type" Type="varchar" MaxLength="50" />
+          <Property Name="data_out" Type="varchar(max)" />
+          <Property Name="data_in" Type="varchar(max)" />
+          <Property Name="meta" Type="varchar(max)" />
+          <Property Name="timestamp" Type="datetime" Nullable="false" />
+          <Property Name="rel_SOUL_id" Type="bigint" />
+          <Property Name="executed_by" Type="bigint" />
+          <Property Name="rel_ORPROC_id" Type="bigint" />
+        </EntityType>
+        <EntityType Name="log_ORPROC">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="rel_ORDERPROC_id" Type="bigint" Nullable="false" />
+          <Property Name="action" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="meta" Type="varchar" MaxLength="500" />
+          <Property Name="executed_by" Type="bigint" Nullable="false" />
+          <Property Name="executed_on" Type="datetime" Nullable="false" />
+          <Property Name="var_from" Type="varchar" MaxLength="100" />
+          <Property Name="var_to" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="log_ORPROC_ALL">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="rel_ORDERPROC_id" Type="bigint" Nullable="false" />
+          <Property Name="action" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="meta" Type="varchar" MaxLength="500" />
+          <Property Name="executed_by" Type="bigint" Nullable="false" />
+          <Property Name="executed_on" Type="datetime" Nullable="false" />
+          <Property Name="var_from" Type="varchar" MaxLength="100" />
+          <Property Name="var_to" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="LOG_Q1">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="acct_manager" Type="bigint" Nullable="false" />
+          <Property Name="rel_ref_orprocstate_id" Type="bigint" Nullable="false" />
+          <Property Name="count" Type="bigint" Nullable="false" />
+          <Property Name="order_ids" Type="varchar(max)" />
+          <Property Name="date" Type="date" Nullable="false" />
+        </EntityType>
+        <EntityType Name="log_USER">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="rel_USER_id" Type="bigint" />
+          <Property Name="action_note" Type="varchar" MaxLength="100" />
+          <Property Name="rel_ref_action_id" Type="bigint" />
+          <Property Name="timestamp" Type="datetime" />
+          <Property Name="ip" Type="varchar" MaxLength="20" />
+          <Property Name="page" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Med_Specialties">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="nvarchar" MaxLength="100" />
+          <Property Name="description" Type="nvarchar" MaxLength="100" />
+          <Property Name="category" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="NOTE">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="text" Type="varchar" MaxLength="800" Nullable="false" />
+          <Property Name="written_by" Type="bigint" Nullable="false" />
+          <Property Name="written_on" Type="datetime" Nullable="false" />
+          <Property Name="note_type" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="rel_ref_note_type_id" Type="bigint" />
+          <Property Name="rel_parent_id" Type="bigint" />
+          <Property Name="tags" Type="varchar" MaxLength="500" />
+        </EntityType>
+        <EntityType Name="ORDER_info_2">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="rel_ORDERPROC_id" Type="bigint" Nullable="false" />
+          <Property Name="date_actual_ship" Type="datetime" />
+          <Property Name="shipped_through" Type="varchar" MaxLength="50" />
+          <Property Name="tracking_no" Type="varchar" MaxLength="50" />
+          <Property Name="date_AOB_received" Type="datetime" />
+        </EntityType>
+        <EntityType Name="ORDER_shipping">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="date" Type="date" Nullable="false" />
+          <Property Name="trackng_number" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="rel_ref_shipping_status_id" Type="bigint" />
+          <Property Name="notes" Type="varchar" MaxLength="500" />
+          <Property Name="rel_ORDERPROC_id" Type="bigint" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ORDERPROC">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="rel_TRANSACTION_id" Type="bigint" Nullable="false" />
+          <Property Name="rel_ref_orproc_state_id" Type="bigint" Nullable="false" />
+          <Property Name="taken_by" Type="bigint" />
+          <Property Name="taken_on" Type="datetime" />
+          <Property Name="last_update" Type="datetime" />
+          <Property Name="last_update_by" Type="bigint" />
+          <Property Name="rel_ITEM_id" Type="bigint" Nullable="false" />
+          <Property Name="date_added" Type="datetime" />
+          <Property Name="meta" Type="varchar(max)" />
+          <Property Name="stay_taken" Type="bit" />
+          <Property Name="acct_managed_by" Type="bigint" />
+          <Property Name="tags" Type="varchar" MaxLength="500" />
+          <Property Name="tags_sys" Type="varchar" MaxLength="500" />
+        </EntityType>
+        <EntityType Name="ref_orproc_state">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="bigint" Nullable="false" />
+          <Property Name="name" Type="varchar" MaxLength="50" />
+          <Property Name="description" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="ref_orproc_state_group">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="bigint" Nullable="false" />
+          <Property Name="code" Type="varchar" MaxLength="10" />
+          <Property Name="members" Type="varchar" MaxLength="800" />
+          <Property Name="active" Type="nchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="ref_TAG">
+          <Key>
+            <PropertyRef Name="tag" />
+          </Key>
+          <Property Name="tag" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="pname" Type="varchar" MaxLength="100" />
+          <Property Name="rel_ref_tag_type_code" Type="char" MaxLength="4" Nullable="false" />
+          <Property Name="tag_parent" Type="varchar" MaxLength="100" />
+          <Property Name="active" Type="bit" />
+        </EntityType>
+        <EntityType Name="ref_trans_type">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="bigint" Nullable="false" />
+          <Property Name="name" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="description" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="ref_upsell">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="description" Type="varchar" MaxLength="200" />
+        </EntityType>
+        <EntityType Name="ref_user_type">
+          <Key>
+            <PropertyRef Name="code" />
+          </Key>
+          <Property Name="code" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="description" Type="varchar" MaxLength="100" />
+          <Property Name="meta" Type="varchar" MaxLength="200" />
+        </EntityType>
+        <EntityType Name="ref_zip">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="zip" Type="char" MaxLength="5" Nullable="false" />
+          <Property Name="city_name" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="city_state" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="city_lat" Type="float" Nullable="false" />
+          <Property Name="city_lon" Type="float" Nullable="false" />
+          <Property Name="city_county" Type="varchar" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <EntityType Name="SETTINGS">
+          <Key>
+            <PropertyRef Name="setting_name" />
+          </Key>
+          <Property Name="setting_name" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="value" Type="varchar(max)" />
+        </EntityType>
+        <EntityType Name="SOUL">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name_first" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="name_last" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="phone_number" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="rel_ADDRESS_id" Type="bigint" Nullable="false" />
+          <Property Name="email" Type="varchar" MaxLength="100" />
+          <Property Name="meta" Type="varchar(max)" />
+          <Property Name="OR_LIST_res_code" Type="varchar" MaxLength="10" />
+          <Property Name="last_contact" Type="datetime" />
+          <Property Name="last_contact_by" Type="bigint" />
+          <Property Name="last_update" Type="datetime" />
+          <Property Name="last_update_by" Type="bigint" />
+          <Property Name="timestamp" Type="datetime" />
+          <Property Name="alt_name" Type="varchar" MaxLength="200" />
+          <Property Name="alt_phone" Type="varchar" MaxLength="50" />
+          <Property Name="alt_relationship" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="SOUL_info_2">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="rel_SOUL_id" Type="bigint" Nullable="false" />
+          <Property Name="authorized_representative" Type="bit" />
+          <Property Name="received_similar_product" Type="bit" />
+          <Property Name="received_similar_covered" Type="bit" />
+          <Property Name="list_other_health_concerns" Type="varchar" MaxLength="500" />
+          <Property Name="name_on_ins_card" Type="varchar" MaxLength="200" />
+          <Property Name="date_birth" Type="date" />
+          <Property Name="height" Type="float" />
+          <Property Name="weight" Type="float" />
+          <Property Name="doctor_name" Type="varchar" MaxLength="200" />
+          <Property Name="doctor_phone" Type="varchar" MaxLength="50" />
+          <Property Name="doctor_fax" Type="varchar" MaxLength="50" />
+          <Property Name="ins_primary" Type="varchar" MaxLength="50" />
+          <Property Name="pins_policy_number" Type="varchar" MaxLength="50" />
+          <Property Name="pins_rel_ADDRESS_id" Type="bigint" />
+          <Property Name="pins_phone" Type="varchar" MaxLength="50" />
+          <Property Name="sins_policy_number" Type="varchar" MaxLength="50" />
+          <Property Name="sins_rel_ADDRESS_id" Type="bigint" />
+          <Property Name="sins_phone" Type="varchar" MaxLength="50" />
+          <Property Name="waist_size" Type="int" />
+          <Property Name="pins_name" Type="varchar" MaxLength="100" />
+          <Property Name="sins_name" Type="varchar" MaxLength="100" />
+          <Property Name="pins_group_no" Type="varchar" MaxLength="50" />
+          <Property Name="sins_group_no" Type="varchar" MaxLength="50" />
+          <Property Name="interested_in_AED" Type="bit" />
+          <Property Name="doctor_NPI" Type="varchar" MaxLength="50" />
+          <Property Name="doctor_rel_ADDRESS_id" Type="bigint" />
+          <Property Name="SSN" Type="varchar" MaxLength="50" />
+          <Property Name="doctor_state_m_id" Type="varchar" MaxLength="50" />
+          <Property Name="doctor_medicare_upin" Type="varchar" MaxLength="50" />
+          <Property Name="doctor_license_no" Type="varchar" MaxLength="50" />
+          <Property Name="doctor_pecos_cert" Type="bit" />
+          <Property Name="doctor_fax_to" Type="varchar" MaxLength="50" />
+          <Property Name="doctor_address_state" Type="varchar" MaxLength="2" />
+          <Property Name="doctor_address_city" Type="varchar" MaxLength="50" />
+          <Property Name="doctor_address" Type="varchar" MaxLength="100" />
+          <Property Name="doctor_address_zip" Type="varchar" MaxLength="50" />
+          <Property Name="pins_info_2_id" Type="bigint" />
+          <Property Name="sins_info_2_id" Type="bigint" />
+          <Property Name="injury_covered_under" Type="varchar" MaxLength="100" />
+          <Property Name="injury_covered_claimno" Type="varchar" MaxLength="50" />
+          <Property Name="gender" Type="char" MaxLength="1" />
+          <Property Name="diabetic" Type="bit" />
+          <Property Name="cpap" Type="bit" />
+          <Property Name="diabetic_confirm" Type="bit" />
+          <Property Name="ppo" Type="bit" />
+          <Property Name="jpc_interested" Type="bit" />
+        </EntityType>
+        <EntityType Name="SOUL_info_3">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="rel_SOUL_id" Type="bigint" Nullable="false" />
+          <Property Name="home_phone2" Type="varchar" MaxLength="50" />
+          <Property Name="home_phone_co" Type="varchar" MaxLength="50" />
+          <Property Name="emgcy_contact1_name" Type="varchar" MaxLength="200" />
+          <Property Name="emgcy_contact1_relation" Type="varchar" MaxLength="50" />
+          <Property Name="emgcy_contact1_phone1" Type="varchar" MaxLength="50" />
+          <Property Name="emgcy_contact1_phone2" Type="varchar" MaxLength="50" />
+          <Property Name="emgcy_contact1_phone3" Type="varchar" MaxLength="50" />
+          <Property Name="emgcy_contact1_hasaccess" Type="bit" />
+          <Property Name="emgcy_contact2_name" Type="varchar" MaxLength="200" />
+          <Property Name="emgcy_contact2_relation" Type="varchar" MaxLength="50" />
+          <Property Name="emgcy_contact2_phone1" Type="varchar" MaxLength="50" />
+          <Property Name="emgcy_contact2_phone2" Type="varchar" MaxLength="50" />
+          <Property Name="emgcy_contact2_phone3" Type="varchar" MaxLength="50" />
+          <Property Name="emgcy_contact2_hasaccess" Type="bit" />
+          <Property Name="emgcy_contact3_name" Type="varchar" MaxLength="200" />
+          <Property Name="emgcy_contact3_relation" Type="varchar" MaxLength="50" />
+          <Property Name="emgcy_contact3_phone1" Type="varchar" MaxLength="50" />
+          <Property Name="emgcy_contact3_phone2" Type="varchar" MaxLength="50" />
+          <Property Name="emgcy_contact3_phone3" Type="varchar" MaxLength="50" />
+          <Property Name="emgcy_contact3_hasaccess" Type="bit" />
+          <Property Name="pref_hospital_name" Type="varchar" MaxLength="200" />
+          <Property Name="pref_hospital_city" Type="varchar" MaxLength="50" />
+          <Property Name="pref_hospital_state" Type="varchar" MaxLength="2" />
+          <Property Name="pref_hospital_phone" Type="varchar" MaxLength="50" />
+          <Property Name="allergies" Type="varchar" MaxLength="500" />
+          <Property Name="emgcy_special_instructions" Type="varchar" MaxLength="500" />
+          <Property Name="home_hidden_key_loc" Type="varchar" MaxLength="200" />
+          <Property Name="medical_conditions" Type="varchar" MaxLength="500" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'HS_sc_main.dbo.Table_1' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="Table_1">
+          <Key>
+            <PropertyRef Name="id" />
+            <PropertyRef Name="rel_TRANSACTION_id" />
+            <PropertyRef Name="rel_ref_orproc_state_id" />
+            <PropertyRef Name="taken_by" />
+            <PropertyRef Name="taken_on" />
+          </Key>
+          <Property Name="id" Type="bigint" Nullable="false" />
+          <Property Name="rel_TRANSACTION_id" Type="bigint" Nullable="false" />
+          <Property Name="rel_ref_orproc_state_id" Type="bigint" Nullable="false" />
+          <Property Name="taken_by" Type="bigint" Nullable="false" />
+          <Property Name="taken_on" Type="bigint" Nullable="false" />
+          <Property Name="last_update" Type="datetime" />
+          <Property Name="last_update_by" Type="bigint" />
+        </EntityType>
+        <EntityType Name="TAG">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="value" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="rel_ORDERPROC_id" Type="bigint" Nullable="false" />
+          <Property Name="rel_NOTE_id" Type="bigint" />
+          <Property Name="date1" Type="datetime" />
+          <Property Name="date2" Type="datetime" />
+          <Property Name="type" Type="varchar" MaxLength="10" />
+          <Property Name="created_on" Type="datetime" Nullable="false" />
+          <Property Name="created_by" Type="bigint" Nullable="false" />
+          <Property Name="status" Type="varchar" MaxLength="10" />
+          <Property Name="updated_on" Type="datetime" />
+          <Property Name="updated_by" Type="bigint" />
+        </EntityType>
+        <EntityType Name="USER">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="bigint" Nullable="false" />
+          <Property Name="rel_ref_user_type_code" Type="varchar" MaxLength="50" />
+          <Property Name="username" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="password" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="name_first" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="name_last" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="last_login" Type="datetime" />
+          <Property Name="active" Type="bit" Nullable="false" />
+          <Property Name="meta" Type="varchar(max)" />
+          <Property Name="logged_in" Type="bit" />
+        </EntityType>
+        <Association Name="FK_ADDRESS_ref_zip">
+          <End Role="ref_zip" Type="Self.ref_zip" Multiplicity="1" />
+          <End Role="ADDRESS" Type="Self.ADDRESS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ref_zip">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="ADDRESS">
+              <PropertyRef Name="rel_ref_zip_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_con_LIST_SOUL_LIST">
+          <End Role="LIST" Type="Self.LIST" Multiplicity="1" />
+          <End Role="con_LIST_SOUL" Type="Self.con_LIST_SOUL" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LIST">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="con_LIST_SOUL">
+              <PropertyRef Name="rel_LIST_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_con_LIST_SOUL_SOUL">
+          <End Role="SOUL" Type="Self.SOUL" Multiplicity="1" />
+          <End Role="con_LIST_SOUL" Type="Self.con_LIST_SOUL" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SOUL">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="con_LIST_SOUL">
+              <PropertyRef Name="rel_SOUL_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_con_ORDERPROC_DOCTOR_DOCTOR">
+          <End Role="DOCTOR" Type="Self.DOCTOR" Multiplicity="1" />
+          <End Role="con_ORDERPROC_DOCTOR" Type="Self.con_ORDERPROC_DOCTOR" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DOCTOR">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="con_ORDERPROC_DOCTOR">
+              <PropertyRef Name="rel_DOCTOR_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_con_ORDERPROC_DOCTOR_ORDERPROC">
+          <End Role="ORDERPROC" Type="Self.ORDERPROC" Multiplicity="1" />
+          <End Role="con_ORDERPROC_DOCTOR" Type="Self.con_ORDERPROC_DOCTOR" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="ORDERPROC">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="con_ORDERPROC_DOCTOR">
+              <PropertyRef Name="rel_ORDERPROC_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_con_ORDERPROC_DOCTOR_SOUL">
+          <End Role="SOUL" Type="Self.SOUL" Multiplicity="1" />
+          <End Role="con_ORDERPROC_DOCTOR" Type="Self.con_ORDERPROC_DOCTOR" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SOUL">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="con_ORDERPROC_DOCTOR">
+              <PropertyRef Name="rel_SOUL_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_con_SOUL_ref_upsell_ref_upsell">
+          <End Role="ref_upsell" Type="Self.ref_upsell" Multiplicity="1" />
+          <End Role="con_SOUL_ref_upsell" Type="Self.con_SOUL_ref_upsell" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ref_upsell">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="con_SOUL_ref_upsell">
+              <PropertyRef Name="rel_ref_upsell_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_con_SOUL_ref_upsell_SOUL">
+          <End Role="SOUL" Type="Self.SOUL" Multiplicity="1" />
+          <End Role="con_SOUL_ref_upsell" Type="Self.con_SOUL_ref_upsell" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SOUL">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="con_SOUL_ref_upsell">
+              <PropertyRef Name="rel_SOUL_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_log_USER_USER">
+          <End Role="USER" Type="Self.USER" Multiplicity="0..1" />
+          <End Role="log_USER" Type="Self.log_USER" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="USER">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="log_USER">
+              <PropertyRef Name="rel_USER_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ORDER_info_2_ORDERPROC">
+          <End Role="ORDERPROC" Type="Self.ORDERPROC" Multiplicity="1" />
+          <End Role="ORDER_info_2" Type="Self.ORDER_info_2" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ORDERPROC">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="ORDER_info_2">
+              <PropertyRef Name="rel_ORDERPROC_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ORDER_shipping_ORDERPROC">
+          <End Role="ORDERPROC" Type="Self.ORDERPROC" Multiplicity="1" />
+          <End Role="ORDER_shipping" Type="Self.ORDER_shipping" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ORDERPROC">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="ORDER_shipping">
+              <PropertyRef Name="rel_ORDERPROC_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ORDERPROC_ref_orproc_state">
+          <End Role="ref_orproc_state" Type="Self.ref_orproc_state" Multiplicity="1" />
+          <End Role="ORDERPROC" Type="Self.ORDERPROC" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ref_orproc_state">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="ORDERPROC">
+              <PropertyRef Name="rel_ref_orproc_state_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ORDERPROC_USER">
+          <End Role="USER" Type="Self.USER" Multiplicity="0..1" />
+          <End Role="ORDERPROC" Type="Self.ORDERPROC" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="USER">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="ORDERPROC">
+              <PropertyRef Name="acct_managed_by" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Table_DOCTOR">
+          <End Role="DOCTOR" Type="Self.DOCTOR" Multiplicity="0..1" />
+          <End Role="Doc_Insurance_Affiliation" Type="Self.Doc_Insurance_Affiliation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DOCTOR">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Doc_Insurance_Affiliation">
+              <PropertyRef Name="doc_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Table_Insurance">
+          <End Role="Insurance_Profile" Type="Self.Insurance_Profile" Multiplicity="0..1" />
+          <End Role="Doc_Insurance_Affiliation" Type="Self.Doc_Insurance_Affiliation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Insurance_Profile">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Doc_Insurance_Affiliation">
+              <PropertyRef Name="insurance_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tags_ORDERPROC">
+          <End Role="ORDERPROC" Type="Self.ORDERPROC" Multiplicity="1" />
+          <End Role="TAG" Type="Self.TAG" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ORDERPROC">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="TAG">
+              <PropertyRef Name="rel_ORDERPROC_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_USER_ref_user_type">
+          <End Role="ref_user_type" Type="Self.ref_user_type" Multiplicity="0..1" />
+          <End Role="USER" Type="Self.USER" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ref_user_type">
+              <PropertyRef Name="code" />
+            </Principal>
+            <Dependent Role="USER">
+              <PropertyRef Name="rel_ref_user_type_code" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="ModelsStoreContainer">
+          <EntitySet Name="ADDRESS" EntityType="Self.ADDRESS" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CAMPAIGN" EntityType="Self.CAMPAIGN" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="con_LIST_SOUL" EntityType="Self.con_LIST_SOUL" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="con_ORDERPROC_DOCTOR" EntityType="Self.con_ORDERPROC_DOCTOR" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="con_SOUL_ref_upsell" EntityType="Self.con_SOUL_ref_upsell" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Conditions_Profile" EntityType="Self.Conditions_Profile" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Doc_Insurance_Affiliation" EntityType="Self.Doc_Insurance_Affiliation" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Doc_Specialties_Profile" EntityType="Self.Doc_Specialties_Profile" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DOCTOR" EntityType="Self.DOCTOR" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="INS_info_2" EntityType="Self.INS_info_2" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Insurance_Profile" EntityType="Self.Insurance_Profile" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ITEM" EntityType="Self.ITEM" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="LIST" EntityType="Self.LIST" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="log_EXTERNAL" EntityType="Self.log_EXTERNAL" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="log_ORPROC" EntityType="Self.log_ORPROC" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="log_ORPROC_ALL" EntityType="Self.log_ORPROC_ALL" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="LOG_Q1" EntityType="Self.LOG_Q1" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="log_USER" EntityType="Self.log_USER" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Med_Specialties" EntityType="Self.Med_Specialties" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="NOTE" EntityType="Self.NOTE" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ORDER_info_2" EntityType="Self.ORDER_info_2" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ORDER_shipping" EntityType="Self.ORDER_shipping" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ORDERPROC" EntityType="Self.ORDERPROC" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ref_orproc_state" EntityType="Self.ref_orproc_state" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ref_orproc_state_group" EntityType="Self.ref_orproc_state_group" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ref_TAG" EntityType="Self.ref_TAG" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ref_trans_type" EntityType="Self.ref_trans_type" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ref_upsell" EntityType="Self.ref_upsell" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ref_user_type" EntityType="Self.ref_user_type" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ref_zip" EntityType="Self.ref_zip" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SETTINGS" EntityType="Self.SETTINGS" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SOUL" EntityType="Self.SOUL" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SOUL_info_2" EntityType="Self.SOUL_info_2" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SOUL_info_3" EntityType="Self.SOUL_info_3" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TAG" EntityType="Self.TAG" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="USER" EntityType="Self.USER" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Table_1" EntityType="Self.Table_1" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Table_1].[id] AS [id], 
+    [Table_1].[rel_TRANSACTION_id] AS [rel_TRANSACTION_id], 
+    [Table_1].[rel_ref_orproc_state_id] AS [rel_ref_orproc_state_id], 
+    [Table_1].[taken_by] AS [taken_by], 
+    [Table_1].[taken_on] AS [taken_on], 
+    [Table_1].[last_update] AS [last_update], 
+    [Table_1].[last_update_by] AS [last_update_by]
+    FROM [dbo].[Table_1] AS [Table_1]</DefiningQuery>
+          </EntitySet>
+          <AssociationSet Name="FK_ADDRESS_ref_zip" Association="Self.FK_ADDRESS_ref_zip">
+            <End Role="ref_zip" EntitySet="ref_zip" />
+            <End Role="ADDRESS" EntitySet="ADDRESS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_con_LIST_SOUL_LIST" Association="Self.FK_con_LIST_SOUL_LIST">
+            <End Role="LIST" EntitySet="LIST" />
+            <End Role="con_LIST_SOUL" EntitySet="con_LIST_SOUL" />
+          </AssociationSet>
+          <AssociationSet Name="FK_con_LIST_SOUL_SOUL" Association="Self.FK_con_LIST_SOUL_SOUL">
+            <End Role="SOUL" EntitySet="SOUL" />
+            <End Role="con_LIST_SOUL" EntitySet="con_LIST_SOUL" />
+          </AssociationSet>
+          <AssociationSet Name="FK_con_ORDERPROC_DOCTOR_DOCTOR" Association="Self.FK_con_ORDERPROC_DOCTOR_DOCTOR">
+            <End Role="DOCTOR" EntitySet="DOCTOR" />
+            <End Role="con_ORDERPROC_DOCTOR" EntitySet="con_ORDERPROC_DOCTOR" />
+          </AssociationSet>
+          <AssociationSet Name="FK_con_ORDERPROC_DOCTOR_ORDERPROC" Association="Self.FK_con_ORDERPROC_DOCTOR_ORDERPROC">
+            <End Role="ORDERPROC" EntitySet="ORDERPROC" />
+            <End Role="con_ORDERPROC_DOCTOR" EntitySet="con_ORDERPROC_DOCTOR" />
+          </AssociationSet>
+          <AssociationSet Name="FK_con_ORDERPROC_DOCTOR_SOUL" Association="Self.FK_con_ORDERPROC_DOCTOR_SOUL">
+            <End Role="SOUL" EntitySet="SOUL" />
+            <End Role="con_ORDERPROC_DOCTOR" EntitySet="con_ORDERPROC_DOCTOR" />
+          </AssociationSet>
+          <AssociationSet Name="FK_con_SOUL_ref_upsell_ref_upsell" Association="Self.FK_con_SOUL_ref_upsell_ref_upsell">
+            <End Role="ref_upsell" EntitySet="ref_upsell" />
+            <End Role="con_SOUL_ref_upsell" EntitySet="con_SOUL_ref_upsell" />
+          </AssociationSet>
+          <AssociationSet Name="FK_con_SOUL_ref_upsell_SOUL" Association="Self.FK_con_SOUL_ref_upsell_SOUL">
+            <End Role="SOUL" EntitySet="SOUL" />
+            <End Role="con_SOUL_ref_upsell" EntitySet="con_SOUL_ref_upsell" />
+          </AssociationSet>
+          <AssociationSet Name="FK_log_USER_USER" Association="Self.FK_log_USER_USER">
+            <End Role="USER" EntitySet="USER" />
+            <End Role="log_USER" EntitySet="log_USER" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ORDER_info_2_ORDERPROC" Association="Self.FK_ORDER_info_2_ORDERPROC">
+            <End Role="ORDERPROC" EntitySet="ORDERPROC" />
+            <End Role="ORDER_info_2" EntitySet="ORDER_info_2" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ORDER_shipping_ORDERPROC" Association="Self.FK_ORDER_shipping_ORDERPROC">
+            <End Role="ORDERPROC" EntitySet="ORDERPROC" />
+            <End Role="ORDER_shipping" EntitySet="ORDER_shipping" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ORDERPROC_ref_orproc_state" Association="Self.FK_ORDERPROC_ref_orproc_state">
+            <End Role="ref_orproc_state" EntitySet="ref_orproc_state" />
+            <End Role="ORDERPROC" EntitySet="ORDERPROC" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ORDERPROC_USER" Association="Self.FK_ORDERPROC_USER">
+            <End Role="USER" EntitySet="USER" />
+            <End Role="ORDERPROC" EntitySet="ORDERPROC" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Table_DOCTOR" Association="Self.FK_Table_DOCTOR">
+            <End Role="DOCTOR" EntitySet="DOCTOR" />
+            <End Role="Doc_Insurance_Affiliation" EntitySet="Doc_Insurance_Affiliation" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Table_Insurance" Association="Self.FK_Table_Insurance">
+            <End Role="Insurance_Profile" EntitySet="Insurance_Profile" />
+            <End Role="Doc_Insurance_Affiliation" EntitySet="Doc_Insurance_Affiliation" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tags_ORDERPROC" Association="Self.FK_tags_ORDERPROC">
+            <End Role="ORDERPROC" EntitySet="ORDERPROC" />
+            <End Role="TAG" EntitySet="TAG" />
+          </AssociationSet>
+          <AssociationSet Name="FK_USER_ref_user_type" Association="Self.FK_USER_ref_user_type">
+            <End Role="ref_user_type" EntitySet="ref_user_type" />
+            <End Role="USER" EntitySet="USER" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Models" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="ADDRESS">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="address1" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="address2" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="xus_city" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="xus_state" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="xus_zip" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="rel_ref_zip_id" Type="Int64" Nullable="false" />
+          <Property Name="OR_zip_city" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="rel_ref_country_id" Type="Int64" Nullable="false" />
+          <Property Name="last_update" Type="DateTime" Precision="3" />
+          <Property Name="last_updated_by" Type="Int64" />
+          <NavigationProperty Name="ref_zip" Relationship="Self.FK_ADDRESS_ref_zip" FromRole="ADDRESS" ToRole="ref_zip" />
+        </EntityType>
+        <EntityType Name="CAMPAIGN">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="code" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="drop_date_set" Type="DateTime" Precision="0" />
+          <Property Name="drop_date_actual" Type="DateTime" Precision="0" />
+          <Property Name="rel_ref_campaign_type" Type="Int64" />
+          <Property Name="type" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="quantity" Type="Int64" />
+          <Property Name="phone" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="created_on" Type="DateTime" Precision="3" />
+          <Property Name="created_by" Type="Int64" />
+          <Property Name="updated_on" Type="DateTime" Precision="3" />
+          <Property Name="updated_by" Type="Int64" />
+        </EntityType>
+        <EntityType Name="con_LIST_SOUL">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="rel_LIST_id" Type="Int64" Nullable="false" />
+          <Property Name="rel_SOUL_id" Type="Int64" Nullable="false" />
+          <Property Name="rc_tail" Type="Int64" />
+          <NavigationProperty Name="LIST" Relationship="Self.FK_con_LIST_SOUL_LIST" FromRole="con_LIST_SOUL" ToRole="LIST" />
+          <NavigationProperty Name="SOUL" Relationship="Self.FK_con_LIST_SOUL_SOUL" FromRole="con_LIST_SOUL" ToRole="SOUL" />
+        </EntityType>
+        <EntityType Name="con_ORDERPROC_DOCTOR">
+          <Key>
+            <PropertyRef Name="rel_ORDERPROC_id" />
+          </Key>
+          <Property Name="rel_ORDERPROC_id" Type="Int64" Nullable="false" />
+          <Property Name="rel_SOUL_id" Type="Int64" Nullable="false" />
+          <Property Name="rel_DOCTOR_id" Type="Int64" Nullable="false" />
+          <NavigationProperty Name="DOCTOR" Relationship="Self.FK_con_ORDERPROC_DOCTOR_DOCTOR" FromRole="con_ORDERPROC_DOCTOR" ToRole="DOCTOR" />
+          <NavigationProperty Name="ORDERPROC" Relationship="Self.FK_con_ORDERPROC_DOCTOR_ORDERPROC" FromRole="con_ORDERPROC_DOCTOR" ToRole="ORDERPROC" />
+          <NavigationProperty Name="SOUL" Relationship="Self.FK_con_ORDERPROC_DOCTOR_SOUL" FromRole="con_ORDERPROC_DOCTOR" ToRole="SOUL" />
+        </EntityType>
+        <EntityType Name="con_SOUL_ref_upsell">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="rel_SOUL_id" Type="Int64" Nullable="false" />
+          <Property Name="rel_ref_upsell_id" Type="Int64" Nullable="false" />
+          <Property Name="meta" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="meta_2" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="timestamp" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="ref_upsell" Relationship="Self.FK_con_SOUL_ref_upsell_ref_upsell" FromRole="con_SOUL_ref_upsell" ToRole="ref_upsell" />
+          <NavigationProperty Name="SOUL" Relationship="Self.FK_con_SOUL_ref_upsell_SOUL" FromRole="con_SOUL_ref_upsell" ToRole="SOUL" />
+        </EntityType>
+        <EntityType Name="Conditions_Profile">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="description" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="symptoms" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="category" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Doc_Insurance_Affiliation">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="doc_id" Type="Int64" />
+          <Property Name="insurance_id" Type="Int64" />
+          <NavigationProperty Name="DOCTOR" Relationship="Self.FK_Table_DOCTOR" FromRole="Doc_Insurance_Affiliation" ToRole="DOCTOR" />
+          <NavigationProperty Name="Insurance_Profile" Relationship="Self.FK_Table_Insurance" FromRole="Doc_Insurance_Affiliation" ToRole="Insurance_Profile" />
+        </EntityType>
+        <EntityType Name="Doc_Specialties_Profile">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="doctor_id" Type="Int32" />
+          <Property Name="specialty_id" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+        </EntityType>
+        <EntityType Name="DOCTOR">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="doctor_name" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="gender" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="title" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="doctor_phone" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="doctor_fax" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="doctor_NPI" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="doctor_NPI_type" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
+          <Property Name="doctor_org_name" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="doctor_rel_ADDRESS_id" Type="Int64" />
+          <Property Name="doctor_state_m_id" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="doctor_medicare_upin" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="doctor_license_no" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="doctor_pecos_cert" Type="Boolean" />
+          <Property Name="doctor_fax_to" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="doctor_address1" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="doctor_address2" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="doctor_address_state" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="doctor_address_city" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="doctor_address" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="doctor_address_zip" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="last_update_by" Type="Int64" />
+          <Property Name="last_update" Type="DateTime" Precision="3" />
+          <Property Name="status" Type="Int32" />
+          <NavigationProperty Name="con_ORDERPROC_DOCTOR" Relationship="Self.FK_con_ORDERPROC_DOCTOR_DOCTOR" FromRole="DOCTOR" ToRole="con_ORDERPROC_DOCTOR" />
+          <NavigationProperty Name="Doc_Insurance_Affiliation" Relationship="Self.FK_Table_DOCTOR" FromRole="DOCTOR" ToRole="Doc_Insurance_Affiliation" />
+        </EntityType>
+        <EntityType Name="INS_info_2">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="benefit_level" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DME_benefits" Type="Boolean" />
+          <Property Name="effective_date" Type="DateTime" Precision="3" />
+          <Property Name="deductible" Type="Decimal" Precision="18" Scale="4" />
+          <Property Name="deductible_met" Type="Decimal" Precision="18" Scale="4" />
+          <Property Name="percent_coverage" Type="Double" />
+          <Property Name="out_of_pocket" Type="Decimal" Precision="18" Scale="4" />
+          <Property Name="co_pay" Type="Boolean" />
+          <Property Name="co_pay_amount" Type="Decimal" Precision="18" Scale="4" />
+          <Property Name="preauth_req" Type="Boolean" />
+          <Property Name="preauth_contact" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="payor_id" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="preauth_info" Type="String" MaxLength="800" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Insurance_Profile">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="plan_name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="provider" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="category" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Doc_Insurance_Affiliation" Relationship="Self.FK_Table_Insurance" FromRole="Insurance_Profile" ToRole="Doc_Insurance_Affiliation" />
+        </EntityType>
+        <EntityType Name="ITEM">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int64" Nullable="false" />
+          <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="code" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="description" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="HCPC" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="price" Type="Decimal" Precision="18" Scale="2" />
+        </EntityType>
+        <EntityType Name="LIST">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="description" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="segment" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="order_number" Type="Int64" />
+          <Property Name="res_code" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="order_quantity" Type="Int64" />
+          <Property Name="date_emailed" Type="DateTime" Precision="0" />
+          <Property Name="final_quantity" Type="Int64" />
+          <Property Name="date_mailed" Type="DateTime" Precision="0" />
+          <Property Name="mail_quantity" Type="Int64" />
+          <Property Name="response_count" Type="Int64" />
+          <Property Name="accepted_count" Type="Int64" />
+          <Property Name="last_hit" Type="DateTime" Precision="3" />
+          <Property Name="last_update" Type="DateTime" Precision="3" />
+          <Property Name="last_update_by" Type="DateTime" Precision="3" />
+          <Property Name="drop_description" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="phone_number" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="con_LIST_SOUL" Relationship="Self.FK_con_LIST_SOUL_LIST" FromRole="LIST" ToRole="con_LIST_SOUL" />
+        </EntityType>
+        <EntityType Name="log_EXTERNAL">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="rel_ref_external_type_id" Type="Int64" />
+          <Property Name="external_type" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="data_out" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="data_in" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="meta" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="timestamp" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="rel_SOUL_id" Type="Int64" />
+          <Property Name="executed_by" Type="Int64" />
+          <Property Name="rel_ORPROC_id" Type="Int64" />
+        </EntityType>
+        <EntityType Name="log_ORPROC">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="rel_ORDERPROC_id" Type="Int64" Nullable="false" />
+          <Property Name="action" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="meta" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="executed_by" Type="Int64" Nullable="false" />
+          <Property Name="executed_on" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="var_from" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="var_to" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="log_ORPROC_ALL">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="rel_ORDERPROC_id" Type="Int64" Nullable="false" />
+          <Property Name="action" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="meta" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="executed_by" Type="Int64" Nullable="false" />
+          <Property Name="executed_on" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="var_from" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="var_to" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="LOG_Q1">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="acct_manager" Type="Int64" Nullable="false" />
+          <Property Name="rel_ref_orprocstate_id" Type="Int64" Nullable="false" />
+          <Property Name="count" Type="Int64" Nullable="false" />
+          <Property Name="order_ids" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="date" Type="DateTime" Nullable="false" Precision="0" />
+        </EntityType>
+        <EntityType Name="log_USER">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="rel_USER_id" Type="Int64" />
+          <Property Name="action_note" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="rel_ref_action_id" Type="Int64" />
+          <Property Name="timestamp" Type="DateTime" Precision="3" />
+          <Property Name="ip" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="page" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="USER" Relationship="Self.FK_log_USER_USER" FromRole="log_USER" ToRole="USER" />
+        </EntityType>
+        <EntityType Name="Med_Specialties">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="description" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="category" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="NOTE">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="text" Type="String" MaxLength="800" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="written_by" Type="Int64" Nullable="false" />
+          <Property Name="written_on" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="note_type" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="rel_ref_note_type_id" Type="Int64" />
+          <Property Name="rel_parent_id" Type="Int64" />
+          <Property Name="tags" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="ORDER_info_2">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="rel_ORDERPROC_id" Type="Int64" Nullable="false" />
+          <Property Name="date_actual_ship" Type="DateTime" Precision="3" />
+          <Property Name="shipped_through" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="tracking_no" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="date_AOB_received" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="ORDERPROC" Relationship="Self.FK_ORDER_info_2_ORDERPROC" FromRole="ORDER_info_2" ToRole="ORDERPROC" />
+        </EntityType>
+        <EntityType Name="ORDER_shipping">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="date" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="trackng_number" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="rel_ref_shipping_status_id" Type="Int64" />
+          <Property Name="notes" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="rel_ORDERPROC_id" Type="Int64" Nullable="false" />
+          <NavigationProperty Name="ORDERPROC" Relationship="Self.FK_ORDER_shipping_ORDERPROC" FromRole="ORDER_shipping" ToRole="ORDERPROC" />
+        </EntityType>
+        <EntityType Name="ORDERPROC">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="rel_TRANSACTION_id" Type="Int64" Nullable="false" />
+          <Property Name="rel_ref_orproc_state_id" Type="Int64" Nullable="false" />
+          <Property Name="taken_by" Type="Int64" />
+          <Property Name="taken_on" Type="DateTime" Precision="3" />
+          <Property Name="last_update" Type="DateTime" Precision="3" />
+          <Property Name="last_update_by" Type="Int64" />
+          <Property Name="rel_ITEM_id" Type="Int64" Nullable="false" />
+          <Property Name="date_added" Type="DateTime" Precision="3" />
+          <Property Name="meta" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="stay_taken" Type="Boolean" />
+          <Property Name="acct_managed_by" Type="Int64" />
+          <Property Name="tags" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="tags_sys" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="con_ORDERPROC_DOCTOR" Relationship="Self.FK_con_ORDERPROC_DOCTOR_ORDERPROC" FromRole="ORDERPROC" ToRole="con_ORDERPROC_DOCTOR" />
+          <NavigationProperty Name="ORDER_info_2" Relationship="Self.FK_ORDER_info_2_ORDERPROC" FromRole="ORDERPROC" ToRole="ORDER_info_2" />
+          <NavigationProperty Name="ORDER_shipping" Relationship="Self.FK_ORDER_shipping_ORDERPROC" FromRole="ORDERPROC" ToRole="ORDER_shipping" />
+          <NavigationProperty Name="ref_orproc_state" Relationship="Self.FK_ORDERPROC_ref_orproc_state" FromRole="ORDERPROC" ToRole="ref_orproc_state" />
+          <NavigationProperty Name="USER" Relationship="Self.FK_ORDERPROC_USER" FromRole="ORDERPROC" ToRole="USER" />
+          <NavigationProperty Name="TAGs1" Relationship="Self.FK_tags_ORDERPROC" FromRole="ORDERPROC" ToRole="TAG" />
+        </EntityType>
+        <EntityType Name="ref_orproc_state">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int64" Nullable="false" />
+          <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="description" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="ORDERPROCs" Relationship="Self.FK_ORDERPROC_ref_orproc_state" FromRole="ref_orproc_state" ToRole="ORDERPROC" />
+        </EntityType>
+        <EntityType Name="ref_orproc_state_group">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int64" Nullable="false" />
+          <Property Name="code" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="members" Type="String" MaxLength="800" FixedLength="false" Unicode="false" />
+          <Property Name="active" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+        </EntityType>
+        <EntityType Name="ref_TAG">
+          <Key>
+            <PropertyRef Name="tag" />
+          </Key>
+          <Property Name="tag" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="pname" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="rel_ref_tag_type_code" Type="String" MaxLength="4" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="tag_parent" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="active" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="ref_trans_type">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int64" Nullable="false" />
+          <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="description" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="ref_upsell">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="description" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="con_SOUL_ref_upsell" Relationship="Self.FK_con_SOUL_ref_upsell_ref_upsell" FromRole="ref_upsell" ToRole="con_SOUL_ref_upsell" />
+        </EntityType>
+        <EntityType Name="ref_user_type">
+          <Key>
+            <PropertyRef Name="code" />
+          </Key>
+          <Property Name="code" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="description" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="meta" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="USERs" Relationship="Self.FK_USER_ref_user_type" FromRole="ref_user_type" ToRole="USER" />
+        </EntityType>
+        <EntityType Name="ref_zip">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="zip" Type="String" MaxLength="5" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="city_name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="city_state" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="city_lat" Type="Double" Nullable="false" />
+          <Property Name="city_lon" Type="Double" Nullable="false" />
+          <Property Name="city_county" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="ADDRESSes" Relationship="Self.FK_ADDRESS_ref_zip" FromRole="ref_zip" ToRole="ADDRESS" />
+        </EntityType>
+        <EntityType Name="SETTING">
+          <Key>
+            <PropertyRef Name="setting_name" />
+          </Key>
+          <Property Name="setting_name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="value" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="SOUL">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name_first" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="name_last" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="phone_number" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="rel_ADDRESS_id" Type="Int64" Nullable="false" />
+          <Property Name="email" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="meta" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="OR_LIST_res_code" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="last_contact" Type="DateTime" Precision="3" />
+          <Property Name="last_contact_by" Type="Int64" />
+          <Property Name="last_update" Type="DateTime" Precision="3" />
+          <Property Name="last_update_by" Type="Int64" />
+          <Property Name="timestamp" Type="DateTime" Precision="3" />
+          <Property Name="alt_name" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="alt_phone" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="alt_relationship" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="con_LIST_SOUL" Relationship="Self.FK_con_LIST_SOUL_SOUL" FromRole="SOUL" ToRole="con_LIST_SOUL" />
+          <NavigationProperty Name="con_ORDERPROC_DOCTOR" Relationship="Self.FK_con_ORDERPROC_DOCTOR_SOUL" FromRole="SOUL" ToRole="con_ORDERPROC_DOCTOR" />
+          <NavigationProperty Name="con_SOUL_ref_upsell" Relationship="Self.FK_con_SOUL_ref_upsell_SOUL" FromRole="SOUL" ToRole="con_SOUL_ref_upsell" />
+        </EntityType>
+        <EntityType Name="SOUL_info_2">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="rel_SOUL_id" Type="Int64" Nullable="false" />
+          <Property Name="authorized_representative" Type="Boolean" />
+          <Property Name="received_similar_product" Type="Boolean" />
+          <Property Name="received_similar_covered" Type="Boolean" />
+          <Property Name="list_other_health_concerns" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="name_on_ins_card" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="date_birth" Type="DateTime" Precision="0" />
+          <Property Name="height" Type="Double" />
+          <Property Name="weight" Type="Double" />
+          <Property Name="doctor_name" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="doctor_phone" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="doctor_fax" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ins_primary" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="pins_policy_number" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="pins_rel_ADDRESS_id" Type="Int64" />
+          <Property Name="pins_phone" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="sins_policy_number" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="sins_rel_ADDRESS_id" Type="Int64" />
+          <Property Name="sins_phone" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="waist_size" Type="Int32" />
+          <Property Name="pins_name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="sins_name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="pins_group_no" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="sins_group_no" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="interested_in_AED" Type="Boolean" />
+          <Property Name="doctor_NPI" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="doctor_rel_ADDRESS_id" Type="Int64" />
+          <Property Name="SSN" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="doctor_state_m_id" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="doctor_medicare_upin" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="doctor_license_no" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="doctor_pecos_cert" Type="Boolean" />
+          <Property Name="doctor_fax_to" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="doctor_address_state" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="doctor_address_city" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="doctor_address" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="doctor_address_zip" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="pins_info_2_id" Type="Int64" />
+          <Property Name="sins_info_2_id" Type="Int64" />
+          <Property Name="injury_covered_under" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="injury_covered_claimno" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="gender" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="diabetic" Type="Boolean" />
+          <Property Name="cpap" Type="Boolean" />
+          <Property Name="diabetic_confirm" Type="Boolean" />
+          <Property Name="ppo" Type="Boolean" />
+          <Property Name="jpc_interested" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="SOUL_info_3">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="rel_SOUL_id" Type="Int64" Nullable="false" />
+          <Property Name="home_phone2" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="home_phone_co" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="emgcy_contact1_name" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="emgcy_contact1_relation" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="emgcy_contact1_phone1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="emgcy_contact1_phone2" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="emgcy_contact1_phone3" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="emgcy_contact1_hasaccess" Type="Boolean" />
+          <Property Name="emgcy_contact2_name" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="emgcy_contact2_relation" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="emgcy_contact2_phone1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="emgcy_contact2_phone2" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="emgcy_contact2_phone3" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="emgcy_contact2_hasaccess" Type="Boolean" />
+          <Property Name="emgcy_contact3_name" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="emgcy_contact3_relation" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="emgcy_contact3_phone1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="emgcy_contact3_phone2" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="emgcy_contact3_phone3" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="emgcy_contact3_hasaccess" Type="Boolean" />
+          <Property Name="pref_hospital_name" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="pref_hospital_city" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="pref_hospital_state" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="pref_hospital_phone" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="allergies" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="emgcy_special_instructions" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="home_hidden_key_loc" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="medical_conditions" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="TAG">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="value" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="rel_ORDERPROC_id" Type="Int64" Nullable="false" />
+          <Property Name="rel_NOTE_id" Type="Int64" />
+          <Property Name="date1" Type="DateTime" Precision="3" />
+          <Property Name="date2" Type="DateTime" Precision="3" />
+          <Property Name="type" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="created_on" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="created_by" Type="Int64" Nullable="false" />
+          <Property Name="status" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="updated_on" Type="DateTime" Precision="3" />
+          <Property Name="updated_by" Type="Int64" />
+          <NavigationProperty Name="ORDERPROC" Relationship="Self.FK_tags_ORDERPROC" FromRole="TAG" ToRole="ORDERPROC" />
+        </EntityType>
+        <EntityType Name="USER">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int64" Nullable="false" />
+          <Property Name="rel_ref_user_type_code" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="username" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="name_first" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="name_last" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="last_login" Type="DateTime" Precision="3" />
+          <Property Name="active" Type="Boolean" Nullable="false" />
+          <Property Name="meta" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="logged_in" Type="Boolean" />
+          <NavigationProperty Name="log_USER" Relationship="Self.FK_log_USER_USER" FromRole="USER" ToRole="log_USER" />
+          <NavigationProperty Name="ORDERPROCs" Relationship="Self.FK_ORDERPROC_USER" FromRole="USER" ToRole="ORDERPROC" />
+          <NavigationProperty Name="ref_user_type" Relationship="Self.FK_USER_ref_user_type" FromRole="USER" ToRole="ref_user_type" />
+        </EntityType>
+        <EntityType Name="Table_1">
+          <Key>
+            <PropertyRef Name="id" />
+            <PropertyRef Name="rel_TRANSACTION_id" />
+            <PropertyRef Name="rel_ref_orproc_state_id" />
+            <PropertyRef Name="taken_by" />
+            <PropertyRef Name="taken_on" />
+          </Key>
+          <Property Name="id" Type="Int64" Nullable="false" />
+          <Property Name="rel_TRANSACTION_id" Type="Int64" Nullable="false" />
+          <Property Name="rel_ref_orproc_state_id" Type="Int64" Nullable="false" />
+          <Property Name="taken_by" Type="Int64" Nullable="false" />
+          <Property Name="taken_on" Type="Int64" Nullable="false" />
+          <Property Name="last_update" Type="DateTime" Precision="3" />
+          <Property Name="last_update_by" Type="Int64" />
+        </EntityType>
+        <Association Name="FK_ADDRESS_ref_zip">
+          <End Role="ref_zip" Type="Self.ref_zip" Multiplicity="1" />
+          <End Role="ADDRESS" Type="Self.ADDRESS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ref_zip">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="ADDRESS">
+              <PropertyRef Name="rel_ref_zip_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_con_LIST_SOUL_LIST">
+          <End Role="LIST" Type="Self.LIST" Multiplicity="1" />
+          <End Role="con_LIST_SOUL" Type="Self.con_LIST_SOUL" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LIST">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="con_LIST_SOUL">
+              <PropertyRef Name="rel_LIST_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_con_LIST_SOUL_SOUL">
+          <End Role="SOUL" Type="Self.SOUL" Multiplicity="1" />
+          <End Role="con_LIST_SOUL" Type="Self.con_LIST_SOUL" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SOUL">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="con_LIST_SOUL">
+              <PropertyRef Name="rel_SOUL_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_con_ORDERPROC_DOCTOR_DOCTOR">
+          <End Role="DOCTOR" Type="Self.DOCTOR" Multiplicity="1" />
+          <End Role="con_ORDERPROC_DOCTOR" Type="Self.con_ORDERPROC_DOCTOR" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DOCTOR">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="con_ORDERPROC_DOCTOR">
+              <PropertyRef Name="rel_DOCTOR_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_con_ORDERPROC_DOCTOR_ORDERPROC">
+          <End Role="ORDERPROC" Type="Self.ORDERPROC" Multiplicity="1" />
+          <End Role="con_ORDERPROC_DOCTOR" Type="Self.con_ORDERPROC_DOCTOR" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="ORDERPROC">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="con_ORDERPROC_DOCTOR">
+              <PropertyRef Name="rel_ORDERPROC_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_con_ORDERPROC_DOCTOR_SOUL">
+          <End Role="SOUL" Type="Self.SOUL" Multiplicity="1" />
+          <End Role="con_ORDERPROC_DOCTOR" Type="Self.con_ORDERPROC_DOCTOR" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SOUL">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="con_ORDERPROC_DOCTOR">
+              <PropertyRef Name="rel_SOUL_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_con_SOUL_ref_upsell_ref_upsell">
+          <End Role="ref_upsell" Type="Self.ref_upsell" Multiplicity="1" />
+          <End Role="con_SOUL_ref_upsell" Type="Self.con_SOUL_ref_upsell" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ref_upsell">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="con_SOUL_ref_upsell">
+              <PropertyRef Name="rel_ref_upsell_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_con_SOUL_ref_upsell_SOUL">
+          <End Role="SOUL" Type="Self.SOUL" Multiplicity="1" />
+          <End Role="con_SOUL_ref_upsell" Type="Self.con_SOUL_ref_upsell" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SOUL">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="con_SOUL_ref_upsell">
+              <PropertyRef Name="rel_SOUL_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Table_DOCTOR">
+          <End Role="DOCTOR" Type="Self.DOCTOR" Multiplicity="0..1" />
+          <End Role="Doc_Insurance_Affiliation" Type="Self.Doc_Insurance_Affiliation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DOCTOR">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Doc_Insurance_Affiliation">
+              <PropertyRef Name="doc_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Table_Insurance">
+          <End Role="Insurance_Profile" Type="Self.Insurance_Profile" Multiplicity="0..1" />
+          <End Role="Doc_Insurance_Affiliation" Type="Self.Doc_Insurance_Affiliation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Insurance_Profile">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Doc_Insurance_Affiliation">
+              <PropertyRef Name="insurance_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_log_USER_USER">
+          <End Role="USER" Type="Self.USER" Multiplicity="0..1" />
+          <End Role="log_USER" Type="Self.log_USER" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="USER">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="log_USER">
+              <PropertyRef Name="rel_USER_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ORDER_info_2_ORDERPROC">
+          <End Role="ORDERPROC" Type="Self.ORDERPROC" Multiplicity="1" />
+          <End Role="ORDER_info_2" Type="Self.ORDER_info_2" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ORDERPROC">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="ORDER_info_2">
+              <PropertyRef Name="rel_ORDERPROC_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ORDER_shipping_ORDERPROC">
+          <End Role="ORDERPROC" Type="Self.ORDERPROC" Multiplicity="1" />
+          <End Role="ORDER_shipping" Type="Self.ORDER_shipping" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ORDERPROC">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="ORDER_shipping">
+              <PropertyRef Name="rel_ORDERPROC_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ORDERPROC_ref_orproc_state">
+          <End Role="ref_orproc_state" Type="Self.ref_orproc_state" Multiplicity="1" />
+          <End Role="ORDERPROC" Type="Self.ORDERPROC" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ref_orproc_state">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="ORDERPROC">
+              <PropertyRef Name="rel_ref_orproc_state_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ORDERPROC_USER">
+          <End Role="USER" Type="Self.USER" Multiplicity="0..1" />
+          <End Role="ORDERPROC" Type="Self.ORDERPROC" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="USER">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="ORDERPROC">
+              <PropertyRef Name="acct_managed_by" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tags_ORDERPROC">
+          <End Role="ORDERPROC" Type="Self.ORDERPROC" Multiplicity="1" />
+          <End Role="TAG" Type="Self.TAG" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ORDERPROC">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="TAG">
+              <PropertyRef Name="rel_ORDERPROC_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_USER_ref_user_type">
+          <End Role="ref_user_type" Type="Self.ref_user_type" Multiplicity="0..1" />
+          <End Role="USER" Type="Self.USER" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ref_user_type">
+              <PropertyRef Name="code" />
+            </Principal>
+            <Dependent Role="USER">
+              <PropertyRef Name="rel_ref_user_type_code" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="mainEntitiescon" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="ADDRESSes" EntityType="Self.ADDRESS" />
+          <EntitySet Name="CAMPAIGNs" EntityType="Self.CAMPAIGN" />
+          <EntitySet Name="con_LIST_SOUL" EntityType="Self.con_LIST_SOUL" />
+          <EntitySet Name="con_ORDERPROC_DOCTOR" EntityType="Self.con_ORDERPROC_DOCTOR" />
+          <EntitySet Name="con_SOUL_ref_upsell" EntityType="Self.con_SOUL_ref_upsell" />
+          <EntitySet Name="Conditions_Profile" EntityType="Self.Conditions_Profile" />
+          <EntitySet Name="Doc_Insurance_Affiliation" EntityType="Self.Doc_Insurance_Affiliation" />
+          <EntitySet Name="Doc_Specialties_Profile" EntityType="Self.Doc_Specialties_Profile" />
+          <EntitySet Name="DOCTORs" EntityType="Self.DOCTOR" />
+          <EntitySet Name="INS_info_2" EntityType="Self.INS_info_2" />
+          <EntitySet Name="Insurance_Profile" EntityType="Self.Insurance_Profile" />
+          <EntitySet Name="ITEMs" EntityType="Self.ITEM" />
+          <EntitySet Name="LISTs" EntityType="Self.LIST" />
+          <EntitySet Name="log_EXTERNAL" EntityType="Self.log_EXTERNAL" />
+          <EntitySet Name="log_ORPROC" EntityType="Self.log_ORPROC" />
+          <EntitySet Name="log_ORPROC_ALL" EntityType="Self.log_ORPROC_ALL" />
+          <EntitySet Name="LOG_Q1" EntityType="Self.LOG_Q1" />
+          <EntitySet Name="log_USER" EntityType="Self.log_USER" />
+          <EntitySet Name="Med_Specialties" EntityType="Self.Med_Specialties" />
+          <EntitySet Name="NOTEs" EntityType="Self.NOTE" />
+          <EntitySet Name="ORDER_info_2" EntityType="Self.ORDER_info_2" />
+          <EntitySet Name="ORDER_shipping" EntityType="Self.ORDER_shipping" />
+          <EntitySet Name="ORDERPROCs" EntityType="Self.ORDERPROC" />
+          <EntitySet Name="ref_orproc_state" EntityType="Self.ref_orproc_state" />
+          <EntitySet Name="ref_orproc_state_group" EntityType="Self.ref_orproc_state_group" />
+          <EntitySet Name="ref_TAG" EntityType="Self.ref_TAG" />
+          <EntitySet Name="ref_trans_type" EntityType="Self.ref_trans_type" />
+          <EntitySet Name="ref_upsell" EntityType="Self.ref_upsell" />
+          <EntitySet Name="ref_user_type" EntityType="Self.ref_user_type" />
+          <EntitySet Name="ref_zip" EntityType="Self.ref_zip" />
+          <EntitySet Name="SETTINGS" EntityType="Self.SETTING" />
+          <EntitySet Name="SOULs" EntityType="Self.SOUL" />
+          <EntitySet Name="SOUL_info_2" EntityType="Self.SOUL_info_2" />
+          <EntitySet Name="SOUL_info_3" EntityType="Self.SOUL_info_3" />
+          <EntitySet Name="TAGs" EntityType="Self.TAG" />
+          <EntitySet Name="USERs" EntityType="Self.USER" />
+          <EntitySet Name="Table_1" EntityType="Self.Table_1" />
+          <AssociationSet Name="FK_ADDRESS_ref_zip" Association="Self.FK_ADDRESS_ref_zip">
+            <End Role="ref_zip" EntitySet="ref_zip" />
+            <End Role="ADDRESS" EntitySet="ADDRESSes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_con_LIST_SOUL_LIST" Association="Self.FK_con_LIST_SOUL_LIST">
+            <End Role="LIST" EntitySet="LISTs" />
+            <End Role="con_LIST_SOUL" EntitySet="con_LIST_SOUL" />
+          </AssociationSet>
+          <AssociationSet Name="FK_con_LIST_SOUL_SOUL" Association="Self.FK_con_LIST_SOUL_SOUL">
+            <End Role="SOUL" EntitySet="SOULs" />
+            <End Role="con_LIST_SOUL" EntitySet="con_LIST_SOUL" />
+          </AssociationSet>
+          <AssociationSet Name="FK_con_ORDERPROC_DOCTOR_DOCTOR" Association="Self.FK_con_ORDERPROC_DOCTOR_DOCTOR">
+            <End Role="DOCTOR" EntitySet="DOCTORs" />
+            <End Role="con_ORDERPROC_DOCTOR" EntitySet="con_ORDERPROC_DOCTOR" />
+          </AssociationSet>
+          <AssociationSet Name="FK_con_ORDERPROC_DOCTOR_ORDERPROC" Association="Self.FK_con_ORDERPROC_DOCTOR_ORDERPROC">
+            <End Role="ORDERPROC" EntitySet="ORDERPROCs" />
+            <End Role="con_ORDERPROC_DOCTOR" EntitySet="con_ORDERPROC_DOCTOR" />
+          </AssociationSet>
+          <AssociationSet Name="FK_con_ORDERPROC_DOCTOR_SOUL" Association="Self.FK_con_ORDERPROC_DOCTOR_SOUL">
+            <End Role="SOUL" EntitySet="SOULs" />
+            <End Role="con_ORDERPROC_DOCTOR" EntitySet="con_ORDERPROC_DOCTOR" />
+          </AssociationSet>
+          <AssociationSet Name="FK_con_SOUL_ref_upsell_ref_upsell" Association="Self.FK_con_SOUL_ref_upsell_ref_upsell">
+            <End Role="ref_upsell" EntitySet="ref_upsell" />
+            <End Role="con_SOUL_ref_upsell" EntitySet="con_SOUL_ref_upsell" />
+          </AssociationSet>
+          <AssociationSet Name="FK_con_SOUL_ref_upsell_SOUL" Association="Self.FK_con_SOUL_ref_upsell_SOUL">
+            <End Role="SOUL" EntitySet="SOULs" />
+            <End Role="con_SOUL_ref_upsell" EntitySet="con_SOUL_ref_upsell" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Table_DOCTOR" Association="Self.FK_Table_DOCTOR">
+            <End Role="DOCTOR" EntitySet="DOCTORs" />
+            <End Role="Doc_Insurance_Affiliation" EntitySet="Doc_Insurance_Affiliation" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Table_Insurance" Association="Self.FK_Table_Insurance">
+            <End Role="Insurance_Profile" EntitySet="Insurance_Profile" />
+            <End Role="Doc_Insurance_Affiliation" EntitySet="Doc_Insurance_Affiliation" />
+          </AssociationSet>
+          <AssociationSet Name="FK_log_USER_USER" Association="Self.FK_log_USER_USER">
+            <End Role="USER" EntitySet="USERs" />
+            <End Role="log_USER" EntitySet="log_USER" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ORDER_info_2_ORDERPROC" Association="Self.FK_ORDER_info_2_ORDERPROC">
+            <End Role="ORDERPROC" EntitySet="ORDERPROCs" />
+            <End Role="ORDER_info_2" EntitySet="ORDER_info_2" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ORDER_shipping_ORDERPROC" Association="Self.FK_ORDER_shipping_ORDERPROC">
+            <End Role="ORDERPROC" EntitySet="ORDERPROCs" />
+            <End Role="ORDER_shipping" EntitySet="ORDER_shipping" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ORDERPROC_ref_orproc_state" Association="Self.FK_ORDERPROC_ref_orproc_state">
+            <End Role="ref_orproc_state" EntitySet="ref_orproc_state" />
+            <End Role="ORDERPROC" EntitySet="ORDERPROCs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ORDERPROC_USER" Association="Self.FK_ORDERPROC_USER">
+            <End Role="USER" EntitySet="USERs" />
+            <End Role="ORDERPROC" EntitySet="ORDERPROCs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tags_ORDERPROC" Association="Self.FK_tags_ORDERPROC">
+            <End Role="ORDERPROC" EntitySet="ORDERPROCs" />
+            <End Role="TAG" EntitySet="TAGs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_USER_ref_user_type" Association="Self.FK_USER_ref_user_type">
+            <End Role="ref_user_type" EntitySet="ref_user_type" />
+            <End Role="USER" EntitySet="USERs" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="ModelsStoreContainer" CdmEntityContainer="mainEntitiescon">
+          <EntitySetMapping Name="ADDRESSes">
+            <EntityTypeMapping TypeName="Models.ADDRESS">
+              <MappingFragment StoreEntitySet="ADDRESS">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="address1" ColumnName="address1" />
+                <ScalarProperty Name="address2" ColumnName="address2" />
+                <ScalarProperty Name="xus_city" ColumnName="xus_city" />
+                <ScalarProperty Name="xus_state" ColumnName="xus_state" />
+                <ScalarProperty Name="xus_zip" ColumnName="xus_zip" />
+                <ScalarProperty Name="rel_ref_zip_id" ColumnName="rel_ref_zip_id" />
+                <ScalarProperty Name="OR_zip_city" ColumnName="OR_zip_city" />
+                <ScalarProperty Name="rel_ref_country_id" ColumnName="rel_ref_country_id" />
+                <ScalarProperty Name="last_update" ColumnName="last_update" />
+                <ScalarProperty Name="last_updated_by" ColumnName="last_updated_by" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CAMPAIGNs">
+            <EntityTypeMapping TypeName="Models.CAMPAIGN">
+              <MappingFragment StoreEntitySet="CAMPAIGN">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="code" ColumnName="code" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="drop_date_set" ColumnName="drop_date_set" />
+                <ScalarProperty Name="drop_date_actual" ColumnName="drop_date_actual" />
+                <ScalarProperty Name="rel_ref_campaign_type" ColumnName="rel_ref_campaign_type" />
+                <ScalarProperty Name="type" ColumnName="type" />
+                <ScalarProperty Name="quantity" ColumnName="quantity" />
+                <ScalarProperty Name="phone" ColumnName="phone" />
+                <ScalarProperty Name="created_on" ColumnName="created_on" />
+                <ScalarProperty Name="created_by" ColumnName="created_by" />
+                <ScalarProperty Name="updated_on" ColumnName="updated_on" />
+                <ScalarProperty Name="updated_by" ColumnName="updated_by" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="con_LIST_SOUL">
+            <EntityTypeMapping TypeName="Models.con_LIST_SOUL">
+              <MappingFragment StoreEntitySet="con_LIST_SOUL">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="rel_LIST_id" ColumnName="rel_LIST_id" />
+                <ScalarProperty Name="rel_SOUL_id" ColumnName="rel_SOUL_id" />
+                <ScalarProperty Name="rc_tail" ColumnName="rc_tail" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="con_ORDERPROC_DOCTOR">
+            <EntityTypeMapping TypeName="Models.con_ORDERPROC_DOCTOR">
+              <MappingFragment StoreEntitySet="con_ORDERPROC_DOCTOR">
+                <ScalarProperty Name="rel_ORDERPROC_id" ColumnName="rel_ORDERPROC_id" />
+                <ScalarProperty Name="rel_SOUL_id" ColumnName="rel_SOUL_id" />
+                <ScalarProperty Name="rel_DOCTOR_id" ColumnName="rel_DOCTOR_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="con_SOUL_ref_upsell">
+            <EntityTypeMapping TypeName="Models.con_SOUL_ref_upsell">
+              <MappingFragment StoreEntitySet="con_SOUL_ref_upsell">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="rel_SOUL_id" ColumnName="rel_SOUL_id" />
+                <ScalarProperty Name="rel_ref_upsell_id" ColumnName="rel_ref_upsell_id" />
+                <ScalarProperty Name="meta" ColumnName="meta" />
+                <ScalarProperty Name="meta_2" ColumnName="meta_2" />
+                <ScalarProperty Name="timestamp" ColumnName="timestamp" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Conditions_Profile">
+            <EntityTypeMapping TypeName="Models.Conditions_Profile">
+              <MappingFragment StoreEntitySet="Conditions_Profile">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="description" ColumnName="description" />
+                <ScalarProperty Name="symptoms" ColumnName="symptoms" />
+                <ScalarProperty Name="category" ColumnName="category" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Doc_Insurance_Affiliation">
+            <EntityTypeMapping TypeName="Models.Doc_Insurance_Affiliation">
+              <MappingFragment StoreEntitySet="Doc_Insurance_Affiliation">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="doc_id" ColumnName="doc_id" />
+                <ScalarProperty Name="insurance_id" ColumnName="insurance_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Doc_Specialties_Profile">
+            <EntityTypeMapping TypeName="Models.Doc_Specialties_Profile">
+              <MappingFragment StoreEntitySet="Doc_Specialties_Profile">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="doctor_id" ColumnName="doctor_id" />
+                <ScalarProperty Name="specialty_id" ColumnName="specialty_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DOCTORs">
+            <EntityTypeMapping TypeName="Models.DOCTOR">
+              <MappingFragment StoreEntitySet="DOCTOR">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="doctor_name" ColumnName="doctor_name" />
+                <ScalarProperty Name="gender" ColumnName="gender" />
+                <ScalarProperty Name="title" ColumnName="title" />
+                <ScalarProperty Name="doctor_phone" ColumnName="doctor_phone" />
+                <ScalarProperty Name="doctor_fax" ColumnName="doctor_fax" />
+                <ScalarProperty Name="doctor_NPI" ColumnName="doctor_NPI" />
+                <ScalarProperty Name="doctor_NPI_type" ColumnName="doctor_NPI_type" />
+                <ScalarProperty Name="doctor_org_name" ColumnName="doctor_org_name" />
+                <ScalarProperty Name="doctor_rel_ADDRESS_id" ColumnName="doctor_rel_ADDRESS_id" />
+                <ScalarProperty Name="doctor_state_m_id" ColumnName="doctor_state_m_id" />
+                <ScalarProperty Name="doctor_medicare_upin" ColumnName="doctor_medicare_upin" />
+                <ScalarProperty Name="doctor_license_no" ColumnName="doctor_license_no" />
+                <ScalarProperty Name="doctor_pecos_cert" ColumnName="doctor_pecos_cert" />
+                <ScalarProperty Name="doctor_fax_to" ColumnName="doctor_fax_to" />
+                <ScalarProperty Name="doctor_address1" ColumnName="doctor_address1" />
+                <ScalarProperty Name="doctor_address2" ColumnName="doctor_address2" />
+                <ScalarProperty Name="doctor_address_state" ColumnName="doctor_address_state" />
+                <ScalarProperty Name="doctor_address_city" ColumnName="doctor_address_city" />
+                <ScalarProperty Name="doctor_address" ColumnName="doctor_address" />
+                <ScalarProperty Name="doctor_address_zip" ColumnName="doctor_address_zip" />
+                <ScalarProperty Name="last_update_by" ColumnName="last_update_by" />
+                <ScalarProperty Name="last_update" ColumnName="last_update" />
+                <ScalarProperty Name="status" ColumnName="status" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="INS_info_2">
+            <EntityTypeMapping TypeName="Models.INS_info_2">
+              <MappingFragment StoreEntitySet="INS_info_2">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="benefit_level" ColumnName="benefit_level" />
+                <ScalarProperty Name="DME_benefits" ColumnName="DME_benefits" />
+                <ScalarProperty Name="effective_date" ColumnName="effective_date" />
+                <ScalarProperty Name="deductible" ColumnName="deductible" />
+                <ScalarProperty Name="deductible_met" ColumnName="deductible_met" />
+                <ScalarProperty Name="percent_coverage" ColumnName="percent_coverage" />
+                <ScalarProperty Name="out_of_pocket" ColumnName="out_of_pocket" />
+                <ScalarProperty Name="co_pay" ColumnName="co_pay" />
+                <ScalarProperty Name="co_pay_amount" ColumnName="co_pay_amount" />
+                <ScalarProperty Name="preauth_req" ColumnName="preauth_req" />
+                <ScalarProperty Name="preauth_contact" ColumnName="preauth_contact" />
+                <ScalarProperty Name="payor_id" ColumnName="payor_id" />
+                <ScalarProperty Name="preauth_info" ColumnName="preauth_info" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Insurance_Profile">
+            <EntityTypeMapping TypeName="Models.Insurance_Profile">
+              <MappingFragment StoreEntitySet="Insurance_Profile">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="plan_name" ColumnName="plan_name" />
+                <ScalarProperty Name="provider" ColumnName="provider" />
+                <ScalarProperty Name="category" ColumnName="category" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ITEMs">
+            <EntityTypeMapping TypeName="Models.ITEM">
+              <MappingFragment StoreEntitySet="ITEM">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="code" ColumnName="code" />
+                <ScalarProperty Name="description" ColumnName="description" />
+                <ScalarProperty Name="HCPC" ColumnName="HCPC" />
+                <ScalarProperty Name="price" ColumnName="price" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LISTs">
+            <EntityTypeMapping TypeName="Models.LIST">
+              <MappingFragment StoreEntitySet="LIST">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="description" ColumnName="description" />
+                <ScalarProperty Name="segment" ColumnName="segment" />
+                <ScalarProperty Name="order_number" ColumnName="order_number" />
+                <ScalarProperty Name="res_code" ColumnName="res_code" />
+                <ScalarProperty Name="order_quantity" ColumnName="order_quantity" />
+                <ScalarProperty Name="date_emailed" ColumnName="date_emailed" />
+                <ScalarProperty Name="final_quantity" ColumnName="final_quantity" />
+                <ScalarProperty Name="date_mailed" ColumnName="date_mailed" />
+                <ScalarProperty Name="mail_quantity" ColumnName="mail_quantity" />
+                <ScalarProperty Name="response_count" ColumnName="response_count" />
+                <ScalarProperty Name="accepted_count" ColumnName="accepted_count" />
+                <ScalarProperty Name="last_hit" ColumnName="last_hit" />
+                <ScalarProperty Name="last_update" ColumnName="last_update" />
+                <ScalarProperty Name="last_update_by" ColumnName="last_update_by" />
+                <ScalarProperty Name="drop_description" ColumnName="drop_description" />
+                <ScalarProperty Name="phone_number" ColumnName="phone_number" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="log_EXTERNAL">
+            <EntityTypeMapping TypeName="Models.log_EXTERNAL">
+              <MappingFragment StoreEntitySet="log_EXTERNAL">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="rel_ref_external_type_id" ColumnName="rel_ref_external_type_id" />
+                <ScalarProperty Name="external_type" ColumnName="external_type" />
+                <ScalarProperty Name="data_out" ColumnName="data_out" />
+                <ScalarProperty Name="data_in" ColumnName="data_in" />
+                <ScalarProperty Name="meta" ColumnName="meta" />
+                <ScalarProperty Name="timestamp" ColumnName="timestamp" />
+                <ScalarProperty Name="rel_SOUL_id" ColumnName="rel_SOUL_id" />
+                <ScalarProperty Name="executed_by" ColumnName="executed_by" />
+                <ScalarProperty Name="rel_ORPROC_id" ColumnName="rel_ORPROC_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="log_ORPROC">
+            <EntityTypeMapping TypeName="Models.log_ORPROC">
+              <MappingFragment StoreEntitySet="log_ORPROC">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="rel_ORDERPROC_id" ColumnName="rel_ORDERPROC_id" />
+                <ScalarProperty Name="action" ColumnName="action" />
+                <ScalarProperty Name="meta" ColumnName="meta" />
+                <ScalarProperty Name="executed_by" ColumnName="executed_by" />
+                <ScalarProperty Name="executed_on" ColumnName="executed_on" />
+                <ScalarProperty Name="var_from" ColumnName="var_from" />
+                <ScalarProperty Name="var_to" ColumnName="var_to" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="log_ORPROC_ALL">
+            <EntityTypeMapping TypeName="Models.log_ORPROC_ALL">
+              <MappingFragment StoreEntitySet="log_ORPROC_ALL">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="rel_ORDERPROC_id" ColumnName="rel_ORDERPROC_id" />
+                <ScalarProperty Name="action" ColumnName="action" />
+                <ScalarProperty Name="meta" ColumnName="meta" />
+                <ScalarProperty Name="executed_by" ColumnName="executed_by" />
+                <ScalarProperty Name="executed_on" ColumnName="executed_on" />
+                <ScalarProperty Name="var_from" ColumnName="var_from" />
+                <ScalarProperty Name="var_to" ColumnName="var_to" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LOG_Q1">
+            <EntityTypeMapping TypeName="Models.LOG_Q1">
+              <MappingFragment StoreEntitySet="LOG_Q1">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="acct_manager" ColumnName="acct_manager" />
+                <ScalarProperty Name="rel_ref_orprocstate_id" ColumnName="rel_ref_orprocstate_id" />
+                <ScalarProperty Name="count" ColumnName="count" />
+                <ScalarProperty Name="order_ids" ColumnName="order_ids" />
+                <ScalarProperty Name="date" ColumnName="date" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="log_USER">
+            <EntityTypeMapping TypeName="Models.log_USER">
+              <MappingFragment StoreEntitySet="log_USER">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="rel_USER_id" ColumnName="rel_USER_id" />
+                <ScalarProperty Name="action_note" ColumnName="action_note" />
+                <ScalarProperty Name="rel_ref_action_id" ColumnName="rel_ref_action_id" />
+                <ScalarProperty Name="timestamp" ColumnName="timestamp" />
+                <ScalarProperty Name="ip" ColumnName="ip" />
+                <ScalarProperty Name="page" ColumnName="page" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Med_Specialties">
+            <EntityTypeMapping TypeName="Models.Med_Specialties">
+              <MappingFragment StoreEntitySet="Med_Specialties">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="description" ColumnName="description" />
+                <ScalarProperty Name="category" ColumnName="category" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="NOTEs">
+            <EntityTypeMapping TypeName="Models.NOTE">
+              <MappingFragment StoreEntitySet="NOTE">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="text" ColumnName="text" />
+                <ScalarProperty Name="written_by" ColumnName="written_by" />
+                <ScalarProperty Name="written_on" ColumnName="written_on" />
+                <ScalarProperty Name="note_type" ColumnName="note_type" />
+                <ScalarProperty Name="rel_ref_note_type_id" ColumnName="rel_ref_note_type_id" />
+                <ScalarProperty Name="rel_parent_id" ColumnName="rel_parent_id" />
+                <ScalarProperty Name="tags" ColumnName="tags" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ORDER_info_2">
+            <EntityTypeMapping TypeName="Models.ORDER_info_2">
+              <MappingFragment StoreEntitySet="ORDER_info_2">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="rel_ORDERPROC_id" ColumnName="rel_ORDERPROC_id" />
+                <ScalarProperty Name="date_actual_ship" ColumnName="date_actual_ship" />
+                <ScalarProperty Name="shipped_through" ColumnName="shipped_through" />
+                <ScalarProperty Name="tracking_no" ColumnName="tracking_no" />
+                <ScalarProperty Name="date_AOB_received" ColumnName="date_AOB_received" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ORDER_shipping">
+            <EntityTypeMapping TypeName="Models.ORDER_shipping">
+              <MappingFragment StoreEntitySet="ORDER_shipping">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="date" ColumnName="date" />
+                <ScalarProperty Name="trackng_number" ColumnName="trackng_number" />
+                <ScalarProperty Name="rel_ref_shipping_status_id" ColumnName="rel_ref_shipping_status_id" />
+                <ScalarProperty Name="notes" ColumnName="notes" />
+                <ScalarProperty Name="rel_ORDERPROC_id" ColumnName="rel_ORDERPROC_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ORDERPROCs">
+            <EntityTypeMapping TypeName="Models.ORDERPROC">
+              <MappingFragment StoreEntitySet="ORDERPROC">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="rel_TRANSACTION_id" ColumnName="rel_TRANSACTION_id" />
+                <ScalarProperty Name="rel_ref_orproc_state_id" ColumnName="rel_ref_orproc_state_id" />
+                <ScalarProperty Name="taken_by" ColumnName="taken_by" />
+                <ScalarProperty Name="taken_on" ColumnName="taken_on" />
+                <ScalarProperty Name="last_update" ColumnName="last_update" />
+                <ScalarProperty Name="last_update_by" ColumnName="last_update_by" />
+                <ScalarProperty Name="rel_ITEM_id" ColumnName="rel_ITEM_id" />
+                <ScalarProperty Name="date_added" ColumnName="date_added" />
+                <ScalarProperty Name="meta" ColumnName="meta" />
+                <ScalarProperty Name="stay_taken" ColumnName="stay_taken" />
+                <ScalarProperty Name="acct_managed_by" ColumnName="acct_managed_by" />
+                <ScalarProperty Name="tags" ColumnName="tags" />
+                <ScalarProperty Name="tags_sys" ColumnName="tags_sys" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ref_orproc_state">
+            <EntityTypeMapping TypeName="Models.ref_orproc_state">
+              <MappingFragment StoreEntitySet="ref_orproc_state">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="description" ColumnName="description" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ref_orproc_state_group">
+            <EntityTypeMapping TypeName="Models.ref_orproc_state_group">
+              <MappingFragment StoreEntitySet="ref_orproc_state_group">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="code" ColumnName="code" />
+                <ScalarProperty Name="members" ColumnName="members" />
+                <ScalarProperty Name="active" ColumnName="active" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ref_TAG">
+            <EntityTypeMapping TypeName="Models.ref_TAG">
+              <MappingFragment StoreEntitySet="ref_TAG">
+                <ScalarProperty Name="tag" ColumnName="tag" />
+                <ScalarProperty Name="pname" ColumnName="pname" />
+                <ScalarProperty Name="rel_ref_tag_type_code" ColumnName="rel_ref_tag_type_code" />
+                <ScalarProperty Name="tag_parent" ColumnName="tag_parent" />
+                <ScalarProperty Name="active" ColumnName="active" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ref_trans_type">
+            <EntityTypeMapping TypeName="Models.ref_trans_type">
+              <MappingFragment StoreEntitySet="ref_trans_type">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="description" ColumnName="description" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ref_upsell">
+            <EntityTypeMapping TypeName="Models.ref_upsell">
+              <MappingFragment StoreEntitySet="ref_upsell">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="description" ColumnName="description" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ref_user_type">
+            <EntityTypeMapping TypeName="Models.ref_user_type">
+              <MappingFragment StoreEntitySet="ref_user_type">
+                <ScalarProperty Name="code" ColumnName="code" />
+                <ScalarProperty Name="description" ColumnName="description" />
+                <ScalarProperty Name="meta" ColumnName="meta" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ref_zip">
+            <EntityTypeMapping TypeName="Models.ref_zip">
+              <MappingFragment StoreEntitySet="ref_zip">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="zip" ColumnName="zip" />
+                <ScalarProperty Name="city_name" ColumnName="city_name" />
+                <ScalarProperty Name="city_state" ColumnName="city_state" />
+                <ScalarProperty Name="city_lat" ColumnName="city_lat" />
+                <ScalarProperty Name="city_lon" ColumnName="city_lon" />
+                <ScalarProperty Name="city_county" ColumnName="city_county" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SETTINGS">
+            <EntityTypeMapping TypeName="Models.SETTING">
+              <MappingFragment StoreEntitySet="SETTINGS">
+                <ScalarProperty Name="setting_name" ColumnName="setting_name" />
+                <ScalarProperty Name="value" ColumnName="value" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SOULs">
+            <EntityTypeMapping TypeName="Models.SOUL">
+              <MappingFragment StoreEntitySet="SOUL">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="name_first" ColumnName="name_first" />
+                <ScalarProperty Name="name_last" ColumnName="name_last" />
+                <ScalarProperty Name="phone_number" ColumnName="phone_number" />
+                <ScalarProperty Name="rel_ADDRESS_id" ColumnName="rel_ADDRESS_id" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="meta" ColumnName="meta" />
+                <ScalarProperty Name="OR_LIST_res_code" ColumnName="OR_LIST_res_code" />
+                <ScalarProperty Name="last_contact" ColumnName="last_contact" />
+                <ScalarProperty Name="last_contact_by" ColumnName="last_contact_by" />
+                <ScalarProperty Name="last_update" ColumnName="last_update" />
+                <ScalarProperty Name="last_update_by" ColumnName="last_update_by" />
+                <ScalarProperty Name="timestamp" ColumnName="timestamp" />
+                <ScalarProperty Name="alt_name" ColumnName="alt_name" />
+                <ScalarProperty Name="alt_phone" ColumnName="alt_phone" />
+                <ScalarProperty Name="alt_relationship" ColumnName="alt_relationship" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SOUL_info_2">
+            <EntityTypeMapping TypeName="Models.SOUL_info_2">
+              <MappingFragment StoreEntitySet="SOUL_info_2">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="rel_SOUL_id" ColumnName="rel_SOUL_id" />
+                <ScalarProperty Name="authorized_representative" ColumnName="authorized_representative" />
+                <ScalarProperty Name="received_similar_product" ColumnName="received_similar_product" />
+                <ScalarProperty Name="received_similar_covered" ColumnName="received_similar_covered" />
+                <ScalarProperty Name="list_other_health_concerns" ColumnName="list_other_health_concerns" />
+                <ScalarProperty Name="name_on_ins_card" ColumnName="name_on_ins_card" />
+                <ScalarProperty Name="date_birth" ColumnName="date_birth" />
+                <ScalarProperty Name="height" ColumnName="height" />
+                <ScalarProperty Name="weight" ColumnName="weight" />
+                <ScalarProperty Name="doctor_name" ColumnName="doctor_name" />
+                <ScalarProperty Name="doctor_phone" ColumnName="doctor_phone" />
+                <ScalarProperty Name="doctor_fax" ColumnName="doctor_fax" />
+                <ScalarProperty Name="ins_primary" ColumnName="ins_primary" />
+                <ScalarProperty Name="pins_policy_number" ColumnName="pins_policy_number" />
+                <ScalarProperty Name="pins_rel_ADDRESS_id" ColumnName="pins_rel_ADDRESS_id" />
+                <ScalarProperty Name="pins_phone" ColumnName="pins_phone" />
+                <ScalarProperty Name="sins_policy_number" ColumnName="sins_policy_number" />
+                <ScalarProperty Name="sins_rel_ADDRESS_id" ColumnName="sins_rel_ADDRESS_id" />
+                <ScalarProperty Name="sins_phone" ColumnName="sins_phone" />
+                <ScalarProperty Name="waist_size" ColumnName="waist_size" />
+                <ScalarProperty Name="pins_name" ColumnName="pins_name" />
+                <ScalarProperty Name="sins_name" ColumnName="sins_name" />
+                <ScalarProperty Name="pins_group_no" ColumnName="pins_group_no" />
+                <ScalarProperty Name="sins_group_no" ColumnName="sins_group_no" />
+                <ScalarProperty Name="interested_in_AED" ColumnName="interested_in_AED" />
+                <ScalarProperty Name="doctor_NPI" ColumnName="doctor_NPI" />
+                <ScalarProperty Name="doctor_rel_ADDRESS_id" ColumnName="doctor_rel_ADDRESS_id" />
+                <ScalarProperty Name="SSN" ColumnName="SSN" />
+                <ScalarProperty Name="doctor_state_m_id" ColumnName="doctor_state_m_id" />
+                <ScalarProperty Name="doctor_medicare_upin" ColumnName="doctor_medicare_upin" />
+                <ScalarProperty Name="doctor_license_no" ColumnName="doctor_license_no" />
+                <ScalarProperty Name="doctor_pecos_cert" ColumnName="doctor_pecos_cert" />
+                <ScalarProperty Name="doctor_fax_to" ColumnName="doctor_fax_to" />
+                <ScalarProperty Name="doctor_address_state" ColumnName="doctor_address_state" />
+                <ScalarProperty Name="doctor_address_city" ColumnName="doctor_address_city" />
+                <ScalarProperty Name="doctor_address" ColumnName="doctor_address" />
+                <ScalarProperty Name="doctor_address_zip" ColumnName="doctor_address_zip" />
+                <ScalarProperty Name="pins_info_2_id" ColumnName="pins_info_2_id" />
+                <ScalarProperty Name="sins_info_2_id" ColumnName="sins_info_2_id" />
+                <ScalarProperty Name="injury_covered_under" ColumnName="injury_covered_under" />
+                <ScalarProperty Name="injury_covered_claimno" ColumnName="injury_covered_claimno" />
+                <ScalarProperty Name="gender" ColumnName="gender" />
+                <ScalarProperty Name="diabetic" ColumnName="diabetic" />
+                <ScalarProperty Name="cpap" ColumnName="cpap" />
+                <ScalarProperty Name="diabetic_confirm" ColumnName="diabetic_confirm" />
+                <ScalarProperty Name="ppo" ColumnName="ppo" />
+                <ScalarProperty Name="jpc_interested" ColumnName="jpc_interested" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SOUL_info_3">
+            <EntityTypeMapping TypeName="Models.SOUL_info_3">
+              <MappingFragment StoreEntitySet="SOUL_info_3">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="rel_SOUL_id" ColumnName="rel_SOUL_id" />
+                <ScalarProperty Name="home_phone2" ColumnName="home_phone2" />
+                <ScalarProperty Name="home_phone_co" ColumnName="home_phone_co" />
+                <ScalarProperty Name="emgcy_contact1_name" ColumnName="emgcy_contact1_name" />
+                <ScalarProperty Name="emgcy_contact1_relation" ColumnName="emgcy_contact1_relation" />
+                <ScalarProperty Name="emgcy_contact1_phone1" ColumnName="emgcy_contact1_phone1" />
+                <ScalarProperty Name="emgcy_contact1_phone2" ColumnName="emgcy_contact1_phone2" />
+                <ScalarProperty Name="emgcy_contact1_phone3" ColumnName="emgcy_contact1_phone3" />
+                <ScalarProperty Name="emgcy_contact1_hasaccess" ColumnName="emgcy_contact1_hasaccess" />
+                <ScalarProperty Name="emgcy_contact2_name" ColumnName="emgcy_contact2_name" />
+                <ScalarProperty Name="emgcy_contact2_relation" ColumnName="emgcy_contact2_relation" />
+                <ScalarProperty Name="emgcy_contact2_phone1" ColumnName="emgcy_contact2_phone1" />
+                <ScalarProperty Name="emgcy_contact2_phone2" ColumnName="emgcy_contact2_phone2" />
+                <ScalarProperty Name="emgcy_contact2_phone3" ColumnName="emgcy_contact2_phone3" />
+                <ScalarProperty Name="emgcy_contact2_hasaccess" ColumnName="emgcy_contact2_hasaccess" />
+                <ScalarProperty Name="emgcy_contact3_name" ColumnName="emgcy_contact3_name" />
+                <ScalarProperty Name="emgcy_contact3_relation" ColumnName="emgcy_contact3_relation" />
+                <ScalarProperty Name="emgcy_contact3_phone1" ColumnName="emgcy_contact3_phone1" />
+                <ScalarProperty Name="emgcy_contact3_phone2" ColumnName="emgcy_contact3_phone2" />
+                <ScalarProperty Name="emgcy_contact3_phone3" ColumnName="emgcy_contact3_phone3" />
+                <ScalarProperty Name="emgcy_contact3_hasaccess" ColumnName="emgcy_contact3_hasaccess" />
+                <ScalarProperty Name="pref_hospital_name" ColumnName="pref_hospital_name" />
+                <ScalarProperty Name="pref_hospital_city" ColumnName="pref_hospital_city" />
+                <ScalarProperty Name="pref_hospital_state" ColumnName="pref_hospital_state" />
+                <ScalarProperty Name="pref_hospital_phone" ColumnName="pref_hospital_phone" />
+                <ScalarProperty Name="allergies" ColumnName="allergies" />
+                <ScalarProperty Name="emgcy_special_instructions" ColumnName="emgcy_special_instructions" />
+                <ScalarProperty Name="home_hidden_key_loc" ColumnName="home_hidden_key_loc" />
+                <ScalarProperty Name="medical_conditions" ColumnName="medical_conditions" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TAGs">
+            <EntityTypeMapping TypeName="Models.TAG">
+              <MappingFragment StoreEntitySet="TAG">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="value" ColumnName="value" />
+                <ScalarProperty Name="rel_ORDERPROC_id" ColumnName="rel_ORDERPROC_id" />
+                <ScalarProperty Name="rel_NOTE_id" ColumnName="rel_NOTE_id" />
+                <ScalarProperty Name="date1" ColumnName="date1" />
+                <ScalarProperty Name="date2" ColumnName="date2" />
+                <ScalarProperty Name="type" ColumnName="type" />
+                <ScalarProperty Name="created_on" ColumnName="created_on" />
+                <ScalarProperty Name="created_by" ColumnName="created_by" />
+                <ScalarProperty Name="status" ColumnName="status" />
+                <ScalarProperty Name="updated_on" ColumnName="updated_on" />
+                <ScalarProperty Name="updated_by" ColumnName="updated_by" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="USERs">
+            <EntityTypeMapping TypeName="Models.USER">
+              <MappingFragment StoreEntitySet="USER">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="rel_ref_user_type_code" ColumnName="rel_ref_user_type_code" />
+                <ScalarProperty Name="username" ColumnName="username" />
+                <ScalarProperty Name="password" ColumnName="password" />
+                <ScalarProperty Name="name_first" ColumnName="name_first" />
+                <ScalarProperty Name="name_last" ColumnName="name_last" />
+                <ScalarProperty Name="last_login" ColumnName="last_login" />
+                <ScalarProperty Name="active" ColumnName="active" />
+                <ScalarProperty Name="meta" ColumnName="meta" />
+                <ScalarProperty Name="logged_in" ColumnName="logged_in" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Table_1">
+            <EntityTypeMapping TypeName="Models.Table_1">
+              <MappingFragment StoreEntitySet="Table_1">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="rel_TRANSACTION_id" ColumnName="rel_TRANSACTION_id" />
+                <ScalarProperty Name="rel_ref_orproc_state_id" ColumnName="rel_ref_orproc_state_id" />
+                <ScalarProperty Name="taken_by" ColumnName="taken_by" />
+                <ScalarProperty Name="taken_on" ColumnName="taken_on" />
+                <ScalarProperty Name="last_update" ColumnName="last_update" />
+                <ScalarProperty Name="last_update_by" ColumnName="last_update_by" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

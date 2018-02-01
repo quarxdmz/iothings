@@ -1,0 +1,1 @@
+<Playlist Version="1.0"><Add Test="api.NunitTest.UserPhysicianTest.testpostPhysician" /><Add Test="api.NunitTest.UserPhysicianTest.testpostPhysician_email" /><Add Test="api.NunitTest.UserPhysicianTest.testpostPhysician_isrequired" /></Playlist>

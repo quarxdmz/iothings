@@ -1,0 +1,864 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ModelsStoreContainer" CdmEntityContainer="mainEntities">
+    <FunctionImportMapping FunctionImportName="usp_getport_number" FunctionName="Models.Store.usp_getport_number" />
+    <EntitySetMapping Name="CAMPAIGNs">
+      <EntityTypeMapping TypeName="Models.CAMPAIGN">
+        <MappingFragment StoreEntitySet="CAMPAIGN">
+          <ScalarProperty Name="updated_by" ColumnName="updated_by" />
+          <ScalarProperty Name="updated_on" ColumnName="updated_on" />
+          <ScalarProperty Name="created_by" ColumnName="created_by" />
+          <ScalarProperty Name="created_on" ColumnName="created_on" />
+          <ScalarProperty Name="phone" ColumnName="phone" />
+          <ScalarProperty Name="quantity" ColumnName="quantity" />
+          <ScalarProperty Name="type" ColumnName="type" />
+          <ScalarProperty Name="rel_ref_campaign_type" ColumnName="rel_ref_campaign_type" />
+          <ScalarProperty Name="drop_date_actual" ColumnName="drop_date_actual" />
+          <ScalarProperty Name="drop_date_set" ColumnName="drop_date_set" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="code" ColumnName="code" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="con_ORDERPROC_DOCTOR">
+      <EntityTypeMapping TypeName="Models.con_ORDERPROC_DOCTOR">
+        <MappingFragment StoreEntitySet="con_ORDERPROC_DOCTOR">
+          <ScalarProperty Name="rel_DOCTOR_id" ColumnName="rel_DOCTOR_id" />
+          <ScalarProperty Name="rel_SOUL_id" ColumnName="rel_SOUL_id" />
+          <ScalarProperty Name="rel_ORDERPROC_id" ColumnName="rel_ORDERPROC_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="con_SOUL_ref_upsell">
+      <EntityTypeMapping TypeName="Models.con_SOUL_ref_upsell">
+        <MappingFragment StoreEntitySet="con_SOUL_ref_upsell">
+          <ScalarProperty Name="timestamp" ColumnName="timestamp" />
+          <ScalarProperty Name="meta_2" ColumnName="meta_2" />
+          <ScalarProperty Name="meta" ColumnName="meta" />
+          <ScalarProperty Name="rel_ref_upsell_id" ColumnName="rel_ref_upsell_id" />
+          <ScalarProperty Name="rel_SOUL_id" ColumnName="rel_SOUL_id" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Entities">
+      <EntityTypeMapping TypeName="Models.Entity">
+        <MappingFragment StoreEntitySet="Entity">
+          <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+          <ScalarProperty Name="DateUpdated" ColumnName="DateUpdated" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ref_EntityTypeID" ColumnName="ref_EntityTypeID" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Filters">
+      <EntityTypeMapping TypeName="Models.Filter">
+        <MappingFragment StoreEntitySet="Filter">
+          <ScalarProperty Name="UpdateBy" ColumnName="UpdateBy" />
+          <ScalarProperty Name="DateUpdated" ColumnName="DateUpdated" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="ref_EntityDefinitionId" ColumnName="ref_EntityDefinitionId" />
+          <ScalarProperty Name="ref_EntityId" ColumnName="ref_EntityId" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="INS_info_2">
+      <EntityTypeMapping TypeName="Models.INS_info_2">
+        <MappingFragment StoreEntitySet="INS_info_2">
+          <ScalarProperty Name="preauth_info" ColumnName="preauth_info" />
+          <ScalarProperty Name="payor_id" ColumnName="payor_id" />
+          <ScalarProperty Name="preauth_contact" ColumnName="preauth_contact" />
+          <ScalarProperty Name="preauth_req" ColumnName="preauth_req" />
+          <ScalarProperty Name="co_pay_amount" ColumnName="co_pay_amount" />
+          <ScalarProperty Name="co_pay" ColumnName="co_pay" />
+          <ScalarProperty Name="out_of_pocket" ColumnName="out_of_pocket" />
+          <ScalarProperty Name="percent_coverage" ColumnName="percent_coverage" />
+          <ScalarProperty Name="deductible_met" ColumnName="deductible_met" />
+          <ScalarProperty Name="deductible" ColumnName="deductible" />
+          <ScalarProperty Name="effective_date" ColumnName="effective_date" />
+          <ScalarProperty Name="DME_benefits" ColumnName="DME_benefits" />
+          <ScalarProperty Name="benefit_level" ColumnName="benefit_level" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Insurance_Profile">
+      <EntityTypeMapping TypeName="Models.Insurance_Profile">
+        <MappingFragment StoreEntitySet="Insurance_Profile">
+          <ScalarProperty Name="category" ColumnName="category" />
+          <ScalarProperty Name="provider" ColumnName="provider" />
+          <ScalarProperty Name="plan_name" ColumnName="plan_name" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LISTs">
+      <EntityTypeMapping TypeName="Models.LIST">
+        <MappingFragment StoreEntitySet="LIST">
+          <ScalarProperty Name="phone_number" ColumnName="phone_number" />
+          <ScalarProperty Name="drop_description" ColumnName="drop_description" />
+          <ScalarProperty Name="last_update_by" ColumnName="last_update_by" />
+          <ScalarProperty Name="last_update" ColumnName="last_update" />
+          <ScalarProperty Name="last_hit" ColumnName="last_hit" />
+          <ScalarProperty Name="accepted_count" ColumnName="accepted_count" />
+          <ScalarProperty Name="response_count" ColumnName="response_count" />
+          <ScalarProperty Name="mail_quantity" ColumnName="mail_quantity" />
+          <ScalarProperty Name="date_mailed" ColumnName="date_mailed" />
+          <ScalarProperty Name="final_quantity" ColumnName="final_quantity" />
+          <ScalarProperty Name="date_emailed" ColumnName="date_emailed" />
+          <ScalarProperty Name="order_quantity" ColumnName="order_quantity" />
+          <ScalarProperty Name="res_code" ColumnName="res_code" />
+          <ScalarProperty Name="order_number" ColumnName="order_number" />
+          <ScalarProperty Name="segment" ColumnName="segment" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="log_EXTERNAL">
+      <EntityTypeMapping TypeName="Models.log_EXTERNAL">
+        <MappingFragment StoreEntitySet="log_EXTERNAL">
+          <ScalarProperty Name="rel_ORPROC_id" ColumnName="rel_ORPROC_id" />
+          <ScalarProperty Name="executed_by" ColumnName="executed_by" />
+          <ScalarProperty Name="rel_SOUL_id" ColumnName="rel_SOUL_id" />
+          <ScalarProperty Name="timestamp" ColumnName="timestamp" />
+          <ScalarProperty Name="meta" ColumnName="meta" />
+          <ScalarProperty Name="data_in" ColumnName="data_in" />
+          <ScalarProperty Name="data_out" ColumnName="data_out" />
+          <ScalarProperty Name="external_type" ColumnName="external_type" />
+          <ScalarProperty Name="rel_ref_external_type_id" ColumnName="rel_ref_external_type_id" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="log_ORPROC">
+      <EntityTypeMapping TypeName="Models.log_ORPROC">
+        <MappingFragment StoreEntitySet="log_ORPROC">
+          <ScalarProperty Name="var_to" ColumnName="var_to" />
+          <ScalarProperty Name="var_from" ColumnName="var_from" />
+          <ScalarProperty Name="executed_on" ColumnName="executed_on" />
+          <ScalarProperty Name="executed_by" ColumnName="executed_by" />
+          <ScalarProperty Name="meta" ColumnName="meta" />
+          <ScalarProperty Name="action" ColumnName="action" />
+          <ScalarProperty Name="rel_ORDERPROC_id" ColumnName="rel_ORDERPROC_id" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="log_ORPROC_ALL">
+      <EntityTypeMapping TypeName="Models.log_ORPROC_ALL">
+        <MappingFragment StoreEntitySet="log_ORPROC_ALL">
+          <ScalarProperty Name="var_to" ColumnName="var_to" />
+          <ScalarProperty Name="var_from" ColumnName="var_from" />
+          <ScalarProperty Name="executed_on" ColumnName="executed_on" />
+          <ScalarProperty Name="executed_by" ColumnName="executed_by" />
+          <ScalarProperty Name="meta" ColumnName="meta" />
+          <ScalarProperty Name="action" ColumnName="action" />
+          <ScalarProperty Name="rel_ORDERPROC_id" ColumnName="rel_ORDERPROC_id" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LOG_Q1">
+      <EntityTypeMapping TypeName="Models.LOG_Q1">
+        <MappingFragment StoreEntitySet="LOG_Q1">
+          <ScalarProperty Name="date" ColumnName="date" />
+          <ScalarProperty Name="order_ids" ColumnName="order_ids" />
+          <ScalarProperty Name="count" ColumnName="count" />
+          <ScalarProperty Name="rel_ref_orprocstate_id" ColumnName="rel_ref_orprocstate_id" />
+          <ScalarProperty Name="acct_manager" ColumnName="acct_manager" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="log_USER">
+      <EntityTypeMapping TypeName="Models.log_USER">
+        <MappingFragment StoreEntitySet="log_USER">
+          <ScalarProperty Name="page" ColumnName="page" />
+          <ScalarProperty Name="ip" ColumnName="ip" />
+          <ScalarProperty Name="timestamp" ColumnName="timestamp" />
+          <ScalarProperty Name="rel_ref_action_id" ColumnName="rel_ref_action_id" />
+          <ScalarProperty Name="action_note" ColumnName="action_note" />
+          <ScalarProperty Name="rel_USER_id" ColumnName="rel_USER_id" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LOG_variables">
+      <EntityTypeMapping TypeName="Models.LOG_variables">
+        <MappingFragment StoreEntitySet="LOG_variables">
+          <ScalarProperty Name="rel_TRANSACTION_id" ColumnName="rel_TRANSACTION_id" />
+          <ScalarProperty Name="value" ColumnName="value" />
+          <ScalarProperty Name="variable" ColumnName="variable" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Med_Specialties">
+      <EntityTypeMapping TypeName="Models.Med_Specialties">
+        <MappingFragment StoreEntitySet="Med_Specialties">
+          <ScalarProperty Name="actor" ColumnName="actor" />
+          <ScalarProperty Name="category" ColumnName="category" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="uid" ColumnName="uid" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="NOTEs">
+      <EntityTypeMapping TypeName="Models.NOTE">
+        <MappingFragment StoreEntitySet="NOTE">
+          <ScalarProperty Name="tags" ColumnName="tags" />
+          <ScalarProperty Name="rel_parent_id" ColumnName="rel_parent_id" />
+          <ScalarProperty Name="rel_ref_note_type_id" ColumnName="rel_ref_note_type_id" />
+          <ScalarProperty Name="note_type" ColumnName="note_type" />
+          <ScalarProperty Name="written_on" ColumnName="written_on" />
+          <ScalarProperty Name="written_by" ColumnName="written_by" />
+          <ScalarProperty Name="text" ColumnName="text" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ORDER_info_2">
+      <EntityTypeMapping TypeName="Models.ORDER_info_2">
+        <MappingFragment StoreEntitySet="ORDER_info_2">
+          <ScalarProperty Name="date_AOB_received" ColumnName="date_AOB_received" />
+          <ScalarProperty Name="tracking_no" ColumnName="tracking_no" />
+          <ScalarProperty Name="shipped_through" ColumnName="shipped_through" />
+          <ScalarProperty Name="date_actual_ship" ColumnName="date_actual_ship" />
+          <ScalarProperty Name="rel_ORDERPROC_id" ColumnName="rel_ORDERPROC_id" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ORDER_shipping">
+      <EntityTypeMapping TypeName="Models.ORDER_shipping">
+        <MappingFragment StoreEntitySet="ORDER_shipping">
+          <ScalarProperty Name="rel_ORDERPROC_id" ColumnName="rel_ORDERPROC_id" />
+          <ScalarProperty Name="notes" ColumnName="notes" />
+          <ScalarProperty Name="rel_ref_shipping_status_id" ColumnName="rel_ref_shipping_status_id" />
+          <ScalarProperty Name="trackng_number" ColumnName="trackng_number" />
+          <ScalarProperty Name="date" ColumnName="date" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ORDERPROCs">
+      <EntityTypeMapping TypeName="Models.ORDERPROC">
+        <MappingFragment StoreEntitySet="ORDERPROC">
+          <ScalarProperty Name="tags_sys" ColumnName="tags_sys" />
+          <ScalarProperty Name="tags" ColumnName="tags" />
+          <ScalarProperty Name="acct_managed_by" ColumnName="acct_managed_by" />
+          <ScalarProperty Name="stay_taken" ColumnName="stay_taken" />
+          <ScalarProperty Name="meta" ColumnName="meta" />
+          <ScalarProperty Name="date_added" ColumnName="date_added" />
+          <ScalarProperty Name="rel_ITEM_id" ColumnName="rel_ITEM_id" />
+          <ScalarProperty Name="last_update_by" ColumnName="last_update_by" />
+          <ScalarProperty Name="last_update" ColumnName="last_update" />
+          <ScalarProperty Name="taken_on" ColumnName="taken_on" />
+          <ScalarProperty Name="taken_by" ColumnName="taken_by" />
+          <ScalarProperty Name="rel_ref_orproc_state_id" ColumnName="rel_ref_orproc_state_id" />
+          <ScalarProperty Name="rel_TRANSACTION_id" ColumnName="rel_TRANSACTION_id" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ref_EntityDefinition">
+      <EntityTypeMapping TypeName="Models.ref_EntityDefinition">
+        <MappingFragment StoreEntitySet="ref_EntityDefinition">
+          <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+          <ScalarProperty Name="DateUpdated" ColumnName="DateUpdated" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ref_EntityType">
+      <EntityTypeMapping TypeName="Models.ref_EntityType">
+        <MappingFragment StoreEntitySet="ref_EntityType">
+          <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+          <ScalarProperty Name="DateUpdated" ColumnName="DateUpdated" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ref_insurance_plan">
+      <EntityTypeMapping TypeName="Models.ref_insurance_plan">
+        <MappingFragment StoreEntitySet="ref_insurance_plan">
+          <ScalarProperty Name="category" ColumnName="category" />
+          <ScalarProperty Name="provider_id" ColumnName="provider_id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="uid" ColumnName="uid" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ref_orproc_state">
+      <EntityTypeMapping TypeName="Models.ref_orproc_state">
+        <MappingFragment StoreEntitySet="ref_orproc_state">
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ref_orproc_state_group">
+      <EntityTypeMapping TypeName="Models.ref_orproc_state_group">
+        <MappingFragment StoreEntitySet="ref_orproc_state_group">
+          <ScalarProperty Name="active" ColumnName="active" />
+          <ScalarProperty Name="members" ColumnName="members" />
+          <ScalarProperty Name="code" ColumnName="code" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ref_TAG">
+      <EntityTypeMapping TypeName="Models.ref_TAG">
+        <MappingFragment StoreEntitySet="ref_TAG">
+          <ScalarProperty Name="active" ColumnName="active" />
+          <ScalarProperty Name="tag_parent" ColumnName="tag_parent" />
+          <ScalarProperty Name="rel_ref_tag_type_code" ColumnName="rel_ref_tag_type_code" />
+          <ScalarProperty Name="pname" ColumnName="pname" />
+          <ScalarProperty Name="tag" ColumnName="tag" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ref_trans_type">
+      <EntityTypeMapping TypeName="Models.ref_trans_type">
+        <MappingFragment StoreEntitySet="ref_trans_type">
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ref_upsell">
+      <EntityTypeMapping TypeName="Models.ref_upsell">
+        <MappingFragment StoreEntitySet="ref_upsell">
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ref_user_type">
+      <EntityTypeMapping TypeName="Models.ref_user_type">
+        <MappingFragment StoreEntitySet="ref_user_type">
+          <ScalarProperty Name="meta" ColumnName="meta" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="code" ColumnName="code" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="rel_EntityType_EntityDefinition">
+      <EntityTypeMapping TypeName="Models.rel_EntityType_EntityDefinition">
+        <MappingFragment StoreEntitySet="rel_EntityType_EntityDefinition">
+          <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+          <ScalarProperty Name="DateUpdated" ColumnName="DateUpdated" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="relEntityDefinitionID" ColumnName="relEntityDefinitionID" />
+          <ScalarProperty Name="rel_EntityTypeID" ColumnName="rel_EntityTypeID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SETTINGS">
+      <EntityTypeMapping TypeName="Models.SETTING">
+        <MappingFragment StoreEntitySet="SETTINGS">
+          <ScalarProperty Name="value" ColumnName="value" />
+          <ScalarProperty Name="setting_name" ColumnName="setting_name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tables">
+      <EntityTypeMapping TypeName="Models.Table">
+        <MappingFragment StoreEntitySet="Table">
+          <ScalarProperty Name="provider_id" ColumnName="provider_id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="uid" ColumnName="uid" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TAGs">
+      <EntityTypeMapping TypeName="Models.TAG">
+        <MappingFragment StoreEntitySet="TAG">
+          <ScalarProperty Name="updated_by" ColumnName="updated_by" />
+          <ScalarProperty Name="updated_on" ColumnName="updated_on" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="created_by" ColumnName="created_by" />
+          <ScalarProperty Name="created_on" ColumnName="created_on" />
+          <ScalarProperty Name="type" ColumnName="type" />
+          <ScalarProperty Name="date2" ColumnName="date2" />
+          <ScalarProperty Name="date1" ColumnName="date1" />
+          <ScalarProperty Name="rel_NOTE_id" ColumnName="rel_NOTE_id" />
+          <ScalarProperty Name="rel_ORDERPROC_id" ColumnName="rel_ORDERPROC_id" />
+          <ScalarProperty Name="value" ColumnName="value" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TRANSACTIONs">
+      <EntityTypeMapping TypeName="Models.TRANSACTION">
+        <MappingFragment StoreEntitySet="TRANSACTION">
+          <ScalarProperty Name="rel_CALL_LOG_id" ColumnName="rel_CALL_LOG_id" />
+          <ScalarProperty Name="notes" ColumnName="notes" />
+          <ScalarProperty Name="timestamp" ColumnName="timestamp" />
+          <ScalarProperty Name="last_update_by" ColumnName="last_update_by" />
+          <ScalarProperty Name="last_update" ColumnName="last_update" />
+          <ScalarProperty Name="meta" ColumnName="meta" />
+          <ScalarProperty Name="executed_by" ColumnName="executed_by" />
+          <ScalarProperty Name="rel_ITEM_id" ColumnName="rel_ITEM_id" />
+          <ScalarProperty Name="order_id" ColumnName="order_id" />
+          <ScalarProperty Name="rel_ref_trans_type_id" ColumnName="rel_ref_trans_type_id" />
+          <ScalarProperty Name="rel_SOUL_id" ColumnName="rel_SOUL_id" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Table_1">
+      <EntityTypeMapping TypeName="Models.Table_1">
+        <MappingFragment StoreEntitySet="Table_1">
+          <ScalarProperty Name="last_update_by" ColumnName="last_update_by" />
+          <ScalarProperty Name="last_update" ColumnName="last_update" />
+          <ScalarProperty Name="taken_on" ColumnName="taken_on" />
+          <ScalarProperty Name="taken_by" ColumnName="taken_by" />
+          <ScalarProperty Name="rel_ref_orproc_state_id" ColumnName="rel_ref_orproc_state_id" />
+          <ScalarProperty Name="rel_TRANSACTION_id" ColumnName="rel_TRANSACTION_id" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ADDRESSes">
+      <EntityTypeMapping TypeName="Models.ADDRESS">
+        <MappingFragment StoreEntitySet="ADDRESS">
+          <ScalarProperty Name="last_updated_by" ColumnName="last_updated_by" />
+          <ScalarProperty Name="last_update" ColumnName="last_update" />
+          <ScalarProperty Name="rel_ref_country_id" ColumnName="rel_ref_country_id" />
+          <ScalarProperty Name="OR_zip_city" ColumnName="OR_zip_city" />
+          <ScalarProperty Name="rel_ref_zip_id" ColumnName="rel_ref_zip_id" />
+          <ScalarProperty Name="xus_zip" ColumnName="xus_zip" />
+          <ScalarProperty Name="xus_state" ColumnName="xus_state" />
+          <ScalarProperty Name="xus_city" ColumnName="xus_city" />
+          <ScalarProperty Name="address2" ColumnName="address2" />
+          <ScalarProperty Name="address1" ColumnName="address1" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="appointments">
+      <EntityTypeMapping TypeName="Models.appointment">
+        <MappingFragment StoreEntitySet="appointment">
+          <ScalarProperty Name="time_slot" ColumnName="time_slot" />
+          <ScalarProperty Name="created" ColumnName="created" />
+          <ScalarProperty Name="date_created" ColumnName="date_created" />
+          <ScalarProperty Name="appointment_date" ColumnName="appointment_date" />
+          <ScalarProperty Name="rel_SOUL_id" ColumnName="rel_SOUL_id" />
+          <ScalarProperty Name="rel_doctor_specialty" ColumnName="rel_doctor_specialty" />
+          <ScalarProperty Name="rel_doctor_id" ColumnName="rel_doctor_id" />
+          <ScalarProperty Name="rel_appointment_id" ColumnName="rel_appointment_id" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="con_Fave_doctor">
+      <EntityTypeMapping TypeName="Models.con_Fave_doctor">
+        <MappingFragment StoreEntitySet="con_Fave_doctor">
+          <ScalarProperty Name="created_by" ColumnName="created_by" />
+          <ScalarProperty Name="date_created" ColumnName="date_created" />
+          <ScalarProperty Name="rel_DOC_id" ColumnName="rel_DOC_id" />
+          <ScalarProperty Name="rel_SOUL_id" ColumnName="rel_SOUL_id" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="con_LIST_SOUL">
+      <EntityTypeMapping TypeName="Models.con_LIST_SOUL">
+        <MappingFragment StoreEntitySet="con_LIST_SOUL">
+          <ScalarProperty Name="rc_tail" ColumnName="rc_tail" />
+          <ScalarProperty Name="rel_SOUL_id" ColumnName="rel_SOUL_id" />
+          <ScalarProperty Name="rel_LIST_id" ColumnName="rel_LIST_id" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="con_SOUL_exam">
+      <EntityTypeMapping TypeName="Models.con_SOUL_exam">
+        <MappingFragment StoreEntitySet="con_SOUL_exam">
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="rel_exam_id" ColumnName="rel_exam_id" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="con_SOUL_hist">
+      <EntityTypeMapping TypeName="Models.con_SOUL_hist">
+        <MappingFragment StoreEntitySet="con_SOUL_hist">
+          <ScalarProperty Name="surgery_date" ColumnName="surgery_date" />
+          <ScalarProperty Name="shoe_size" ColumnName="shoe_size" />
+          <ScalarProperty Name="waist_size" ColumnName="waist_size" />
+          <ScalarProperty Name="pregnant" ColumnName="pregnant" />
+          <ScalarProperty Name="diabetic" ColumnName="diabetic" />
+          <ScalarProperty Name="care_physician_visit" ColumnName="care_physician_visit" />
+          <ScalarProperty Name="cholesterol_level" ColumnName="cholesterol_level" />
+          <ScalarProperty Name="current_medical_condition" ColumnName="current_medical_condition" />
+          <ScalarProperty Name="chief_complaint" ColumnName="chief_complaint" />
+          <ScalarProperty Name="skin_allergies" ColumnName="skin_allergies" />
+          <ScalarProperty Name="medical_allergies" ColumnName="medical_allergies" />
+          <ScalarProperty Name="allergies" ColumnName="allergies" />
+          <ScalarProperty Name="surgeries" ColumnName="surgeries" />
+          <ScalarProperty Name="current_medications" ColumnName="current_medications" />
+          <ScalarProperty Name="care_physician" ColumnName="care_physician" />
+          <ScalarProperty Name="rel_SOUL_id" ColumnName="rel_SOUL_id" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Conditions_Profile">
+      <EntityTypeMapping TypeName="Models.Conditions_Profile">
+        <MappingFragment StoreEntitySet="Conditions_Profile">
+          <ScalarProperty Name="category" ColumnName="category" />
+          <ScalarProperty Name="symptoms" ColumnName="symptoms" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Doc_Education">
+      <EntityTypeMapping TypeName="Models.Doc_Education">
+        <MappingFragment StoreEntitySet="Doc_Education">
+          <ScalarProperty Name="active" ColumnName="active" />
+          <ScalarProperty Name="degree" ColumnName="degree" />
+          <ScalarProperty Name="graduation_year" ColumnName="graduation_year" />
+          <ScalarProperty Name="school" ColumnName="school" />
+          <ScalarProperty Name="doctor_id" ColumnName="doctor_id" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Doc_Insurance">
+      <EntityTypeMapping TypeName="Models.Doc_Insurance">
+        <MappingFragment StoreEntitySet="Doc_Insurance">
+          <ScalarProperty Name="insurance_id" ColumnName="insurance_id" />
+          <ScalarProperty Name="doc_id" ColumnName="doc_id" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Doc_Insurance_Affiliation">
+      <EntityTypeMapping TypeName="Models.Doc_Insurance_Affiliation">
+        <MappingFragment StoreEntitySet="Doc_Insurance_Affiliation">
+          <ScalarProperty Name="active" ColumnName="active" />
+          <ScalarProperty Name="insurance_id" ColumnName="insurance_id" />
+          <ScalarProperty Name="doctor_id" ColumnName="doctor_id" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Doc_Specialties_Profile">
+      <EntityTypeMapping TypeName="Models.Doc_Specialties_Profile">
+        <MappingFragment StoreEntitySet="Doc_Specialties_Profile">
+          <ScalarProperty Name="active" ColumnName="active" />
+          <ScalarProperty Name="specialty_id" ColumnName="specialty_id" />
+          <ScalarProperty Name="doctor_id" ColumnName="doctor_id" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DOCTORs">
+      <EntityTypeMapping TypeName="Models.DOCTOR">
+        <MappingFragment StoreEntitySet="DOCTOR">
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="bio" ColumnName="bio" />
+          <ScalarProperty Name="last_update" ColumnName="last_update" />
+          <ScalarProperty Name="last_update_by" ColumnName="last_update_by" />
+          <ScalarProperty Name="image_url" ColumnName="image_url" />
+          <ScalarProperty Name="address_zip" ColumnName="address_zip" />
+          <ScalarProperty Name="address" ColumnName="address" />
+          <ScalarProperty Name="address_city" ColumnName="address_city" />
+          <ScalarProperty Name="address_state" ColumnName="address_state" />
+          <ScalarProperty Name="address2" ColumnName="address2" />
+          <ScalarProperty Name="address1" ColumnName="address1" />
+          <ScalarProperty Name="fax_to" ColumnName="fax_to" />
+          <ScalarProperty Name="pecos_cert" ColumnName="pecos_cert" />
+          <ScalarProperty Name="license_no" ColumnName="license_no" />
+          <ScalarProperty Name="medicare_upin" ColumnName="medicare_upin" />
+          <ScalarProperty Name="state_m_id" ColumnName="state_m_id" />
+          <ScalarProperty Name="rel_ADDRESS_id" ColumnName="rel_ADDRESS_id" />
+          <ScalarProperty Name="org_name" ColumnName="org_name" />
+          <ScalarProperty Name="NPI_type" ColumnName="NPI_type" />
+          <ScalarProperty Name="NPI" ColumnName="NPI" />
+          <ScalarProperty Name="fax" ColumnName="fax" />
+          <ScalarProperty Name="phone" ColumnName="phone" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="gender" ColumnName="gender" />
+          <ScalarProperty Name="namemiddle" ColumnName="namemiddle" />
+          <ScalarProperty Name="namelast" ColumnName="namelast" />
+          <ScalarProperty Name="namefirst" ColumnName="namefirst" />
+          <ScalarProperty Name="doc_name" ColumnName="doc_name" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ITEMs">
+      <EntityTypeMapping TypeName="Models.ITEM">
+        <MappingFragment StoreEntitySet="ITEM">
+          <ScalarProperty Name="price" ColumnName="price" />
+          <ScalarProperty Name="HCPC" ColumnName="HCPC" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="code" ColumnName="code" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LOG_CALL">
+      <EntityTypeMapping TypeName="Models.LOG_CALL">
+        <MappingFragment StoreEntitySet="LOG_CALL">
+          <ScalarProperty Name="duration" ColumnName="duration" />
+          <ScalarProperty Name="xml" ColumnName="xml" />
+          <ScalarProperty Name="rel_USER_id" ColumnName="rel_USER_id" />
+          <ScalarProperty Name="recording_url" ColumnName="recording_url" />
+          <ScalarProperty Name="time_disconnect" ColumnName="time_disconnect" />
+          <ScalarProperty Name="time_answer" ColumnName="time_answer" />
+          <ScalarProperty Name="time_create" ColumnName="time_create" />
+          <ScalarProperty Name="rel_ref_call_type" ColumnName="rel_ref_call_type" />
+          <ScalarProperty Name="event_type" ColumnName="event_type" />
+          <ScalarProperty Name="device_last_redirect" ColumnName="device_last_redirect" />
+          <ScalarProperty Name="device_calling" ColumnName="device_calling" />
+          <ScalarProperty Name="device_called" ColumnName="device_called" />
+          <ScalarProperty Name="term_user" ColumnName="term_user" />
+          <ScalarProperty Name="call_subject" ColumnName="call_subject" />
+          <ScalarProperty Name="call_id" ColumnName="call_id" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ref_appointment_type">
+      <EntityTypeMapping TypeName="Models.ref_appointment_type">
+        <MappingFragment StoreEntitySet="ref_appointment_type">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ref_insurancecompanies">
+      <EntityTypeMapping TypeName="Models.ref_insurancecompanies">
+        <MappingFragment StoreEntitySet="ref_insurancecompanies">
+          <ScalarProperty Name="PayerName" ColumnName="PayerName" />
+          <ScalarProperty Name="uid" ColumnName="uid" />
+          <ScalarProperty Name="PayerID" ColumnName="PayerID" />
+          <ScalarProperty Name="InsuranceKey" ColumnName="InsuranceKey" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ref_specialties">
+      <EntityTypeMapping TypeName="Models.ref_specialties">
+        <MappingFragment StoreEntitySet="ref_specialties">
+          <ScalarProperty Name="actor" ColumnName="actor" />
+          <ScalarProperty Name="category" ColumnName="category" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="uid" ColumnName="uid" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ref_zip">
+      <EntityTypeMapping TypeName="Models.ref_zip">
+        <MappingFragment StoreEntitySet="ref_zip">
+          <ScalarProperty Name="city_county" ColumnName="city_county" />
+          <ScalarProperty Name="city_lon" ColumnName="city_lon" />
+          <ScalarProperty Name="city_lat" ColumnName="city_lat" />
+          <ScalarProperty Name="city_state" ColumnName="city_state" />
+          <ScalarProperty Name="city_name" ColumnName="city_name" />
+          <ScalarProperty Name="zip" ColumnName="zip" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="reviews">
+      <EntityTypeMapping TypeName="Models.review">
+        <MappingFragment StoreEntitySet="review">
+          <ScalarProperty Name="rel_BOOKING_id" ColumnName="rel_BOOKING_id" />
+          <ScalarProperty Name="date" ColumnName="date" />
+          <ScalarProperty Name="comment" ColumnName="comment" />
+          <ScalarProperty Name="rating" ColumnName="rating" />
+          <ScalarProperty Name="rel_DOCTOR_id" ColumnName="rel_DOCTOR_id" />
+          <ScalarProperty Name="rel_SOUL_id" ColumnName="rel_SOUL_id" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SOULs">
+      <EntityTypeMapping TypeName="Models.SOUL">
+        <MappingFragment StoreEntitySet="SOUL">
+          <ScalarProperty Name="alt_relationship" ColumnName="alt_relationship" />
+          <ScalarProperty Name="alt_phone" ColumnName="alt_phone" />
+          <ScalarProperty Name="alt_name" ColumnName="alt_name" />
+          <ScalarProperty Name="timestamp" ColumnName="timestamp" />
+          <ScalarProperty Name="last_update_by" ColumnName="last_update_by" />
+          <ScalarProperty Name="last_update" ColumnName="last_update" />
+          <ScalarProperty Name="last_contact_by" ColumnName="last_contact_by" />
+          <ScalarProperty Name="last_contact" ColumnName="last_contact" />
+          <ScalarProperty Name="OR_LIST_res_code" ColumnName="OR_LIST_res_code" />
+          <ScalarProperty Name="meta" ColumnName="meta" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="parent_SOUL_id" ColumnName="parent_SOUL_id" />
+          <ScalarProperty Name="rel_ADDRESS_id" ColumnName="rel_ADDRESS_id" />
+          <ScalarProperty Name="phone_number" ColumnName="phone_number" />
+          <ScalarProperty Name="name_last" ColumnName="name_last" />
+          <ScalarProperty Name="name_first" ColumnName="name_first" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SOUL_info_2">
+      <EntityTypeMapping TypeName="Models.SOUL_info_2">
+        <MappingFragment StoreEntitySet="SOUL_info_2">
+          <ScalarProperty Name="jpc_interested" ColumnName="jpc_interested" />
+          <ScalarProperty Name="ppo" ColumnName="ppo" />
+          <ScalarProperty Name="diabetic_confirm" ColumnName="diabetic_confirm" />
+          <ScalarProperty Name="cpap" ColumnName="cpap" />
+          <ScalarProperty Name="diabetic" ColumnName="diabetic" />
+          <ScalarProperty Name="gender" ColumnName="gender" />
+          <ScalarProperty Name="injury_covered_claimno" ColumnName="injury_covered_claimno" />
+          <ScalarProperty Name="injury_covered_under" ColumnName="injury_covered_under" />
+          <ScalarProperty Name="doctor_address_zip" ColumnName="doctor_address_zip" />
+          <ScalarProperty Name="doctor_address" ColumnName="doctor_address" />
+          <ScalarProperty Name="doctor_address_city" ColumnName="doctor_address_city" />
+          <ScalarProperty Name="doctor_address_state" ColumnName="doctor_address_state" />
+          <ScalarProperty Name="doctor_fax_to" ColumnName="doctor_fax_to" />
+          <ScalarProperty Name="doctor_pecos_cert" ColumnName="doctor_pecos_cert" />
+          <ScalarProperty Name="doctor_license_no" ColumnName="doctor_license_no" />
+          <ScalarProperty Name="doctor_medicare_upin" ColumnName="doctor_medicare_upin" />
+          <ScalarProperty Name="doctor_state_m_id" ColumnName="doctor_state_m_id" />
+          <ScalarProperty Name="SSN" ColumnName="SSN" />
+          <ScalarProperty Name="doctor_rel_ADDRESS_id" ColumnName="doctor_rel_ADDRESS_id" />
+          <ScalarProperty Name="doctor_NPI" ColumnName="doctor_NPI" />
+          <ScalarProperty Name="interested_in_AED" ColumnName="interested_in_AED" />
+          <ScalarProperty Name="waist_size" ColumnName="waist_size" />
+          <ScalarProperty Name="sins_group_no" ColumnName="sins_group_no" />
+          <ScalarProperty Name="sins_phone" ColumnName="sins_phone" />
+          <ScalarProperty Name="sins_rel_ADDRESS_id" ColumnName="sins_rel_ADDRESS_id" />
+          <ScalarProperty Name="sins_policy_number" ColumnName="sins_policy_number" />
+          <ScalarProperty Name="sins_info_2_id" ColumnName="sins_info_2_id" />
+          <ScalarProperty Name="sins_name" ColumnName="sins_name" />
+          <ScalarProperty Name="pins_group_no" ColumnName="pins_group_no" />
+          <ScalarProperty Name="pins_phone" ColumnName="pins_phone" />
+          <ScalarProperty Name="pins_rel_ADDRESS_id" ColumnName="pins_rel_ADDRESS_id" />
+          <ScalarProperty Name="pins_policy_number" ColumnName="pins_policy_number" />
+          <ScalarProperty Name="pins_info_2_id" ColumnName="pins_info_2_id" />
+          <ScalarProperty Name="pins_name" ColumnName="pins_name" />
+          <ScalarProperty Name="ins_primary" ColumnName="ins_primary" />
+          <ScalarProperty Name="doctor_fax" ColumnName="doctor_fax" />
+          <ScalarProperty Name="doctor_phone" ColumnName="doctor_phone" />
+          <ScalarProperty Name="doctor_name" ColumnName="doctor_name" />
+          <ScalarProperty Name="weight" ColumnName="weight" />
+          <ScalarProperty Name="height" ColumnName="height" />
+          <ScalarProperty Name="date_birth" ColumnName="date_birth" />
+          <ScalarProperty Name="name_on_ins_card" ColumnName="name_on_ins_card" />
+          <ScalarProperty Name="list_other_health_concerns" ColumnName="list_other_health_concerns" />
+          <ScalarProperty Name="received_similar_covered" ColumnName="received_similar_covered" />
+          <ScalarProperty Name="received_similar_product" ColumnName="received_similar_product" />
+          <ScalarProperty Name="authorized_representative" ColumnName="authorized_representative" />
+          <ScalarProperty Name="rel_SOUL_id" ColumnName="rel_SOUL_id" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SOUL_info_3">
+      <EntityTypeMapping TypeName="Models.SOUL_info_3">
+        <MappingFragment StoreEntitySet="SOUL_info_3">
+          <ScalarProperty Name="medical_conditions" ColumnName="medical_conditions" />
+          <ScalarProperty Name="home_hidden_key_loc" ColumnName="home_hidden_key_loc" />
+          <ScalarProperty Name="emgcy_special_instructions" ColumnName="emgcy_special_instructions" />
+          <ScalarProperty Name="allergies" ColumnName="allergies" />
+          <ScalarProperty Name="pref_hospital_phone" ColumnName="pref_hospital_phone" />
+          <ScalarProperty Name="pref_hospital_state" ColumnName="pref_hospital_state" />
+          <ScalarProperty Name="pref_hospital_city" ColumnName="pref_hospital_city" />
+          <ScalarProperty Name="pref_hospital_name" ColumnName="pref_hospital_name" />
+          <ScalarProperty Name="emgcy_contact3_hasaccess" ColumnName="emgcy_contact3_hasaccess" />
+          <ScalarProperty Name="emgcy_contact3_phone3" ColumnName="emgcy_contact3_phone3" />
+          <ScalarProperty Name="emgcy_contact3_phone2" ColumnName="emgcy_contact3_phone2" />
+          <ScalarProperty Name="emgcy_contact3_phone1" ColumnName="emgcy_contact3_phone1" />
+          <ScalarProperty Name="emgcy_contact3_relation" ColumnName="emgcy_contact3_relation" />
+          <ScalarProperty Name="emgcy_contact3_name" ColumnName="emgcy_contact3_name" />
+          <ScalarProperty Name="emgcy_contact2_hasaccess" ColumnName="emgcy_contact2_hasaccess" />
+          <ScalarProperty Name="emgcy_contact2_phone3" ColumnName="emgcy_contact2_phone3" />
+          <ScalarProperty Name="emgcy_contact2_phone2" ColumnName="emgcy_contact2_phone2" />
+          <ScalarProperty Name="emgcy_contact2_phone1" ColumnName="emgcy_contact2_phone1" />
+          <ScalarProperty Name="emgcy_contact2_relation" ColumnName="emgcy_contact2_relation" />
+          <ScalarProperty Name="emgcy_contact2_name" ColumnName="emgcy_contact2_name" />
+          <ScalarProperty Name="emgcy_contact1_hasaccess" ColumnName="emgcy_contact1_hasaccess" />
+          <ScalarProperty Name="emgcy_contact1_phone3" ColumnName="emgcy_contact1_phone3" />
+          <ScalarProperty Name="emgcy_contact1_phone2" ColumnName="emgcy_contact1_phone2" />
+          <ScalarProperty Name="emgcy_contact1_phone1" ColumnName="emgcy_contact1_phone1" />
+          <ScalarProperty Name="emgcy_contact1_relation" ColumnName="emgcy_contact1_relation" />
+          <ScalarProperty Name="emgcy_contact1_name" ColumnName="emgcy_contact1_name" />
+          <ScalarProperty Name="home_phone_co" ColumnName="home_phone_co" />
+          <ScalarProperty Name="home_phone2" ColumnName="home_phone2" />
+          <ScalarProperty Name="rel_SOUL_id" ColumnName="rel_SOUL_id" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="Models.sysdiagram">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="definition" ColumnName="definition" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="USERs">
+      <EntityTypeMapping TypeName="Models.USER">
+        <MappingFragment StoreEntitySet="USER">
+          <ScalarProperty Name="logged_in" ColumnName="logged_in" />
+          <ScalarProperty Name="meta" ColumnName="meta" />
+          <ScalarProperty Name="active" ColumnName="active" />
+          <ScalarProperty Name="last_login" ColumnName="last_login" />
+          <ScalarProperty Name="name_last" ColumnName="name_last" />
+          <ScalarProperty Name="name_first" ColumnName="name_first" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="username" ColumnName="username" />
+          <ScalarProperty Name="rel_DOCTOR_id" ColumnName="rel_DOCTOR_id" />
+          <ScalarProperty Name="rel_SOUL_id" ColumnName="rel_SOUL_id" />
+          <ScalarProperty Name="rel_ref_user_type_code" ColumnName="rel_ref_user_type_code" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="wellness_exam">
+      <EntityTypeMapping TypeName="Models.wellness_exam">
+        <MappingFragment StoreEntitySet="wellness_exam">
+          <ScalarProperty Name="exam_name" ColumnName="exam_name" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

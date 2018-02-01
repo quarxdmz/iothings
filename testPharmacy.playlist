@@ -1,0 +1,1 @@
+<Playlist Version="1.0"><Add Test="api.NunitTest.UserPharmacyTest.testpostPharmacy" /><Add Test="api.NunitTest.UserPharmacyTest.testpostPharmacy_email" /><Add Test="api.NunitTest.UserPharmacyTest.testpostPharmacy_isrequired" /></Playlist>

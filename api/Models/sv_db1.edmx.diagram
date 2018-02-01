@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="f316bdfd22674e8eafdb2f3934988a6a" Name="Diagram1">
+        <EntityTypeShape EntityType="SV_db1Model.app_authentication" Width="1.5" PointX="7.75" PointY="0.75" />
+        <EntityTypeShape EntityType="SV_db1Model.APPOINTMENT" Width="1.5" PointX="19" PointY="1" />
+        <EntityTypeShape EntityType="SV_db1Model.APPOINTMENT_ext" Width="1.5" PointX="21.25" PointY="1.625" />
+        <EntityTypeShape EntityType="SV_db1Model.con_DOCTOR_Hospital" Width="1.5" PointX="8.25" PointY="82.625" />
+        <EntityTypeShape EntityType="SV_db1Model.con_DOCTOR_NOTE" Width="1.5" PointX="14.25" PointY="4.625" />
+        <EntityTypeShape EntityType="SV_db1Model.con_DOCTOR_ref_condition" Width="1.5" PointX="5.25" PointY="122.875" />
+        <EntityTypeShape EntityType="SV_db1Model.con_DOCTOR_ref_Hospital" Width="1.5" PointX="5.25" PointY="80.75" />
+        <EntityTypeShape EntityType="SV_db1Model.con_DOCTOR_ref_language" Width="1.5" PointX="8.25" PointY="108.375" />
+        <EntityTypeShape EntityType="SV_db1Model.con_DOCTOR_ref_specialty" Width="1.5" PointX="5.25" PointY="107.375" />
+        <EntityTypeShape EntityType="SV_db1Model.con_DOCTOR_timeslot" Width="1.5" PointX="5.25" PointY="126.375" />
+        <EntityTypeShape EntityType="SV_db1Model.con_DOCTOR1_ref_insurance" Width="1.5" PointX="8.25" PointY="23.375" />
+        <EntityTypeShape EntityType="SV_db1Model.con_DOCTOR1_ref_language" Width="1.5" PointX="5.25" PointY="23.375" />
+        <EntityTypeShape EntityType="SV_db1Model.con_DOCTOR1_ref_specialty" Width="1.5" PointX="5.25" PointY="19.5" />
+        <EntityTypeShape EntityType="SV_db1Model.con_ORDER_NOTE" Width="1.5" PointX="14.25" PointY="7.875" />
+        <EntityTypeShape EntityType="SV_db1Model.con_ORDER_PRODUCT" Width="1.5" PointX="14.25" PointY="17.25" />
+        <EntityTypeShape EntityType="SV_db1Model.con_ref_specialty_ref_condition" Width="1.5" PointX="7.5" PointY="15.375" />
+        <EntityTypeShape EntityType="SV_db1Model.con_SOUL_LIST" Width="1.5" PointX="5.25" PointY="62.25" />
+        <EntityTypeShape EntityType="SV_db1Model.con_SOUL_mailing_list" Width="1.5" PointX="0.75" PointY="0.75" />
+        <EntityTypeShape EntityType="SV_db1Model.con_SOUL_ref_insurance" Width="1.5" PointX="8.25" PointY="62.125" />
+        <EntityTypeShape EntityType="SV_db1Model.con_TRANSACTION_NOTE" Width="1.5" PointX="14.25" PointY="1.25" />
+        <EntityTypeShape EntityType="SV_db1Model.DOCTOR" Width="1.5" PointX="3" PointY="67.375" />
+        <EntityTypeShape EntityType="SV_db1Model.DOCTOR_ext1" Width="1.5" PointX="5.25" PointY="34.25" />
+        <EntityTypeShape EntityType="SV_db1Model.DOCTOR_NPI" Width="1.5" PointX="3" PointY="75.875" />
+        <EntityTypeShape EntityType="SV_db1Model.DOCTOR1" Width="1.5" PointX="3" PointY="20.625" />
+        <EntityTypeShape EntityType="SV_db1Model.hs_DOCTOR" Width="1.5" PointX="3" PointY="105.5" />
+        <EntityTypeShape EntityType="SV_db1Model.hs_DOCTOR_ext" Width="1.5" PointX="5.25" PointY="111.875" />
+        <EntityTypeShape EntityType="SV_db1Model.hs_Hospital" Width="1.5" PointX="3" PointY="54.125" />
+        <EntityTypeShape EntityType="SV_db1Model.hs_HOSPITAL_ext" Width="1.5" PointX="5.25" PointY="55.5" />
+        <EntityTypeShape EntityType="SV_db1Model.hs_ORGANIZATION" Width="1.5" PointX="3" PointY="90.875" />
+        <EntityTypeShape EntityType="SV_db1Model.LIST" Width="1.5" PointX="3" PointY="35.5" />
+        <EntityTypeShape EntityType="SV_db1Model.LIST_ext" Width="1.5" PointX="5.25" PointY="89.125" />
+        <EntityTypeShape EntityType="SV_db1Model.log_CALL" Width="1.5" PointX="19" PointY="17" />
+        <EntityTypeShape EntityType="SV_db1Model.log_payment" Width="1.5" PointX="7.5" PointY="9.625" />
+        <EntityTypeShape EntityType="SV_db1Model.log_token" Width="1.5" PointX="9.75" PointY="0.75" />
+        <EntityTypeShape EntityType="SV_db1Model.MARKETER" Width="1.5" PointX="3" PointY="38.875" />
+        <EntityTypeShape EntityType="SV_db1Model.MARKETER_ext" Width="1.5" PointX="5.25" PointY="40.625" />
+        <EntityTypeShape EntityType="SV_db1Model.NOTE" Width="1.5" PointX="12" PointY="4.25" />
+        <EntityTypeShape EntityType="SV_db1Model.notification" Width="1.5" PointX="5.25" PointY="1.375" />
+        <EntityTypeShape EntityType="SV_db1Model.ORDER" Width="1.5" PointX="9.75" PointY="28.625" />
+        <EntityTypeShape EntityType="SV_db1Model.ORDER_ext" Width="1.5" PointX="12" PointY="28" />
+        <EntityTypeShape EntityType="SV_db1Model.PHARMACY" Width="1.5" PointX="3" PointY="96.875" />
+        <EntityTypeShape EntityType="SV_db1Model.PHARMACY_ext" Width="1.5" PointX="5.25" PointY="98.875" />
+        <EntityTypeShape EntityType="SV_db1Model.PHYSICIAN" Width="1.5" PointX="3" PointY="82.625" />
+        <EntityTypeShape EntityType="SV_db1Model.PHYSICIAN_ext" Width="1.5" PointX="5.25" PointY="84.75" />
+        <EntityTypeShape EntityType="SV_db1Model.PRODUCT" Width="1.5" PointX="9.75" PointY="17.625" />
+        <EntityTypeShape EntityType="SV_db1Model.PRODUCT_ext" Width="1.5" PointX="12" PointY="17" />
+        <EntityTypeShape EntityType="SV_db1Model.ref_APPOINTMENT_status" Width="1.5" PointX="16.75" PointY="7" />
+        <EntityTypeShape EntityType="SV_db1Model.ref_APPOINTMENT_type" Width="1.5" PointX="16.75" PointY="2" />
+        <EntityTypeShape EntityType="SV_db1Model.ref_CALL_type" Width="1.5" PointX="16.75" PointY="17.125" />
+        <EntityTypeShape EntityType="SV_db1Model.ref_condition" Width="1.5" PointX="5.25" PointY="15.25" />
+        <EntityTypeShape EntityType="SV_db1Model.ref_data_type" Width="1.5" PointX="0.75" PointY="11.75" />
+        <EntityTypeShape EntityType="SV_db1Model.ref_insurance_provider" Width="1.5" PointX="6" PointY="27.75" />
+        <EntityTypeShape EntityType="SV_db1Model.ref_languages" Width="1.5" PointX="3" PointY="30.625" />
+        <EntityTypeShape EntityType="SV_db1Model.ref_NOTE_type" Width="1.5" PointX="9.75" PointY="4.625" />
+        <EntityTypeShape EntityType="SV_db1Model.ref_specialty" Width="1.5" PointX="3" PointY="118.875" />
+        <EntityTypeShape EntityType="SV_db1Model.ref_specialty_provider" Width="1.5" PointX="0.75" PointY="15.5" />
+        <EntityTypeShape EntityType="SV_db1Model.ref_specialty1" Width="1.5" PointX="3" PointY="14.875" />
+        <EntityTypeShape EntityType="SV_db1Model.ref_status" Width="1.5" PointX="12" PointY="12.125" />
+        <EntityTypeShape EntityType="SV_db1Model.ref_status_type" Width="1.5" PointX="9.75" PointY="12.375" />
+        <EntityTypeShape EntityType="SV_db1Model.ref_TRANSACTION_type" Width="1.5" PointX="12" PointY="8.375" />
+        <EntityTypeShape EntityType="SV_db1Model.ref_USER_type" Width="1.5" PointX="0.75" PointY="5.75" />
+        <EntityTypeShape EntityType="SV_db1Model.ref_wellness_exam" Width="1.5" PointX="3" PointY="115.5" />
+        <EntityTypeShape EntityType="SV_db1Model.ref_zip" Width="1.5" PointX="0.75" PointY="60.75" />
+        <EntityTypeShape EntityType="SV_db1Model.SOUL" Width="1.5" PointX="3" PointY="60.75" />
+        <EntityTypeShape EntityType="SV_db1Model.SOUL_ext" Width="1.5" PointX="5.25" PointY="73.125" />
+        <EntityTypeShape EntityType="SV_db1Model.SUPPLIER" Width="1.5" PointX="3" PointY="46.25" />
+        <EntityTypeShape EntityType="SV_db1Model.SUPPLIER_ext" Width="1.5" PointX="5.25" PointY="48.25" />
+        <EntityTypeShape EntityType="SV_db1Model.top_search" Width="1.5" PointX="18.75" PointY="6.75" />
+        <EntityTypeShape EntityType="SV_db1Model.TRANSACTION" Width="1.5" PointX="14.25" PointY="12.125" />
+        <EntityTypeShape EntityType="SV_db1Model.TRANSACTION_ext" Width="1.5" PointX="16.5" PointY="12" />
+        <EntityTypeShape EntityType="SV_db1Model.USER" Width="1.5" PointX="3" PointY="3.75" />
+        <EntityTypeShape EntityType="SV_db1Model.User_Card_Info" Width="1.5" PointX="5.25" PointY="9.375" />
+        <EntityTypeShape EntityType="SV_db1Model.USER_ext" Width="1.5" PointX="5.25" PointY="5.5" />
+        <EntityTypeShape EntityType="SV_db1Model.USER_type_access" Width="1.5" PointX="18.75" PointY="10.75" />
+        <EntityTypeShape EntityType="SV_db1Model.wellness_exam" Width="1.5" PointX="5.25" PointY="66.25" />
+        <EntityTypeShape EntityType="SV_db1Model.log_token_activity" Width="1.5" PointX="20.75" PointY="6.75" />
+        <AssociationConnector Association="SV_db1Model.FK_APPOINTMENT_ext_APPOINTMENT" />
+        <AssociationConnector Association="SV_db1Model.FK_APPOINTMENT_ref_APPOINTMENT_STATUS" />
+        <AssociationConnector Association="SV_db1Model.FK_APPOINTMENT_ref_APPOINTMENT_TYPE" />
+        <AssociationConnector Association="SV_db1Model.FK_con_DOCTOR_Hospital" />
+        <AssociationConnector Association="SV_db1Model.FK_con_DOCTOR_Hospital_DOCTOR" />
+        <AssociationConnector Association="SV_db1Model.FK_con_DOCTOR_NOTE_NOTE" />
+        <AssociationConnector Association="SV_db1Model.FK_con_DOCTOR_ref_condition_DOCTOR" />
+        <AssociationConnector Association="SV_db1Model.FK_con_DOCTOR_ref_hospital" />
+        <AssociationConnector Association="SV_db1Model.FK_con_DOCTOR_ref_hospital_DOCTOR" />
+        <AssociationConnector Association="SV_db1Model.FK_con_DOCTOR_ref_language" />
+        <AssociationConnector Association="SV_db1Model.FK_con_DOCTOR_ref_language_DOCTOR" />
+        <AssociationConnector Association="SV_db1Model.FK_con_DOCTOR_ref_specialty_DOCTOR" />
+        <AssociationConnector Association="SV_db1Model.FK_con_DOCTOR_ref_specialty_ref_specialties" />
+        <AssociationConnector Association="SV_db1Model.FK_con_DOCTOR_timeslot_ToTable" />
+        <AssociationConnector Association="SV_db1Model.FK_con_DOCTOR_ref_insurance_DOCTOR1" />
+        <AssociationConnector Association="SV_db1Model.FK_con_DOCTOR_ref_insurance_ref_insurance_provider1" />
+        <AssociationConnector Association="SV_db1Model.FK_con_DOCTOR_ref_language_DOCTOR1" />
+        <AssociationConnector Association="SV_db1Model.FK_con_DOCTOR_ref_language1" />
+        <AssociationConnector Association="SV_db1Model.FK_con_DOCTOR_ref_specialty_DOCTOR1" />
+        <AssociationConnector Association="SV_db1Model.FK_con_DOCTOR_ref_specialty_ref_specialties1" />
+        <AssociationConnector Association="SV_db1Model.FK_con_ORDER_NOTE_NOTE" />
+        <AssociationConnector Association="SV_db1Model.FK_con_ORDER_PRODUCT_ORDER_ext" />
+        <AssociationConnector Association="SV_db1Model.FK_con_ORDER_PRODUCT_PRODUCT_ext" />
+        <AssociationConnector Association="SV_db1Model.FK_condition_ref_condition" />
+        <AssociationConnector Association="SV_db1Model.FK_condition_ref_specialty" />
+        <AssociationConnector Association="SV_db1Model.FK_con_SOUL_LIST_LIST" />
+        <AssociationConnector Association="SV_db1Model.FK_con_SOUL_LIST_SOUL" />
+        <AssociationConnector Association="SV_db1Model.FK_con_SOUL_ref_insurance_ref_insurance_provider" />
+        <AssociationConnector Association="SV_db1Model.FK_con_SOUL_ref_insurance_SOUL" />
+        <AssociationConnector Association="SV_db1Model.FK_con_TRANSACTION_NOTE_NOTE" />
+        <AssociationConnector Association="SV_db1Model.FK_DOCTOR_ref_zip" />
+        <AssociationConnector Association="SV_db1Model.FK_hs_DOCTOR_ext_DOCTOR1" />
+        <AssociationConnector Association="SV_db1Model.FK_DOCTOR_NPI_ref_zip" />
+        <AssociationConnector Association="SV_db1Model.FK_hsDOCTOR_ref_zip_p1" />
+        <AssociationConnector Association="SV_db1Model.FK_hs_DOCTOR_ext_DOCTOR" />
+        <AssociationConnector Association="SV_db1Model.FK_hsDOCTOR_ref_zip" />
+        <AssociationConnector Association="SV_db1Model.FK_hsDOCTOR_ref_zip_p" />
+        <AssociationConnector Association="SV_db1Model.FK_hs_Hospital_ext_DOCTOR" />
+        <AssociationConnector Association="SV_db1Model.FK_hsHospital_ref_zip" />
+        <AssociationConnector Association="SV_db1Model.FK_hsORGANIZATION_ref_zip" />
+        <AssociationConnector Association="SV_db1Model.FK_LIST_ext_LIST" />
+        <AssociationConnector Association="SV_db1Model.FK_log_CALL_ref_CALL_type" />
+        <AssociationConnector Association="SV_db1Model.FK_log_payment_Card_Info" />
+        <AssociationConnector Association="SV_db1Model.FK_MARKETER_ext_MARKETER" />
+        <AssociationConnector Association="SV_db1Model.FK_MARKETER_Toref_zip" />
+        <AssociationConnector Association="SV_db1Model.FK_MARKETING_ToRef_Zip" />
+        <AssociationConnector Association="SV_db1Model.FK_NOTE_ref_NOTE_type" />
+        <AssociationConnector Association="SV_db1Model.FK_notification_USER" />
+        <AssociationConnector Association="SV_db1Model.FK_ORDER_ext_ORDER" />
+        <AssociationConnector Association="SV_db1Model.FK_PHARMACY_ext_PHARMACY" />
+        <AssociationConnector Association="SV_db1Model.FK_PHARMACY_ToRef_Zip" />
+        <AssociationConnector Association="SV_db1Model.FK_PHYSICIAN_ext_PHYSICIAN" />
+        <AssociationConnector Association="SV_db1Model.FK_PHYSICIAN_ToRef_Zip" />
+        <AssociationConnector Association="SV_db1Model.FK_PRODUCT_ext_PRODUCT" />
+        <AssociationConnector Association="SV_db1Model.FK_ref_condition_specialty" />
+        <AssociationConnector Association="SV_db1Model.FK_ref_specialty1_provider" />
+        <AssociationConnector Association="SV_db1Model.FK_ref_status_ref_status_type" />
+        <AssociationConnector Association="SV_db1Model.FK_TRANSACTION_ref_status" />
+        <AssociationConnector Association="SV_db1Model.FK_TRANSACTION_ref_TRANSACTION_type" />
+        <AssociationConnector Association="SV_db1Model.FK_USER_ToTable" />
+        <AssociationConnector Association="SV_db1Model.FK_wellness_exam_ToRef_wellness" />
+        <AssociationConnector Association="SV_db1Model.FK_SOUL_ref_zip" />
+        <AssociationConnector Association="SV_db1Model.FK_SUPPLIER_Toref_zip" />
+        <AssociationConnector Association="SV_db1Model.FK_SOUL_ext_SOUL" />
+        <AssociationConnector Association="SV_db1Model.FK_wellness_exam_ToSOUL" />
+        <AssociationConnector Association="SV_db1Model.FK_SUPPLIER_ext_SUPPLIER" />
+        <AssociationConnector Association="SV_db1Model.FK_TRANSACTION_ext_TRANSACTION" />
+        <AssociationConnector Association="SV_db1Model.FK_User_Card_Info_ToTable" />
+        <AssociationConnector Association="SV_db1Model.FK_USER_ext_USER" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

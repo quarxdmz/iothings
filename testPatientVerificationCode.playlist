@@ -1,0 +1,1 @@
+<Playlist Version="1.0"><Add Test="api.NunitTest.PatientLoginTest.patient_verificationCode(&quot;dipa2an@yahoo.com&quot;,True)" /><Add Test="api.NunitTest.PatientLoginTest.patient_verificationCode_email(&quot;dipa2an1@yahoo.com&quot;,False)" /><Add Test="api.NunitTest.PatientLoginTest.patient_verificationCode_empty(&quot;&quot;,False)" /></Playlist>

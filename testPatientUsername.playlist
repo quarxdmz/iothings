@@ -1,0 +1,1 @@
+<Playlist Version="1.0"><Add Test="api.NunitTest.PatientLoginTest.patientLoginUsername(&quot;dipa2an@yahoo.com&quot;,True)" /><Add Test="api.NunitTest.PatientLoginTest.patientLoginUsername1(&quot;dipa2an1@yahoo.com&quot;,False)" /><Add Test="api.NunitTest.PatientLoginTest.patientLoginUsername2(&quot;&quot;,False)" /></Playlist>
